@@ -1,7 +1,7 @@
 ---
 title: "Structure contract"
 description: "YAML front matter, heading rules, and scope for agent-first docs under docs/."
-date: 2026-03-22
+date: 2026-03-23
 doc_type: reference
 status: current
 audience: agent-default
@@ -29,6 +29,10 @@ Either a single `#` heading or a `title` in front matter (see below); do not use
 ### Heading ladder
 
 Use `##` then `###` then `####` in order; do not skip a level (e.g. `#` → `###`) unless fixing legacy content in a dedicated edit.
+
+### Descriptive link text
+
+Use **descriptive** link text for intra-repo and external destinations (avoid bare URLs or vague phrases like “click here” when a short label can name the destination).
 
 ## YAML front matter
 

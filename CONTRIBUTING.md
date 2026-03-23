@@ -61,7 +61,7 @@ FakeItem:
     label: { type: string }
 ~~~
 
-**Epic 3** (**Story 3.1**) will add a fuller **substantive** PR checklist; this section stays scoped to **where API truth lives** and **what not to paste** so review stays aligned with the structure contract today.
+When a PR changes **HTTP/API meaning** or **cross-boundary** API claims, reviewers also apply **[Substantive documentation PRs](#substantive-documentation-prs)** under **[Reviewing new and revised doc pages](#reviewing-new-and-revised-doc-pages)**. This section stays scoped to **where API truth lives** and **what not to paste**; it does not replace that checklist.
 
 ## Planning and workflow output vs curated product docs
 
@@ -116,7 +116,11 @@ When you add a **new topical page** under `docs/` that should be part of the dis
 
 ## Reviewing new and revised doc pages
 
-**For reviewers**—when a PR adds or materially changes pages under **`docs/`**, you can verify **structure** against the contract without extra undocumented rules. Use **[docs/structure-contract.md](docs/structure-contract.md)** as the checklist’s authority.
+**For reviewers**—when a PR adds or changes **curated documentation** (pages under **`docs/`**, files under **`docs/templates/`**, or this repository’s **`CONTRIBUTING.md`**), use the subsections below. **Every** such PR should pass **[Structure and contract (every doc PR)](#structure-and-contract-every-doc-pr)** where it applies (for example front matter and heading rules apply to Markdown under **`docs/`**; use judgment for guide-only edits). When the change is **substantive**, also apply **[Substantive documentation PRs](#substantive-documentation-prs)** so reviewers can accept or request changes **without undocumented taste**—each substantive item points at published rules in this repository.
+
+### Structure and contract (every doc PR)
+
+Fast path for **any** doc PR: verify **structure**, **front matter**, and **link style** against **[docs/structure-contract.md](docs/structure-contract.md)**.
 
 - **Front matter:** **[Required keys](docs/structure-contract.md#yaml-front-matter)** (`title`, `description`, `date`) present; YAML valid; optional keys consistent with the **Recommended keys** table when used.
 - **Heading ladder:** no skipped levels between `#` / `##` / `###` / `####`—**[Heading ladder](docs/structure-contract.md#heading-ladder)**.
@@ -124,7 +128,27 @@ When you add a **new topical page** under `docs/` that should be part of the dis
 - **Links:** meaningful **intra-repo** link text; code fences have **language tags** where applicable—**[Markdown syntax](docs/structure-contract.md#markdown-syntax)** (CommonMark expectations above those subsections).
 - **Index:** new **default-path** topical pages update **`docs/index.md`** in the same PR—see **[Keeping the hub complete](#keeping-the-hub-complete)** and **[Keeping this index current](docs/index.md#keeping-this-index-current)** in the hub.
 
-**Epic 3** (**Story 3.1**) will add a fuller **substantive** PR checklist (accuracy, tone, provenance, and similar). This section stays scoped to **structure, front matter, and link style** so review stays aligned with **`docs/structure-contract.md`** today.
+### Substantive documentation PRs
+
+Use this **in addition to** **[Structure and contract (every doc PR)](#structure-and-contract-every-doc-pr)** when the PR is **substantive** (definition next).
+
+**What counts as substantive**
+
+A change is **substantive** when it alters **meaning**, **scope**, or **cross-boundary rules**—not only spelling, formatting, or presentation.
+
+- **Substantive examples:** new or revised **business rules**; new **cross-boundary** claims (for example frontend ↔ backend, HTTP surfaces, operations edges); **scope** changes (what the page owns versus what it defers to outbound links); **new normative** guidance readers or agents would act on; promoting **draft** or **archive-leaning** material to **default-path** truth; any edit that materially changes the **takeaway** of a curated page.
+- **Usually not substantive:** typos; **pure** formatting (whitespace, list punctuation); fixing a broken link **without** changing the **intended** destination; tightening prose **without** changing rules, scope, or claims; adjusting link **wording** when the **destination and meaning** stay the same.
+
+If you are unsure, treat the PR as **substantive** and apply this checklist.
+
+**Substantive reviewer checklist** — work **yes / no / n/a** against the cited authority (same pull request unless called out):
+
+- **Placement (default vs archive)** — Path, **`status`**, and **`audience`** align with **[Default vs archive](docs/structure-contract.md#default-vs-archive)** and the narrative in **[Default path vs archive](docs/default-vs-archive-split.md)**. No **default-path** page presents **`draft`** (or otherwise non-canonical) material as **current truth** without clear rationale in the PR.
+- **Index / hub** — New or **promoted** default-path topical pages update **[docs/index.md](docs/index.md)** in the **same PR**—**[Keeping the hub complete](#keeping-the-hub-complete)** and **[Keeping this index current](docs/index.md#keeping-this-index-current)**.
+- **Outbound link hygiene** — **[Descriptive link text](docs/structure-contract.md#descriptive-link-text)** for intra-repo and external links (NFR-A1). Stable DevDoc / OpenAPI entry points match **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** and **[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)**—no ad-hoc substitutes for those hubs.
+- **OpenAPI boundary** — No new **authoritative** spec dumps, path/method catalogs, or schema-as-truth blocks in this repo; **link-out** only—**[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)** and **[What belongs in this corpus](docs/structure-contract.md#what-belongs-in-this-corpus)**.
+- **Provenance** — **`date`** in front matter reflects the **last substantive** update per **[YAML front matter](docs/structure-contract.md#yaml-front-matter)**. The **PR description** or review thread should call out **material meaning** changes. Norms for **`owner` / `last_updated`** (and which **`doc_type`** values require them) are **Story 3.2**—**do not** invent or require those keys until **`docs/structure-contract.md`** defines them.
+- **Privacy / sensitivity** (when examples or narratives touch people-like data) — Use **synthetic** or clearly **non-production** examples—**no** casual real names, learner identifiers, or PII-adjacent payloads (NFR-A2). Escalate if content could identify individuals or sensitive deployments without an approved pattern.
 
 ---
 

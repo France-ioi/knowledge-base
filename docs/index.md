@@ -66,4 +66,4 @@ If a page is intentionally **not** listed here (for example **draft** material o
 
 ---
 
-**Contributing:** A full contribution guide is planned as **`CONTRIBUTING.md`** or **`docs/contributing.md`**. Until it is published, follow [structure contract](./structure-contract.md) when adding or editing curated documentation.
+**Contributing:** For how to add or change documentation—scope, inclusion rules, and where curated truth lives—see the **[contribution guide](../CONTRIBUTING.md)**. Technical structure for `docs/` pages (YAML front matter, headings) remains in the [structure contract](./structure-contract.md).

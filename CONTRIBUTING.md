@@ -21,6 +21,48 @@ That matches the hub’s **[What belongs here vs elsewhere](docs/index.md#what-b
 
 For default-path versus optional archive material, see **[Default path vs archive](docs/default-vs-archive-split.md)**.
 
+Teachable detail, good vs bad examples, and the **normative** boundary for API reference live in **[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)** below—read that section when you touch HTTP/API material.
+
+## API documentation and OpenAPI boundary
+
+This knowledge base **must not** host a **second authoritative copy** of generated HTTP contracts (FR11, NFR-I2). The hub’s **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** is the **reader-facing map** for the same conventions (Story 1.3, NFR-I1): use it to point to **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)**—**do not** invent different URLs for those entry points.
+
+**Forbidden as contract of record in this repo**
+
+- Pasting **OpenAPI/Swagger YAML or JSON** (whole specs or large fragments) as if this repository were the **source of truth** for HTTP APIs.
+- Pasting **generated path/method catalogs** or wide **endpoint tables** meant to **replace** DevDoc or published OpenAPI-sourced docs.
+- Embedding large **request/response schema** blocks (nested properties, full component trees) as the **authoritative** reference readers should trust for API shape.
+
+**Allowed when it is not the contract of record**
+
+- **Short illustrative mentions** in prose (for example a **single field name** or status code) when you explain **intent** or **cross-boundary behavior**, and the **authoritative** contract remains **outbound**—see **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** and your page’s **References and outbound links**.
+
+**Good pattern** — descriptive link plus one or two sentences of **intent** or **cross-boundary behavior** owned by this KB:
+
+```markdown
+Authoritative path/method and payload definitions: [Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/).
+Here we only state that the SPA treats the server’s returned `progressState` as canonical for the learner dashboard—no duplicate schema.
+```
+
+**Anti-pattern** — spec-style dump presented as the contract of record (illustrative fake names; **do not** copy this style into curated pages):
+
+~~~text
+<!-- ANTI-PATTERN: path catalog + schema excerpt as “the API doc” in this repo -->
+
+| Method | Path              |
+|--------|-------------------|
+| GET    | /api/v1/fakeItems |
+| POST   | /api/v1/fakeItems |
+
+FakeItem:
+  type: object
+  properties:
+    id: { type: string }
+    label: { type: string }
+~~~
+
+**Epic 3** (**Story 3.1**) will add a fuller **substantive** PR checklist; this section stays scoped to **where API truth lives** and **what not to paste** so review stays aligned with the structure contract today.
+
 ## Planning and workflow output vs curated product docs
 
 **`_bmad-output/`** holds **planning artifacts, BMAD workflow output, and sprint or research files**. It is **not** the default-path **curated product narrative** for readers or agents.

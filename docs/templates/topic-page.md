@@ -13,6 +13,7 @@ date: "YYYY-MM-DD"
 <!--
 Before opening a PR: replace every REPLACE/placeholder, remove this block and other HTML comments,
 and align front matter with docs/structure-contract.md (normative).
+Normative API/OpenAPI boundary (no spec dumps as authority): ../../CONTRIBUTING.md#api-documentation-and-openapi-boundary
 -->
 
 # REPLACE: same as title (or a natural H1 variant)

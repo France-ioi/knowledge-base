@@ -42,9 +42,31 @@ Curated Markdown under **`docs/`** **must** follow **[docs/structure-contract.md
 
 Until automated checks exist, the contract’s **Linting and CI** section still expects **human review** in PRs; this guide and the contract are what reviewers use.
 
+**Section naming for new pages:** When you start from the default scaffold, the first topical `##` after the single `#` title is **`## Purpose`** (not a separate “Overview-only” heading). That keeps new pages aligned with the template and avoids synonym drift (“Purpose” vs “Overview”).
+
 ### Front matter and schema drift
 
 The architecture’s **Naming Patterns** state that **front matter keys** are defined in **`docs/structure-contract.md`** and that **synonym keys** for the same concept (for example mixing `owner` and `maintainer`) are **not** allowed without updating the contract. **Enforcement Guidelines** add that **drift** is handled in lockstep: if you **introduce a new key**, **rename** the meaning of an existing key, or **split** one concept across multiple keys, you **must** update **`docs/structure-contract.md`** in the **same pull request** (or the same merged change set). Do not land new normative conventions in prose or YAML alone while the contract still describes an older schema.
+
+## Starting from a template
+
+**Net-new** curated pages under **`docs/*.md`** (standard topic layout) **must** start from the default scaffold in **`docs/templates/topic-page.md`**, unless an exception applies—see **[When not to use the default scaffold](#when-not-to-use-the-default-scaffold)**.
+
+1. Copy **`docs/templates/topic-page.md`**.
+2. Save as a new file under **`docs/`** using a **lowercase-hyphenated** filename (for example `my-topic.md`).
+3. Replace placeholders and remove HTML comments in the copy; fill **`## Purpose`**, **`## Rules and intent`**, and **`## References and outbound links`** per **[docs/structure-contract.md](docs/structure-contract.md)**.
+4. If the page is **default-path** curated content, update **`docs/index.md`** in the **same PR**—see **[Keeping the hub complete](#keeping-the-hub-complete)**.
+
+Templates and folder overview: **[docs/templates/README.md](docs/templates/README.md)**.
+
+### When not to use the default scaffold
+
+Use the default scaffold **except** when:
+
+- You are **not** adding a net-new topic file (for example **tiny errata** or a **one-line** fix to an existing page).
+- The page is **non-standard** by **explicit reviewer agreement** before merge (for example an experimental layout or a page type that will later get its own template). In that case, state the exception in the **PR description** (and optionally a short note in YAML or a comment at the top of the file) so reviewers know the deviation was intentional.
+
+Keep this escape hatch **narrow**—prefer extending **`docs/templates/`** and the structure contract if a new page type becomes common.
 
 ## Keeping the hub complete
 

@@ -2,7 +2,9 @@
 title: "Algorea frontend — AlgoreaFrontend overview"
 description: "Canonical repo link, UI↔API expectations for implementers, and pointers to DevDoc—not a copy of frontend internals."
 date: 2026-03-23
+last_updated: 2026-03-23
 last_reviewed: 2026-03-23
+owner: "#algorea-frontend"
 doc_type: reference
 status: current
 audience: agent-default

@@ -8,6 +8,9 @@ date: "YYYY-MM-DD"
 # doc_type: reference   # tutorial | how-to | reference | explanation
 # status: current       # current | draft | archived
 # audience: agent-default   # agent-default | human-primary | archive (per governance)
+# On default-path curated pages listed in docs/index.md#curated-pages (cross-boundary / governed narrative):
+# owner: "#algorea-platform-docs"   # or #algorea-frontend, etc. — see ../structure-contract.md#provenance-and-ownership
+# last_updated: YYYY-MM-DD          # same as date on substantive edits — ../structure-contract.md#applicable-curated-pages
 ---
 
 <!--
@@ -15,6 +18,7 @@ Before opening a PR: replace every REPLACE/placeholder, remove this block and ot
 and align front matter with docs/structure-contract.md (normative).
 Normative API/OpenAPI boundary (no spec dumps as authority): ../../CONTRIBUTING.md#api-documentation-and-openapi-boundary
 Substantive doc PR review checklist (meaning, placement, provenance, etc.): ../../CONTRIBUTING.md#substantive-documentation-prs
+Owner / last_updated when your page is an applicable curated page: ../structure-contract.md#applicable-curated-pages
 -->
 
 # REPLACE: same as title (or a natural H1 variant)

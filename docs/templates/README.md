@@ -9,7 +9,7 @@ audience: agent-default
 
 # Page templates
 
-Use these files when adding a **new** curated topic page under `docs/` so front matter and headings match **[Structure contract](../structure-contract.md)** without reconstructing the layout from memory.
+Use these files when adding a **new** curated topic page under `docs/` so front matter and headings match **[Structure contract](../structure-contract.md)** without reconstructing the layout from memory. For pages that will be **default-path** entries under **[Curated pages](../index.md#curated-pages)** with cross-boundary or governed narrative, copy the commented **`owner`** / **`last_updated`** lines from **[topic-page.md](./topic-page.md)** and follow **[Provenance and ownership](../structure-contract.md#provenance-and-ownership)**.
 
 | File | Use |
 |------|-----|

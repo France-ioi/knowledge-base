@@ -2,6 +2,7 @@
 title: "Structure contract"
 description: "YAML front matter, heading rules, and scope for agent-first docs under docs/."
 date: 2026-03-23
+last_reviewed: 2026-03-23
 doc_type: reference
 status: current
 audience: agent-default
@@ -54,22 +55,68 @@ Use YAML between `---` lines at the **top** of the file when the page is part of
 | `doc_type` | string | One of: `tutorial`, `how-to`, `reference`, `explanation` (see [Diátaxis](https://diataxis.fr/)). |
 | `status` | string | `current` (default), `draft`, or `archived`. |
 | `audience` | string | `agent-default` (in default agent context) or `human-primary` / `archive` as you define in governance. |
+| `owner` | string | Who **curates** the page or **answers questions** about its claims (see [Provenance and ownership](#provenance-and-ownership)). |
+| `last_updated` | string | `YYYY-MM-DD` — reader-facing **curation freshness** signal (see [Provenance and ownership](#provenance-and-ownership)); **not** a synonym for `last_reviewed`. |
 
-**Example**
+Use **multi-line YAML lists** for arrays (e.g. `tags:`) and **quote** strings that contain `:` or special characters.
+
+### Provenance and ownership
+
+These keys make **curation** and **freshness** visible on substantive default-path pages (FR8). Do **not** introduce parallel synonyms (for example `maintainer` for `owner`) without updating this contract in the same pull request—see **Naming Patterns** in the architecture doc.
+
+#### `date` (required — unchanged meaning)
+
+- **`YYYY-MM-DD`** — page **creation** or last **substantive** update (same meaning as before this section existed).
+- **Migration note for contributors:** if you only change typos or formatting, **do not** bump `date`. If you change meaning, scope, or cross-boundary rules, **do** bump `date` per the required-keys table above. This document does **not** redefine `date`.
+
+#### `last_reviewed` (recommended — distinct from `last_updated`)
+
+- **`YYYY-MM-DD`** — when factual claims on the page were **checked** against **source code** or **canonical** outbound documentation (DevDoc, OpenAPI-sourced references, app READMEs).
+- Use it for **verification** passes that may **not** coincide with a substantive narrative rewrite. It answers “when were the **facts** validated?”—not “when did a curator **reaffirm** the page for readers?”
+
+#### `owner` (required on [applicable curated pages](#applicable-curated-pages))
+
+- A **single line** identifying who **owns curation** or **field questions** about the page’s governed claims.
+- **Canonical style for this repository:** **Slack channel or team label** — prefix with `#` for Slack (e.g. `#algorea-platform-docs`), or use a short **team / area** name if Slack does not apply (e.g. `Algorea platform documentation`). **Examples:**
+  - `#algorea-platform-docs` — default corpus curators for cross-cutting Algorea KB pages.
+  - `#algorea-frontend` — frontend implementers for SPA-heavy boundary pages.
+  - `Algorea platform documentation` — human-readable team label when no channel is listed.
+- Do **not** mix multiple unrelated styles on the same page; pick the label that best matches **who merges and defends** the page’s content.
+
+#### `last_updated` (required on [applicable curated pages](#applicable-curated-pages))
+
+- **`YYYY-MM-DD`** — last time curators **affirmed** this page as **current** for the **default path** (reader-facing “how fresh is this guidance?”).
+- **Semantics:** on a **substantive** edit, set `last_updated` to the **same** `YYYY-MM-DD` as `date` (both advance together). On a **verification-only** pass (facts checked, narrative meaning unchanged), you may advance **`last_reviewed`** **without** changing `date`; advance **`last_updated`** only when the PR or review thread **explicitly reaffirms** the page as still the default-path truth (optional). **Never** use `last_updated` as a substitute for `last_reviewed`—verification dates belong in `last_reviewed`.
+
+### Applicable curated pages
+
+Pages that **must** include both `owner` and `last_updated` (in addition to required keys):
+
+- Default-path **`docs/*.md`** pages **listed** under **[Curated pages](./index.md#curated-pages)** in the hub **when** they carry **cross-boundary**, **governed**, or **business-rule** narrative—typically with `doc_type` one of `reference`, `how-to`, `tutorial`, or `explanation` on the default consultation path (`status: current`, `audience: agent-default`).
+
+**Explicitly exempt** (do **not** require `owner` / `last_updated` here):
+
+- **Hub:** [`docs/index.md`](./index.md) — navigation and corpus map, not a single owned topic.
+- **Meta / governance shells:** this file [`docs/structure-contract.md`](./structure-contract.md), [`docs/default-vs-archive-split.md`](./default-vs-archive-split.md) — they define rules for the corpus rather than product cross-boundary claims.
+- **Templates:** files under `docs/templates/` — scaffolds; **published** pages copied from them **must** satisfy this section when they fall under “must include” above.
+
+Archive-path pages (`audience: archive` or future `docs/archive/`) follow the same keys only if governance promotes them to a **curated** surface; default is **no extra requirement** beyond the required keys unless explicitly listed in the hub.
+
+**Example** (substantive reference page)
 
 ```yaml
 ---
 title: "Algorea frontend — routing overview"
 description: "Top-level Angular routes and lazy-loaded areas for AlgoreaFrontend."
 date: 2026-03-22
+last_updated: 2026-03-22
 last_reviewed: 2026-03-22
+owner: "#algorea-frontend"
 doc_type: reference
 status: current
 audience: agent-default
 ---
 ```
-
-Use **multi-line YAML lists** for arrays (e.g. `tags:`) and **quote** strings that contain `:` or special characters.
 
 ## Default vs archive
 

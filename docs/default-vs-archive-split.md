@@ -1,7 +1,7 @@
 ---
 title: "Default path vs archive"
 description: "Summary of default curated path versus opt-in archive for this knowledge base; links to full research."
-date: 2026-03-22
+date: 2026-03-23
 last_reviewed: 2026-03-23
 doc_type: explanation
 status: current
@@ -9,6 +9,8 @@ audience: agent-default
 ---
 
 # Default path vs archive
+
+> **Note on prior guidance:** This page is the **default-path policy summary**. Deliberative and superseded write-ups belong under **[docs/archive/](archive/README.md)** (placement rules in **[CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**).
 
 This page summarizes **technical research** on splitting **curated “current truth”** (default consultation) from **historical deliberation** (archive, opt-in). It applies to this repository as an **agent-first** knowledge base: routine answers and agent context should lean on the **default** layer; the **archive** holds the full story when someone explicitly needs it.
 
@@ -42,7 +44,7 @@ These are **reference patterns**, not mandatory tooling:
 
 1. **Add or update curated facts** in the normal doc tree and keep **`docs/index.md`** (and any future hub pages) pointing at **default** entry points.
 2. **When meaning changes** (not just typos), avoid silent rewrites: add an **archive note**, **changelog line**, or **supersession** pointer as agreed in contribution rules.
-3. **Put long deliberation** (meeting notes, rejected options, full rationale) under an explicit **archive** location or naming convention once the team defines it—do not rely on chat history as the archive.
+3. **Put long deliberation** (meeting notes, rejected options, full rationale) under **`docs/archive/`** when it is curated Markdown for readers—see **[docs/archive/README.md](archive/README.md)** and **[Archive rules in CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**—do not rely on chat history as the archive.
 
 ## Related
 

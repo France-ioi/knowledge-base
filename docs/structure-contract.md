@@ -100,7 +100,7 @@ Pages that **must** include both `owner` and `last_updated` (in addition to requ
 - **Meta / governance shells:** this file [`docs/structure-contract.md`](./structure-contract.md), [`docs/default-vs-archive-split.md`](./default-vs-archive-split.md) — they define rules for the corpus rather than product cross-boundary claims.
 - **Templates:** files under `docs/templates/` — scaffolds; **published** pages copied from them **must** satisfy this section when they fall under “must include” above.
 
-Archive-path pages (`audience: archive` or future `docs/archive/`) follow the same keys only if governance promotes them to a **curated** surface; default is **no extra requirement** beyond the required keys unless explicitly listed in the hub.
+Archive-path pages (`audience: archive`, typically under `docs/archive/`) follow the same keys only if governance promotes them to a **curated** surface; default is **no extra requirement** beyond the required keys unless explicitly listed in the hub.
 
 **Example** (substantive reference page)
 
@@ -121,7 +121,7 @@ audience: agent-default
 ## Default vs archive
 
 - **Default consultation path:** pages linked from [index.md](./index.md) and written for ongoing truth (`status: current`, `audience: agent-default`).
-- **Archive / deliberation:** if the product brief’s decision archive lives in this repo, mark those pages with `audience: archive` (or a dedicated path convention agreed separately) so agents can exclude them unless explicitly asked.
+- **Archive / deliberation:** pages under **`docs/archive/`** are marked with `audience: archive` (and often `status: archived`) so agents can exclude them unless explicitly asked — see **[Archive (docs/archive/)](../CONTRIBUTING.md#archive-docsarchive)** in the contribution guide.
 
 ## Optional: `llms.txt`
 

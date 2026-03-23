@@ -67,9 +67,77 @@ When a PR changes **HTTP/API meaning** or **cross-boundary** API claims, reviewe
 
 **`_bmad-output/`** holds **planning artifacts, BMAD workflow output, and sprint or research files**. It is **not** the default-path **curated product narrative** for readers or agents.
 
-**Curated** rules and topic pages that should ground day-to-day consultation live under **`docs/`** (with **[docs/index.md](docs/index.md)** as the primary entry). Optional **`docs/archive/`** may appear later for superseded or non-default material; until then, follow the index and structure contract for what counts as default path.
+**Curated** rules and topic pages that should ground day-to-day consultation live under **`docs/`** (with **[docs/index.md](docs/index.md)** as the primary entry). **`docs/archive/`** is the **opt-in** location for superseded narratives, deliberation, and deep history—see **[docs/archive/README.md](docs/archive/README.md)** and the **[Archive section](#archive-docsarchive)** in this guide. It is **not** part of the default consultation path; follow the hub and structure contract for what counts as default path versus archive.
 
 This separation matches the architecture intent documented in [_bmad-output/planning-artifacts/architecture.md](_bmad-output/planning-artifacts/architecture.md) (see **Structure Patterns** and **Project Structure & Boundaries**).
+
+<a id="archive-docsarchive"></a>
+
+## Archive (`docs/archive/`)
+
+**Normative rules** for classifying and placing **historical or deliberative** material so archive content stays consistent (FR14).
+
+### Default path versus `docs/archive/`
+
+| | Default path | `docs/archive/` |
+|---|--------------|-----------------|
+| **Location** | **`docs/*.md`** outside **`archive/`**, typically listed under **[Curated pages](docs/index.md#curated-pages)** | **`docs/archive/`** tree — entry **[docs/archive/README.md](docs/archive/README.md)** |
+| **Role** | **Current** governed guidance for routine use | **History**, deliberation, superseded narratives, traceability |
+| **Typical front matter** | **`status: current`**, **`audience: agent-default`** for default-path topical pages | **`audience: archive`** and often **`status: archived`** — see **[Default vs archive](docs/structure-contract.md#default-vs-archive)** |
+
+### What belongs in the archive
+
+Examples (not exhaustive):
+
+- **Superseded** long explanations kept after a shorter default-path page **replaces** them.
+- **Deliberation** captured as Markdown (options considered, meeting notes, long “why” threads) that would add noise on the default path.
+- **Deprecated policies** kept so readers can see what **used to be** true.
+- **ADR-style** history **if** it is stored here—creating ADRs is **not** mandatory; this bullet applies only when that content **lands** under **`docs/archive/`**.
+
+### Naming and placement
+
+- Use **lowercase-hyphenated** filenames under **`docs/archive/`** (for example `auth-options-deprecated.md`).
+- Optional **topic subfolders** are allowed (for example **`docs/archive/algorea/topic-name.md`**) when they improve organization—**document** the pattern you use in **[docs/archive/README.md](docs/archive/README.md)** when introducing a new convention.
+- Archive pages **must** set **`audience: archive`** (required) and **should** also set **`status: archived`** when the page is no longer evolving — per **[Default vs archive](docs/structure-contract.md#default-vs-archive)** so labeling makes non-default use obvious. The archive **`README.md`** itself is exempt (it uses **`audience: agent-default`** as a navigation aid).
+
+**Example front matter** (archive page):
+
+```yaml
+---
+title: "Auth options — deprecated deliberation"
+description: "Rejected authentication approaches kept for traceability."
+date: 2026-03-23
+doc_type: explanation
+status: archived
+audience: archive
+---
+```
+
+### Related links
+
+- **[docs/archive/README.md](docs/archive/README.md)** — purpose and browsing norms for readers.
+- **[Default path vs archive](docs/default-vs-archive-split.md)** — default-path policy summary.
+- **[Default vs archive](docs/structure-contract.md#default-vs-archive)** — structure contract rules.
+
+## Supersession on the default path
+
+When **default-path** meaning **replaces** bookmarkable guidance, or when a **summary** page **subsumes** longer deliberative docs, use this **standard pattern** so readers do not treat outdated material as current (FR15):
+
+1. Add a **leading blockquote** immediately after the **`#` title** (or the first short intro paragraph). Start the first line with **`> **Note on prior guidance:**`** or **`> **Superseded material:**`** (bold label inside the blockquote).
+2. Keep the blockquote to **one or two sentences**, name what moved or what is now canonical, and link **[docs/archive/README.md](docs/archive/README.md)** or a **specific** path under **`docs/archive/`** when applicable.
+
+**Minimal example:**
+
+```markdown
+# My topic
+
+> **Note on prior guidance:** Longer deliberation and superseded drafts live under [docs/archive/](docs/archive/README.md). This page is the **current** default-path summary.
+
+## Purpose
+...
+```
+
+Always cross-check **[Provenance for substantive meaning changes](#provenance-for-substantive-meaning-changes)** for substantive rewrites. For the split between default path and archive, link **[Default path vs archive](docs/default-vs-archive-split.md)**.
 
 ## Structure and front matter
 
@@ -80,7 +148,7 @@ Curated Markdown under **`docs/`** **must** follow **[docs/structure-contract.md
 - **Titles and headings:** **One** logical title per page and a **heading ladder** that does not skip levels—use `#` then `##` then `###` then `####` in order (see **[One logical title per page](docs/structure-contract.md#one-logical-title-per-page)** and **[Heading ladder](docs/structure-contract.md#heading-ladder)** under **[Markdown syntax](docs/structure-contract.md#markdown-syntax)**).
 - **YAML front matter:** required and recommended keys, types, and examples for pages in the curated knowledge base—see **[YAML front matter](docs/structure-contract.md#yaml-front-matter)**. **New** and **substantially revised** `docs/*.md` pages **must** include front matter that matches the contract.
 - **Link style:** use standard Markdown links with **descriptive** link text for **intra-repo** destinations (avoid bare URLs or vague phrases like “click here” when a short label can name the destination). CommonMark-aligned lists and fenced code blocks with **language tags** are part of the same expectations—still **[Markdown syntax](docs/structure-contract.md#markdown-syntax)**.
-- **Default vs archive:** how default-path pages relate to optional archive material and audience—see **[Default vs archive](docs/structure-contract.md#default-vs-archive)** and, for narrative context, **[Default path vs archive](docs/default-vs-archive-split.md)**.
+- **Default vs archive:** how default-path pages relate to **`docs/archive/`** and audience—see **[Default vs archive](docs/structure-contract.md#default-vs-archive)**, the **[Archive section](#archive-docsarchive)** in this file, and **[Default path vs archive](docs/default-vs-archive-split.md)**.
 
 Until automated checks exist, the contract’s **Linting and CI** section still expects **human review** in PRs; this guide and the contract are what reviewers use.
 
@@ -98,9 +166,9 @@ When you change **substantive** curated meaning (same definition as **[Substanti
 
 **Allowed audit mechanisms** (the team convention is **one or more** of these; see **minimum bar** below):
 
-1. **Archive note** — In the PR or on the page when moving or demoting material toward **archive-aligned** placement (including explicit **`status`** / **`audience`** language in the PR until a dedicated **`docs/archive/`** path exists—**Story 4.1** defines that tree).
+1. **Archive note** — In the PR or on the page when moving or demoting material into **`docs/archive/`** or toward **archive-aligned** placement (explicit **`status`** / **`audience`** in front matter per the **[Archive section](#archive-docsarchive)**).
 2. **Changelog entry** — Repo-level **`CHANGELOG.md`**, a doc-level changelog section, or a fragment under **`docs/`**, **if** the project adopts one. **This repository does not have a root `CHANGELOG.md` today**; until one is added, **do not** treat “changelog” as a separate file—use the **pointer** convention below. If a changelog is introduced later, update this subsection to **reference** it and add a **one-line** scope rule (what belongs there versus **PR-only** narrative).
-3. **Supersession note** — Short text on the page or in the PR stating **what replaced what**, for readers who may have bookmarked older default-path guidance.
+3. **Supersession note** — Short text on the page or in the PR stating **what replaced what**, for readers who may have bookmarked older default-path guidance. On default-path pages, prefer the **blockquote** pattern in **[Supersession on the default path](#supersession-on-the-default-path)**.
 4. **Pointer to a decision** — Link from the **PR description** or the page to an **ADR**, **issue**, or **PR** that records the decision. **Pull request description** and/or **linked issue or PR** count as this mechanism when they **state what meaning changed** (and **why**, or where the decision is recorded).
 
 **Minimum bar for this repository**
@@ -167,7 +235,8 @@ If you are unsure, treat the PR as **substantive** and apply this checklist.
 
 **Substantive reviewer checklist** — work **yes / no / n/a** against the cited authority (same pull request unless called out):
 
-- **Placement (default vs archive)** — Path, **`status`**, and **`audience`** align with **[Default vs archive](docs/structure-contract.md#default-vs-archive)** and the narrative in **[Default path vs archive](docs/default-vs-archive-split.md)**. No **default-path** page presents **`draft`** (or otherwise non-canonical) material as **current truth** without clear rationale in the PR.
+- **Placement (default vs archive)** — Path, **`status`**, and **`audience`** align with **[Default vs archive](docs/structure-contract.md#default-vs-archive)** and the narrative in **[Default path vs archive](docs/default-vs-archive-split.md)**. No **default-path** page presents **`draft`** (or otherwise non-canonical) material as **current truth** without clear rationale in the PR. **New `docs/archive/`** pages are **not** presented as default-path truth and meet **naming** and **YAML** rules in the **[Archive section](#archive-docsarchive)**.
+- **Supersession (when replacing guidance)** — If the PR **replaces** prior default-path guidance, the **living** page (and/or PR trail) follows **[Supersession on the default path](#supersession-on-the-default-path)** so stale bookmarks are not silently wrong.
 - **Index / hub** — New or **promoted** default-path topical pages update **[docs/index.md](docs/index.md)** in the **same PR**—**[Keeping the hub complete](#keeping-the-hub-complete)** and **[Keeping this index current](docs/index.md#keeping-this-index-current)**.
 - **Outbound link hygiene** — **[Descriptive link text](docs/structure-contract.md#descriptive-link-text)** for intra-repo and external links (NFR-A1). Stable DevDoc / OpenAPI entry points match **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** and **[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)**—no ad-hoc substitutes for those hubs.
 - **OpenAPI boundary** — No new **authoritative** spec dumps, path/method catalogs, or schema-as-truth blocks in this repo; **link-out** only—**[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)** and **[What belongs in this corpus](docs/structure-contract.md#what-belongs-in-this-corpus)**.

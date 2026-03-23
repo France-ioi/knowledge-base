@@ -38,7 +38,7 @@ Use this section when you need **contract-level HTTP detail**, **generated API r
 
 ## Curated pages
 
-Every **default-path** topical page under `docs/` (excluding a future `docs/archive/` until it exists) is listed here. Link text describes what you get on the destination page.
+Every **default-path** topical page under `docs/` (outside **`docs/archive/`**) that belongs in routine navigation is listed here. **`docs/archive/`** exists for **opt-in** history and deliberation—see **[Archive (opt-in)](./archive/README.md)**; archive pages are **not** treated as default-path truth. Link text in the table describes what you get on the destination page.
 
 | Page | What it covers |
 |------|----------------|
@@ -47,6 +47,10 @@ Every **default-path** topical page under `docs/` (excluding a future `docs/arch
 | [Page templates — scaffolds for new curated `docs/` pages](./templates/README.md) | Copy-paste `topic-page.md` starter aligned with the structure contract; see contributing guide for required use |
 | [Algorea-linked repositories — map of related repositories](./algorea-linked-repositories.md) | How this knowledge base sits next to Algorea application and documentation repositories |
 | [Algorea frontend — canonical repo link and UI↔API expectations](./algorea-frontend.md) | GitHub as source of truth for app code; cross-boundary intent between the SPA and HTTP APIs; pointers to DevDoc |
+
+### Archive (opt-in)
+
+Historical and deliberative Markdown lives under **`docs/archive/`**—separate from the default consultation path. **Purpose, browsing norms, and when to use the archive** are documented in **[Archive (opt-in history)](./archive/README.md)**. Contributors: classification and naming rules are in **[CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**.
 
 ## Canonical technical documentation
 

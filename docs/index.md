@@ -27,6 +27,15 @@ This page is the **primary entry** for curated Markdown in this repository—use
 
 That split keeps **curated cross-cutting truth** here and **engineer-facing technical depth** in DevDoc and standard API artifacts.
 
+## Where API and backend depth live
+
+Use this section when you need **contract-level HTTP detail**, **generated API reference**, or **backend implementation depth**—follow the links below instead of expecting that material in this repository.
+
+- **Engineer-facing platform documentation:** **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** (published site; source in sibling repo `algorea-devdoc`)—backend structure, Lambda, database, auth, and related topics. Example: [Lambda notes](https://france-ioi.github.io/algorea-devdoc/backend/lambda/).
+- **Generated HTTP API (OpenAPI-sourced):** **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)** on DevDoc is the **stable published** entry point for path/method-level contract documentation. **Source** Swagger/OpenAPI inputs and codegen are maintained in **application repositories** (for example AlgoreaFrontend’s `mocks/` tooling and `npm run generate-types-from-swagger`; see [Algorea frontend — mocks and API typing](./algorea-frontend.md#mocks-and-api-typing)).
+
+**This knowledge base is not the source of truth for generated HTTP or OpenAPI contracts.** Describe behavior and cross-boundary rules here; consume **authoritative** contracts and backend depth **by reference only**—link to DevDoc and published API docs, and do not paste schemas, OpenAPI fragments, or path/method catalogs into this repo.
+
 ## Curated pages
 
 Every **default-path** topical page under `docs/` (excluding a future `docs/archive/` until it exists) is listed here. Link text describes what you get on the destination page.
@@ -40,8 +49,10 @@ Every **default-path** topical page under `docs/` (excluding a future `docs/arch
 
 ## Canonical technical documentation
 
-- **Published:** [https://france-ioi.github.io/algorea-devdoc/](https://france-ioi.github.io/algorea-devdoc/)
-- **Local clone:** `../algorea-devdoc` (Jekyll / Just the Docs). Example backend topics: [Lambda notes](https://france-ioi.github.io/algorea-devdoc/backend/lambda.html) (source: `backend/lambda.md`).
+Use **[Where API and backend depth live](#where-api-and-backend-depth-live)** for the **published Backend API (OpenAPI-sourced)** link and the rule that this KB does not host generated HTTP contracts.
+
+- **Published site:** [https://france-ioi.github.io/algorea-devdoc/](https://france-ioi.github.io/algorea-devdoc/)
+- **Local clone:** `../algorea-devdoc` (Jekyll / Just the Docs). Example: `backend/lambda.md` → [Lambda notes](https://france-ioi.github.io/algorea-devdoc/backend/lambda/).
 
 ## Layout on disk
 

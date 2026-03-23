@@ -2,6 +2,8 @@
 
 This repository is the **governed markdown knowledge base** for **France-IOI**. It holds curated documentation for **business rules**, **cross-boundary behavior**, and **operations essentials** across France-IOI software.
 
+**Algorea** is the largest curated topic area today; other France-IOI initiatives can grow as additional hubs under `docs/` as the corpus expands.
+
 ## Where to start
 
 Open the **[curated documentation entry](docs/index.md)**—the primary hub for human readers and automated agents.

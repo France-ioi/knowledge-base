@@ -14,7 +14,7 @@ Machine-reliable Markdown for **agent-first** docs: tools and models should pars
 ## What belongs in this corpus
 
 - **Business rules**, domain behavior, and **cross-boundary** interactions (e.g. frontend ↔ backend flows, invariants).
-- **Pointers** to authoritative sources: OpenAPI-generated API docs, `algorea-devdoc`, app READMEs — **not** a second copy of request/response schemas.
+- **Pointers** to authoritative sources: OpenAPI-generated API docs (for Algorea, the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)** on DevDoc), **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** overall, and app READMEs — **not** a second copy of request/response schemas or path catalogs.
 
 ## Markdown syntax
 

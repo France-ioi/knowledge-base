@@ -36,6 +36,18 @@ Use this section when you need **contract-level HTTP detail**, **generated API r
 
 **This knowledge base is not the source of truth for generated HTTP or OpenAPI contracts.** Describe behavior and cross-boundary rules here; consume **authoritative** contracts and backend depth **by reference only**—link to DevDoc and published API docs, and do not paste schemas, OpenAPI fragments, or path/method catalogs into this repo.
 
+## If you are not a developer every day
+
+This hub is written primarily for **software developers** and **automated agents** that answer technical questions **with this repository as context** (for example IDE-integrated assistants).
+
+If you need **stable, factual orientation** without owning implementation detail, use these parts of **this same page**:
+
+- **[What belongs here vs elsewhere](#what-belongs-here-vs-elsewhere)** — what this repository is meant to cover, and what lives in **application repos** or **linked engineer documentation** instead.
+- **[Where API and backend depth live](#where-api-and-backend-depth-live)** — where **HTTP contracts** and **backend depth** are **authoritatively** documented (outside this repo); this corpus only **points** there.
+- **[Curated pages](#curated-pages)** — a table of **short, governed** topic pages; each row **summarizes** what you get on the destination, in plain English when the topic allows.
+
+**Governed** factual material for this corpus lives under **`docs/`** and in **canonical outbound documentation** we link to (for example DevDoc). There is **no separate unofficial wiki** shipped beside this repository—if something is **not** here and **not** in those linked sources, do **not** assume this repo holds it.
+
 ## Curated pages
 
 Every **default-path** topical page under `docs/` (outside **`docs/archive/`**) that belongs in routine navigation is listed here. **`docs/archive/`** exists for **opt-in** history and deliberation—see **[Archive (opt-in)](./archive/README.md)**; archive pages are **not** treated as default-path truth. Link text in the table describes what you get on the destination page.

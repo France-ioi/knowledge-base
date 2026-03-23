@@ -10,6 +10,12 @@ audience: agent-default
 
 # Default path vs archive
 
+**Who this is for:** Anyone who needs a **short, factual** read on which Markdown here counts as **current default guidance** versus **optional history** in the archive—including **support-adjacent** readers who want to know when **`docs/archive/`** is the right place to look.
+
+**What this page answers:** How the **default consultation path** relates to the **archive**, and where **contributor placement rules** live.
+
+**What this page does not cover:** Product support playbooks, **HTTP or OpenAPI contract detail**, or **per-application runbooks**. For those boundaries use the **[documentation hub](./index.md#where-api-and-backend-depth-live)**, **[Algorea linked repositories](./algorea-linked-repositories.md)** for repo maps, and **[CONTRIBUTING.md — API documentation and OpenAPI boundary](../CONTRIBUTING.md#api-documentation-and-openapi-boundary)**.
+
 > **Note on prior guidance:** This page is the **default-path policy summary**. Deliberative and superseded write-ups belong under **[docs/archive/](archive/README.md)** (placement rules in **[CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**).
 
 This page summarizes **technical research** on splitting **curated “current truth”** (default consultation) from **historical deliberation** (archive, opt-in). It applies to this repository as an **agent-first** knowledge base: routine answers and agent context should lean on the **default** layer; the **archive** holds the full story when someone explicitly needs it.

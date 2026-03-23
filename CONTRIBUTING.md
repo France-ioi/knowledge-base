@@ -69,6 +69,8 @@ When a PR changes **HTTP/API meaning** or **cross-boundary** API claims, reviewe
 
 **Curated** rules and topic pages that should ground day-to-day consultation live under **`docs/`** (with **[docs/index.md](docs/index.md)** as the primary entry). **`docs/archive/`** is the **opt-in** location for superseded narratives, deliberation, and deep history—see **[docs/archive/README.md](docs/archive/README.md)** and the **[Archive section](#archive-docsarchive)** in this guide. It is **not** part of the default consultation path; follow the hub and structure contract for what counts as default path versus archive.
 
+**IDE agent guardrails** for this repository live under **`.cursor/rules/`** (Cursor project rules). They **point at** curated docs and this guide; they are **not** a second documentation tree or a substitute for **`docs/`**.
+
 This separation matches the architecture intent documented in [_bmad-output/planning-artifacts/architecture.md](_bmad-output/planning-artifacts/architecture.md) (see **Structure Patterns** and **Project Structure & Boundaries**).
 
 <a id="archive-docsarchive"></a>

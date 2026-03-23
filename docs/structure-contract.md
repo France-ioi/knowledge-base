@@ -18,10 +18,17 @@ Machine-reliable Markdown for **agent-first** docs: tools and models should pars
 
 ## Markdown syntax
 
-- Prefer **CommonMark-aligned** Markdown: standard headings, lists, fenced code blocks with **language tags**, links.
-- **One logical title per page:** either a single `#` heading or a `title` in front matter (see below); do not use multiple competing top-level titles without reason.
-- **Heading ladder:** use `##` then `###` then `####` in order; do not skip a level (e.g. `#` → `###`) unless fixing legacy content in a dedicated edit.
-- Keep each **heading attached to its body**: the prose and lists that answer “what is this section?” stay **immediately under** that heading.
+Prefer **CommonMark-aligned** Markdown: standard headings, lists, fenced code blocks with **language tags**, links.
+
+Keep each **heading attached to its body**: the prose and lists that answer “what is this section?” stay **immediately under** that heading.
+
+### One logical title per page
+
+Either a single `#` heading or a `title` in front matter (see below); do not use multiple competing top-level titles without reason.
+
+### Heading ladder
+
+Use `##` then `###` then `####` in order; do not skip a level (e.g. `#` → `###`) unless fixing legacy content in a dedicated edit.
 
 ## YAML front matter
 

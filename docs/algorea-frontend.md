@@ -1,6 +1,6 @@
 ---
 title: "Algorea frontend — AlgoreaFrontend overview"
-description: "Angular workspace, routing, feature areas, and pointers to authoritative API docs and sibling repos."
+description: "Canonical repo link, UI↔API expectations for implementers, and pointers to DevDoc—not a copy of frontend internals."
 date: 2026-03-23
 last_reviewed: 2026-03-23
 doc_type: reference
@@ -10,74 +10,44 @@ audience: agent-default
 
 # Algorea frontend (`AlgoreaFrontend`)
 
-**Repository path (sibling):** `../AlgoreaFrontend`  
-**Package name:** `algorea` (see `package.json`)  
-**Framework:** Angular **20** with **NgRx** (store, effects, router-store), **RxJS**, **Zod**, **Sentry**, **Phosphor** icons.  
-**E2E:** Playwright (`npm run e2e`).  
-**Local dev:** `npm start` runs a **mock API** (`mocks/`) together with `ng serve` (see `package.json` scripts).
+**Source code:** **[France-ioi/AlgoreaFrontend](https://github.com/France-ioi/AlgoreaFrontend)** on GitHub — that is the canonical place to clone, read the README, and inspect routing, `package.json`, and `src/`.
 
-Official backend/Lambda documentation remains in **algorea-devdoc**; the frontend talks to HTTP APIs configured per environment (`src/environments/`).
+If you keep several Algorea repos side by side on disk, see [Algorea — linked repositories](./algorea-linked-repositories.md) for how they relate as sibling folders next to `knowledge-base`.
 
-## Angular workspace
+**What this knowledge-base page is for:** orientation and **cross-boundary** expectations between the SPA and the HTTP APIs. **Not** a mirror of Angular layout, scripts, or folder-by-folder implementation detail—those belong in the GitHub repo.
 
-- Single application project **`algorea`** in `angular.json` (root `""`, `sourceRoot`: `src`, component prefix `alg`).
-- **i18n:** source locale `en` with `baseHref` `/en/`; locales `fr`, `de`, `it` with XLF under `src/locale/`. Build configurations such as `production-en`, `production-fr`, etc.
-- **Styles:** global `src/styles.scss` plus font stylesheets under `src/assets/fonts/`.
+Official backend documentation remains in **algorea-devdoc**; the app calls HTTP APIs configured per environment in the frontend repository.
 
-## Top-level routing (`src/app/app.routes.ts`)
+**Front matter** uses `audience: agent-default` because this page stays on the default consultation path. **Human** FE/BE implementers: the **UI ↔ API** section below is written for you. **Agents:** use this page for outbound links and boundary rules; Angular layout and scripts are not summarized here—see the GitHub repository.
 
-| Path / matcher | Lazy area | Notes |
-|----------------|-----------|--------|
-| `''` | — | `homeRedirectGuard`; home resolution, not a content page. |
-| `community` | `./community/community.routes` | Community UI. |
-| `groups` | `./groups/group.routes` | Groups management; uses `PendingChangesGuard`, `GroupDeleteService`. |
-| `a` (prefix) | `./items/item.routes` | **Activities** — `activityPrefix` from `models/routing/item-route-serialization.ts`. |
-| `s` (prefix) | `./items/item.routes` | **Skills** — `skillPrefix`. |
-| `lti/:contentId` | `./lti/lti.routes` | LTI integration. |
-| `ui-demo` | `UiPageComponent` | UI demo page. |
-| Matcher `r/**` | `RedirectToIdComponent` | Short links / redirects into item routes. |
-| `**` | `PageNotFoundComponent` | 404. |
+## UI ↔ API: who owns what (for implementers)
 
-Many routes use `DefaultLayoutInitService` as `canActivate` to set layout (`ContentDisplayType` where applicable).
+**Audience:** Anyone implementing or reviewing a change that touches **both** the Angular app and backend behavior (items, groups, permissions, errors).
 
-## Feature areas under `src/app/`
+**Why this exists:** OpenAPI and DevDoc describe **contracts** (paths, payloads, status codes). They do not always spell out **product assumptions**—for example, that the UI should treat server-returned state as canonical for progress and access. This section records those **assumptions** so FE and BE work stays aligned without inferring intent only from the schema list.
 
-High-signal folders (non-exhaustive):
+**Limits:** This is not a full product spec and not authoritative for HTTP detail. For methods, fields, status codes, and error shapes, use the links in [Relationship to other repos](#relationship-to-other-repos) below—those are the authoritative entry points.
 
-| Folder | Typical responsibility |
-|--------|-------------------------|
-| `items/` | Item (activity/skill) navigation, editing, progress, forum tab, etc. (`item.routes.ts`). |
-| `groups/` | Group settings, members, managers, access, history (`group.routes.ts`). |
-| `community/` | Community feature routes. |
-| `forum/` | Forum-related UI. |
-| `lti/` | LTI flows. |
-| `store/` | NgRx state, effects, selectors. |
-| `data-access/` | API-facing services and data loading patterns. |
-| `services/` | Cross-cutting app services (e.g. `layout.service.ts`). |
-| `interceptors/` | HTTP interceptors. |
-| `guards/` | Route guards (pending changes, auth-related, home redirect, etc.). |
-| `models/` | Domain and routing models. |
-| `ui-components/` | Shared UI building blocks. |
-| `containers/` | Page-level / shell components (`RedirectToIdComponent`, `PageNotFoundComponent`, …). |
-| `pipes/`, `directives/`, `utils/` | Shared presentation and helpers. |
-| `config/` | App configuration helpers (e.g. locale tags). |
+### Items (activities and skills)
 
-## Mocks and API typing
+- **Canonical state:** After a successful API round-trip, **item trees, progress, and visibility** should match what the server returned. The UI may cache or show optimistic UI, but **ordering, whether something can be opened or edited, and completion meaning** should follow the server—not ad hoc rules invented only on the client.
+- **Gaps:** If behavior differs by environment or version, **the AlgoreaFrontend repository’s** code (under `items/` in that repo) plus **DevDoc** decide; this page does not lock undocumented guarantees.
 
-- **`mocks/`:** Express-based mock server for local development; `npm run mock` / `npm run start`.
-- **Swagger → types:** `npm run generate-types-from-swagger` (see `mocks/generate-types.js`).
+### Groups and access
 
-## Commands (from `package.json`)
+- **Enforcement:** The backend is assumed to enforce **who may see or change** group settings, members, managers, and history. The SPA reflects API results (success, validation errors, denials); authorization policy is not fully restated here.
+- **What users see:** **Actions and data** visible in the UI should match **effective permissions** as returned by the API for the session—not a separate rule set documented only in this knowledge base.
 
-- **Install:** `npm install`
-- **Dev (mock + serve):** `npm start`
-- **Serve only:** `npm run serve`
-- **Build:** `npm run build` (verify any Windows-specific `xcopy` steps if building on Linux)
-- **Unit tests:** `npm test`
-- **Lint:** `npm run lint`
-- **E2E:** `npm run e2e`
+### Errors and concurrent updates
+
+- **Messaging:** User-visible explanations for failed saves, stale views, or denials should align with **what the API returns** (messages, error shapes, status semantics) as wired through the app—not made-up client-only wording.
+- **Ordering:** When several writes overlap, **ordering and retries** follow patterns in the app’s data layer; see the **AlgoreaFrontend** repository for implementation.
+
+### Synthetic examples in documentation
+
+- Identifiers such as `learner-0001`, `item-demo-42`, or `demo-group-alpha` are **placeholders** for docs only—not real users, production IDs, or secrets.
 
 ## Relationship to other repos
 
-- **API contracts and server behavior:** use **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)** for authoritative HTTP contract documentation. **Source** OpenAPI/Swagger and generated types live with application code (see [Mocks and API typing](#mocks-and-api-typing) above)—not re-derived or duplicated in this knowledge base.
-- **AlgoreaServerless / AlgoreaBackend:** implementation details belong in DevDoc `backend/`; this file only helps you find **where** the UI implements flows that call those APIs.
+- **API contracts and server behavior:** use **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)** for authoritative HTTP documentation. OpenAPI/Swagger sources and generated client types live in **[AlgoreaFrontend](https://github.com/France-ioi/AlgoreaFrontend)** alongside the app code—not re-derived in this knowledge base.
+- **AlgoreaServerless / AlgoreaBackend:** deep implementation detail is in DevDoc `backend/`; this file does not duplicate it.

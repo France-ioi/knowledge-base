@@ -32,7 +32,7 @@ That split keeps **curated cross-cutting truth** here and **engineer-facing tech
 Use this section when you need **contract-level HTTP detail**, **generated API reference**, or **backend implementation depth**—follow the links below instead of expecting that material in this repository.
 
 - **Engineer-facing platform documentation:** **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** (published site; source in sibling repo `algorea-devdoc`)—backend structure, Lambda, database, auth, and related topics. Example: [Lambda notes](https://france-ioi.github.io/algorea-devdoc/backend/lambda/).
-- **Generated HTTP API (OpenAPI-sourced):** **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)** on DevDoc is the **stable published** entry point for path/method-level contract documentation. **Source** Swagger/OpenAPI inputs and codegen are maintained in **application repositories** (for example AlgoreaFrontend’s `mocks/` tooling and `npm run generate-types-from-swagger`; see [Algorea frontend — mocks and API typing](./algorea-frontend.md#mocks-and-api-typing)).
+- **Generated HTTP API (OpenAPI-sourced):** **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)** on DevDoc is the **stable published** entry point for path/method-level contract documentation. **Source** Swagger/OpenAPI inputs and codegen are maintained in **application repositories** (for example **[AlgoreaFrontend](https://github.com/France-ioi/AlgoreaFrontend)** — `mocks/` tooling and `npm run generate-types-from-swagger` live with that codebase; see its README on GitHub). For how this knowledge base relates to that app and to DevDoc, see [Algorea frontend](./algorea-frontend.md).
 
 **This knowledge base is not the source of truth for generated HTTP or OpenAPI contracts.** Describe behavior and cross-boundary rules here; consume **authoritative** contracts and backend depth **by reference only**—link to DevDoc and published API docs, and do not paste schemas, OpenAPI fragments, or path/method catalogs into this repo.
 
@@ -45,7 +45,7 @@ Every **default-path** topical page under `docs/` (excluding a future `docs/arch
 | [Default path vs archive — how curated pages relate to optional archive material](./default-vs-archive-split.md) | Default consultation path versus opt-in archive; summary with link to full research |
 | [Structure contract — Markdown and front matter rules for `docs/`](./structure-contract.md) | YAML front matter, heading ladder, and conventions so tools and agents parse pages consistently |
 | [Algorea-linked repositories — map of related repositories](./algorea-linked-repositories.md) | How this knowledge base sits next to Algorea application and documentation repositories |
-| [Algorea frontend — Angular app overview, routes, and folders](./algorea-frontend.md) | AlgoreaFrontend structure, routing, and how to navigate the codebase |
+| [Algorea frontend — canonical repo link and UI↔API expectations](./algorea-frontend.md) | GitHub as source of truth for app code; cross-boundary intent between the SPA and HTTP APIs; pointers to DevDoc |
 
 ## Canonical technical documentation
 

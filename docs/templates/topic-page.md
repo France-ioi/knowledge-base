@@ -18,6 +18,7 @@ Before opening a PR: replace every REPLACE/placeholder, remove this block and ot
 and align front matter with docs/structure-contract.md (normative).
 Normative API/OpenAPI boundary (no spec dumps as authority): ../../CONTRIBUTING.md#api-documentation-and-openapi-boundary
 Substantive doc PR review checklist (meaning, placement, provenance, etc.): ../../CONTRIBUTING.md#substantive-documentation-prs
+Audit trail when you change substantive meaning (not just freshness keys): ../../CONTRIBUTING.md#provenance-for-substantive-meaning-changes
 Owner / last_updated when your page is an applicable curated page: ../structure-contract.md#applicable-curated-pages
 -->
 

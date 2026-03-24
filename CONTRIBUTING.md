@@ -152,7 +152,7 @@ Curated Markdown under **`docs/`** **must** follow **[docs/structure-contract.md
 - **Link style:** use standard Markdown links with **descriptive** link text for **intra-repo** destinations (avoid bare URLs or vague phrases like “click here” when a short label can name the destination). CommonMark-aligned lists and fenced code blocks with **language tags** are part of the same expectations—still **[Markdown syntax](docs/structure-contract.md#markdown-syntax)**.
 - **Default vs archive:** how default-path pages relate to **`docs/archive/`** and audience—see **[Default vs archive](docs/structure-contract.md#default-vs-archive)**, the **[Archive section](#archive-docsarchive)** in this file, and **[Default path vs archive](docs/default-vs-archive-split.md)**.
 
-Until automated checks exist, the contract’s **Linting and CI** section still expects **human review** in PRs; this guide and the contract are what reviewers use.
+**Automated checks** in **[CI and local documentation checks](#ci-and-local-documentation-checks)** complement the contract’s **[Linting and CI](docs/structure-contract.md#linting-and-ci)** section; substantive judgment and anything outside the scripted scope still rely on **human review** in PRs—this guide and the contract remain authoritative for reviewers.
 
 **Section naming for new pages:** When you start from the default scaffold, the first topical `##` after the single `#` title is **`## Purpose`** (not a separate “Overview-only” heading). That keeps new pages aligned with the template and avoids synonym drift (“Purpose” vs “Overview”).
 
@@ -208,6 +208,54 @@ Keep this escape hatch **narrow**—prefer extending **`docs/templates/`** and t
 
 When you add a **new topical page** under `docs/` that should be part of the discoverable corpus, update **`docs/index.md`** in the **same pull request** (usually a new row under **Curated pages**), as described in that file’s **Keeping this index current** section. If the index update cannot ship in the same PR, open a follow-up issue immediately and do not merge the page without a tracking reference.
 
+<a id="ci-and-local-documentation-checks"></a>
+
+## CI and local documentation checks
+
+**Circle CI** runs the **`docs-quality`** workflow (see **`.circleci/config.yml`**) using **Node 22** (Active LTS line). **Duration budget (NFR-P2):** aim for **under about three minutes** for these documentation jobs on typical PRs; raise the limit only if the corpus grows enough to justify it.
+
+From the repository root, after **`npm ci`**:
+
+| Command | What it checks |
+|--------|----------------|
+| **`npm run docs:linkcheck`** | **Repo-relative** links in **`docs/**/*.md`**, **`README.md`**, and **`CONTRIBUTING.md`** (`markdown-link-check`). **External** `http(s)://` URLs are **skipped** in CI via **`.markdown-link-check.json`** (`ignorePatterns`) so jobs stay stable—**do not** use that file to mask **broken internal** links. **`.markdown-link-check.json`** cannot contain comments; document any **narrow** `ignorePatterns` change with **reviewer-approved** rationale **here** or in **`scripts/README.md`**. |
+| **`npm run docs:lint`** | **`markdownlint-cli2`** with **`.markdownlint-cli2.jsonc`** on the **same paths** as link check. **Waivers:** prefer fixing markdown over exceptions; **no** silent disables. **Per-file** or **inline** overrides need **PR justification** (and config comments with **owner approval** or **ticket** when the waiver lives in repo config). |
+| **`npm run docs:rules`** | **Structure** of **`.cursor/rules/*.mdc`** (front matter, non-empty body, `description`, `alwaysApply` / `globs`)—FR22. This is **separate** from link check; **`.mdc`** files are **not** in link-check scope unless you expand it deliberately. |
+| **`npm run docs:check`** | Runs **link check**, **lint**, and **rules** in one go (same sequence as CI). |
+
+Script overview: **[scripts/README.md](scripts/README.md)**.
+
+## Migrating legacy documentation
+
+When you bring **Algorea-relevant** or other **in-scope** material from **legacy** sources (wikis, other repositories, exports, long deliberation threads), use the **[Legacy migration playbook](docs/migration.md)** as the **canonical** procedure. It walks through **slice selection**, **path and hub mapping**, **rewrite or move** against the structure contract, **relative link repair**, and **same-PR** updates to **`docs/index.md`** and any hub sections—plus **default vs archive** placement with pointers to **[Default path vs archive](docs/default-vs-archive-split.md)** and the **[Archive (`docs/archive/`)](#archive-docsarchive)** rules in this guide. Substantive migrations still follow **[Substantive documentation PRs](#substantive-documentation-prs)** and the **[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)**.
+
+## Corpus provenance (optional)
+
+This section is **normative** only when the team **opts in** to tracking **how** a page entered the corpus. Until then, **omit** the field below on **all** pages—**no** backfill is required.
+
+### Optional YAML key: `origin`
+
+You may add an **`origin`** key to YAML front matter on curated pages under **`docs/`** (YAML is **strongly preferred** over a prose-only footer so tools and agents can read it reliably).
+
+**Prose-only equivalent (discouraged):** If a page truly **cannot** carry YAML front matter but the team still wants this signal, add **one** line at the **end** of the Markdown body (after the main content, before any long reference blocks), using exactly:
+
+`**Corpus origin:** migrated` or `**Corpus origin:** net-new`
+
+Use the **same two values** and **same semantics** as in the table below. **[Optional corpus keys](docs/structure-contract.md#optional-corpus-keys)** remains the authoritative enum—do not introduce other spellings or labels in the footer. If the page already has front matter, use **`origin:`** there instead.
+
+| Value | When to use |
+|-------|-------------|
+| **`migrated`** | The page’s **first publication in this repository** came from a **legacy** source and followed the lineage described in the **[Legacy migration playbook](docs/migration.md)** (wikis, other repos, exports, etc.—not authored originally for this corpus). |
+| **`net-new`** | The page was **authored for this corpus** without that legacy lineage (new topic, greenfield rewrite that is not a straight migration batch). |
+
+**Default:** **Omitting `origin` is allowed** and is the **default**. Treat unset `origin` as “team has not applied this optional practice to this page.”
+
+**Additive only:** `origin` does **not** replace **`date`**, **`owner`**, **`last_updated`**, or any other required or recommended keys—see **[YAML front matter](docs/structure-contract.md#yaml-front-matter)** and **[Optional corpus keys](docs/structure-contract.md#optional-corpus-keys)**.
+
+**Archive (`docs/archive/`):** Using **`migrated`** on archive-path pages is **optional** and often **less critical** than on default-path truth; it can still help when archive material clearly came from a legacy import. **`net-new`** archive pages are rare but valid when deliberative content was written for this repo. If unsure, **omit** `origin`.
+
+**Single definition:** Allowed values and semantics match **[Optional corpus keys](docs/structure-contract.md#optional-corpus-keys)**—do not introduce alternate spellings or extra enum values in prose elsewhere.
+
 ## Reviewing new and revised doc pages
 
 **For reviewers**—when a PR adds or changes **curated documentation** (pages under **`docs/`**, files under **`docs/templates/`**, or this repository’s **`CONTRIBUTING.md`**), use the subsections below. **Every** such PR should pass **[Structure and contract (every doc PR)](#structure-and-contract-every-doc-pr)** where it applies (for example front matter and heading rules apply to Markdown under **`docs/`**; use judgment for guide-only edits). When the change is **substantive**, also apply **[Substantive documentation PRs](#substantive-documentation-prs)** so reviewers can accept or request changes **without undocumented taste**—each substantive item points at published rules in this repository.
@@ -216,7 +264,7 @@ When you add a **new topical page** under `docs/` that should be part of the dis
 
 Fast path for **any** doc PR: verify **structure**, **front matter**, and **link style** against **[docs/structure-contract.md](docs/structure-contract.md)**.
 
-- **Front matter:** **[Required keys](docs/structure-contract.md#yaml-front-matter)** (`title`, `description`, `date`) present; YAML valid; optional keys consistent with the **Recommended keys** table when used. For pages under **[Applicable curated pages](docs/structure-contract.md#applicable-curated-pages)**, also **`owner`** and **`last_updated`**—**[Provenance and ownership](docs/structure-contract.md#provenance-and-ownership)**.
+- **Front matter:** **[Required keys](docs/structure-contract.md#yaml-front-matter)** (`title`, `description`, `date`) present; YAML valid; optional keys consistent with the **Recommended keys** and **[Optional corpus keys](docs/structure-contract.md#optional-corpus-keys)** sections when used. If the optional **`origin`** practice is used (**`origin:`** in YAML **or** the **`Corpus origin:`** footer form in **[Corpus provenance (optional)](#corpus-provenance-optional)**), the value must be exactly **`migrated`** or **`net-new`**. For pages under **[Applicable curated pages](docs/structure-contract.md#applicable-curated-pages)**, also **`owner`** and **`last_updated`**—**[Provenance and ownership](docs/structure-contract.md#provenance-and-ownership)**.
 - **Heading ladder:** no skipped levels between `#` / `##` / `###` / `####`—**[Heading ladder](docs/structure-contract.md#heading-ladder)**.
 - **Title:** a single logical top-level title pattern—**[One logical title per page](docs/structure-contract.md#one-logical-title-per-page)**.
 - **Links:** meaningful **intra-repo** link text; code fences have **language tags** where applicable—**[Markdown syntax](docs/structure-contract.md#markdown-syntax)** (CommonMark expectations above those subsections).

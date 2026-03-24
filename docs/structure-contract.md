@@ -58,6 +58,18 @@ Use YAML between `---` lines at the **top** of the file when the page is part of
 | `owner` | string | Who **curates** the page or **answers questions** about its claims (see [Provenance and ownership](#provenance-and-ownership)). |
 | `last_updated` | string | `YYYY-MM-DD` — reader-facing **curation freshness** signal (see [Provenance and ownership](#provenance-and-ownership)); **not** a synonym for `last_reviewed`. |
 
+### Optional corpus keys
+
+These keys are **never required** unless governance explicitly adopts them. **Omission is the default.**
+
+| Key | Type | Allowed values | Purpose |
+|-----|------|----------------|---------|
+| `origin` | string | `migrated`, `net-new` | Optional **corpus-entry** signal: **`migrated`** = first publication in this repo traced to a **legacy** source per the [Legacy migration playbook](./migration.md); **`net-new`** = authored for this corpus without that lineage. Full semantics and team opt-in: **[Corpus provenance (optional)](../CONTRIBUTING.md#corpus-provenance-optional)** in the contribution guide. |
+
+**`origin` is additive only:** it does **not** replace or redefine **`date`**, **`owner`**, **`last_updated`**, **`last_reviewed`**, or any other key in this contract. It does **not** change **[Applicable curated pages](#applicable-curated-pages)**—pages that must carry **`owner`** / **`last_updated`** still do when they fall under that section.
+
+When YAML front matter is **unavailable**, the same two values may appear in the **prose-only `Corpus origin:` footer** defined in **[Corpus provenance (optional)](../CONTRIBUTING.md#corpus-provenance-optional)** (use YAML when the page already has front matter).
+
 Use **multi-line YAML lists** for arrays (e.g. `tags:`) and **quote** strings that contain `:` or special characters.
 
 ### Provenance and ownership
@@ -129,7 +141,7 @@ A root or `docs/` [llms.txt](https://www.llmstxt.org/)-style manifest may list *
 
 ## Linting and CI
 
-When governance matures, prefer automated checks: valid YAML front matter, link checking, and markdown style rules. Until then, **reviewers enforce this contract** in PRs.
+Automated checks run in **Circle CI** and locally via **`npm run docs:check`** — see **[CI and local documentation checks](../CONTRIBUTING.md#ci-and-local-documentation-checks)** in **`CONTRIBUTING.md`** (link check on scoped markdown, **markdownlint-cli2**, and optional **`.cursor/rules/*.mdc`** structure). They **do not** replace this contract: reviewers still enforce anything outside tool scope and **substantive** correctness in PRs.
 
 ---
 

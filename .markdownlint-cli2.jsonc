@@ -1,0 +1,19 @@
+// Baseline for docs/**/*.md, README.md, CONTRIBUTING.md.
+// Aligns with docs/structure-contract.md: heading ladder and link quality matter;
+// line length, pseudo-headings, and intentional HTML anchors stay relaxed for this corpus.
+// MD025 off: structure-contract allows title in YAML plus one in-body # for agent-first pages.
+{
+  "config": {
+    "default": true,
+    "MD013": false,
+    "MD025": false,
+    "MD033": {
+      "allowed_elements": ["a"]
+    },
+    "MD036": false,
+    "MD048": false,
+    "MD049": false,
+    "MD060": false
+  },
+  "globs": ["docs/**/*.md", "README.md", "CONTRIBUTING.md"]
+}

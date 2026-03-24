@@ -1,0 +1,38 @@
+# Documentation quality (Epic 7): link check, markdownlint, Cursor rule structure.
+# Budget (NFR-P2): keep this job under ~3 minutes on typical PRs — see CONTRIBUTING.md.
+version: 2.1
+
+jobs:
+  docs-quality:
+    docker:
+      - image: cimg/node:22.14
+    resource_class: medium
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-npm-docs-{{ checksum "package-lock.json" }}
+            - v1-npm-docs-
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - save_cache:
+          key: v1-npm-docs-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+      - run:
+          name: Internal link check (repo-relative)
+          command: npm run docs:linkcheck
+          no_output_timeout: 3m
+      - run:
+          name: Markdown lint
+          command: npm run docs:lint
+          no_output_timeout: 3m
+      - run:
+          name: Cursor rules structure (.cursor/rules/*.mdc)
+          command: npm run docs:rules
+
+workflows:
+  documentation:
+    jobs:
+      - docs-quality

@@ -11,6 +11,8 @@ date: "YYYY-MM-DD"
 # On default-path curated pages listed in docs/index.md#curated-pages (cross-boundary / governed narrative):
 # owner: "#algorea-platform-docs"   # or #algorea-frontend, etc. — see ../structure-contract.md#provenance-and-ownership
 # last_updated: YYYY-MM-DD          # same as date on substantive edits — ../structure-contract.md#applicable-curated-pages
+# Optional team practice — migrated | net-new; omit by default — ../structure-contract.md#optional-corpus-keys and ../../CONTRIBUTING.md#corpus-provenance-optional
+# origin: migrated
 ---
 
 <!--

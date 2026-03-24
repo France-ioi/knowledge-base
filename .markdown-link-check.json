@@ -1,0 +1,8 @@
+{
+  "$schema": "https://raw.githubusercontent.com/tcort/markdown-link-check/main/schema.json",
+  "retryOn429": true,
+  "retryCount": 2,
+  "fallbackRetryDelay": "2s",
+  "aliveStatusCodes": [200, 206, 403, 429],
+  "ignorePatterns": [{ "pattern": "^https?://" }]
+}

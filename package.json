@@ -1,0 +1,19 @@
+{
+  "name": "knowledge-base",
+  "private": true,
+  "description": "France-IOI knowledge base — doc quality scripts for local and CI",
+  "engines": {
+    "node": ">=20 <25"
+  },
+  "scripts": {
+    "docs:linkcheck": "node scripts/docs-linkcheck.mjs",
+    "docs:lint": "markdownlint-cli2",
+    "docs:rules": "node scripts/check-cursor-rules.mjs",
+    "docs:check": "npm run docs:linkcheck && npm run docs:lint && npm run docs:rules"
+  },
+  "devDependencies": {
+    "gray-matter": "4.0.3",
+    "markdown-link-check": "3.14.2",
+    "markdownlint-cli2": "0.22.0"
+  }
+}

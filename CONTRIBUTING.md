@@ -8,7 +8,7 @@ Put material in **`docs/`** when it is **governed curated documentation** for Fr
 
 - **Business rules** and domain behavior written for cross-project use.
 - **Cross-boundary behavior** (for example how frontend, backend, and operations interact at the edges).
-- **Operations essentials** when they belong in this corpus’s governed docs—not a second home for full operational depth already owned elsewhere.
+- **Operations essentials** when they belong in this corpus’s governed docs—not a second home for full operational depth already owned elsewhere. For the **Algorea** MVP-scoped hub and topic index, see **[Algorea operations essentials](docs/algorea-ops.md)**.
 
 That matches the hub’s **[What belongs here vs elsewhere](docs/index.md#what-belongs-here-vs-elsewhere)**; this guide is the **normative** wording for contributors.
 

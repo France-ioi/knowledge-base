@@ -1,7 +1,7 @@
 ---
 title: "France-IOI knowledge base — documentation hub"
 description: "Primary entry for France-IOI: scope of this corpus, links to curated topic pages, and pointers to canonical technical depth."
-date: 2026-03-23
+date: 2026-03-25
 doc_type: reference
 status: current
 audience: agent-default
@@ -18,6 +18,10 @@ This page is the **primary entry** for curated Markdown in this repository—use
 - **Governed business rules** and domain behavior as curated for **France-IOI** software (including **Algorea** as a major project slice and room for other initiatives).
 - **Cross-boundary behavior** (for example how frontend, backend, and operations interact at the edges).
 - **Operations essentials** when they belong in governed docs for this corpus (not a second home for full infra depth already covered in engineer-facing docs).
+
+### Operations and deployment (Algorea)
+
+For **Algorea** MVP-scoped operations topics, deployment pointers, and an honest map of what is **in** this corpus versus **elsewhere**, use the curated hub **[Algorea operations essentials](./algorea-ops.md)**. It does **not** replace secret stores, cloud consoles, DevDoc, or per-repo pipelines.
 
 **Not default-path material for this repo**
 
@@ -60,6 +64,7 @@ Every **default-path** topical page under `docs/` (outside **`docs/archive/`**) 
 | [Legacy migration playbook — moving legacy material into `docs/`](./migration.md) | Maintainer-oriented steps: choose slice, map paths, rewrite for the contract, fix links, update this hub in the same PR |
 | [Algorea-linked repositories — map of related repositories](./algorea-linked-repositories.md) | How this knowledge base sits next to Algorea application and documentation repositories |
 | [Algorea frontend — canonical repo link and UI↔API expectations](./algorea-frontend.md) | GitHub as source of truth for app code; cross-boundary intent between the SPA and HTTP APIs; pointers to DevDoc |
+| [Algorea operations essentials — hub](./algorea-ops.md) | Algorea MVP-scoped ops hub: topic index, deployment pointers, boundaries to DevDoc, app repos, and external systems |
 
 ### Archive (opt-in)
 

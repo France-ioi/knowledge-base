@@ -1,0 +1,21 @@
+---
+description: "France-IOI knowledge base — curated docs corpus boundaries for agents (default path, archive, OpenAPI)"
+alwaysApply: true
+---
+
+# Knowledge base corpus — agent guardrails
+
+When answering from this repository:
+
+## Where to start
+
+- Open **`docs/index.md`** first for navigation and scope.
+- For **routine answers**, prefer **default-path** pages under **`docs/`** (especially those linked from the hub **Curated pages** table). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **`docs/default-vs-archive-split.md`** and the **Archive (`docs/archive/`)** section in **`CONTRIBUTING.md`** (repo root).
+
+## API and OpenAPI
+
+- **Do not invent** path, method, payload, or schema detail, and **do not duplicate** OpenAPI or generated API catalogs in this repo. Follow **`docs/index.md`** — **Where API and backend depth live** (`#where-api-and-backend-depth-live`) and **`CONTRIBUTING.md`** — **API documentation and OpenAPI boundary**. **Link out** to **algorea-devdoc**, the published **Backend API (generated)** surface, and **application repositories** for authoritative contracts; **open** those sources instead of recreating spec text in answers.
+
+## Consistency
+
+- Do **not** contradict **`docs/structure-contract.md`**, **`docs/index.md`**, or **`CONTRIBUTING.md`** on default vs archive or the API boundary.

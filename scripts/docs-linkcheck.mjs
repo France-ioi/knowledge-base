@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Runs markdown-link-check on the same paths as CI (Story 7.1).
- * Repo-relative links only — see .markdown-link-check.json ignorePatterns.
+ * Repo-relative links only — see `.markdown-link-check.json` ignorePatterns.
  */
 import { spawnSync } from "node:child_process";
 import { existsSync, readdirSync, statSync } from "node:fs";

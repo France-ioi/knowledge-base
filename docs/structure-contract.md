@@ -74,7 +74,7 @@ Use **multi-line YAML lists** for arrays (e.g. `tags:`) and **quote** strings th
 
 ### Provenance and ownership
 
-These keys make **curation** and **freshness** visible on substantive default-path pages (FR8). Do **not** introduce parallel synonyms (for example `maintainer` for `owner`) without updating this contract in the same pull request—see **Naming Patterns** in the architecture doc.
+These keys make **curation** and **freshness** visible on substantive default-path pages. Do **not** introduce parallel synonyms (for example `maintainer` for `owner`) without updating this contract in the same pull request—see **[CONTRIBUTING.md — Front matter and schema drift](../CONTRIBUTING.md#front-matter-and-schema-drift)**.
 
 #### `date` (required — unchanged meaning)
 
@@ -145,4 +145,4 @@ Automated checks run in **Circle CI** and locally via **`npm run docs:check`** �
 
 ---
 
-**Related research:** [_bmad-output/planning-artifacts/research/technical-machine-reliable-doc-structure-research-2026-03-22.md](../_bmad-output/planning-artifacts/research/technical-machine-reliable-doc-structure-research-2026-03-22.md)
+**Background (structure for tools and agents):** This contract aligns with common practice for **machine-reliable** Markdown: **CommonMark**-aligned syntax so parsers agree on structure; **YAML front matter** for a thin metadata layer (title, description, doc type); **Diátaxis**-style `doc_type` values so intent per page is predictable; a **single heading ladder** under one logical title so chunking and retrieval stay stable; and optional **llms.txt**-style manifests when the team wants a bundled index. The goal is the same as the rest of this repo: **governed curated prose** plus **explicit boundaries** to outbound technical truth (DevDoc, OpenAPI)—not duplicating contracts here.

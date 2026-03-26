@@ -20,4 +20,4 @@ Pages under `docs/` follow shared rules. See **[docs/structure-contract.md](docs
 
 ## Contributing
 
-See the **[contribution guide](CONTRIBUTING.md)** for scope, what belongs in `docs/` versus other repositories and `_bmad-output/`, and pointers to the **[structure contract](docs/structure-contract.md)** for Markdown and front matter rules.
+See the **[contribution guide](CONTRIBUTING.md)** for scope, what belongs in `docs/` versus other repositories, and pointers to the **[structure contract](docs/structure-contract.md)** for Markdown and front matter rules.

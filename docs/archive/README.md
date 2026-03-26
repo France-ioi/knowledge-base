@@ -17,7 +17,7 @@ Material under **`docs/archive/`** is **opt-in history**: deliberation, supersed
 - **Hold deliberation** captured as Markdown (long “why” threads, rejected options, meeting summaries) that would add noise on the default path.
 - **Store superseded** policies or narratives for readers who need the historical record.
 
-This tree is **not** a second home for **`_bmad-output/`** planning artifacts. Research and sprint output stay under **`_bmad-output/`**; if the team **copies** or **summarizes** deliberation into the curated corpus for readers, **place** that Markdown here following [Archive (docs/archive/)](../../CONTRIBUTING.md#archive-docsarchive) in the contribution guide.
+This tree is **not** a dumping ground for **unvetted** working notes. If you **copy** or **summarize** deliberation into the curated corpus for readers, **place** that Markdown here following [Archive (docs/archive/)](../../CONTRIBUTING.md#archive-docsarchive) in the contribution guide.
 
 ## Relationship to the default path
 

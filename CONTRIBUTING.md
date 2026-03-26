@@ -17,7 +17,6 @@ That matches the hub’s **[What belongs here vs elsewhere](docs/index.md#what-b
 - **Per-application implementation detail** (folder layouts, framework specifics, local runbooks): use the **relevant application repositories**.
 - **Authoritative HTTP/OpenAPI contracts** and generated API reference: use **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)**, published OpenAPI-sourced surfaces, and sibling engineer-facing docs. **Do not** paste schemas, OpenAPI fragments, or path/method catalogs into this repo—**link** to those sources instead.
 - **Duplicate hosting** of generated API reference or contract dumps: this knowledge base describes behavior and cross-boundary rules **by reference** only.
-- **`_bmad-output/`**: planning artifacts and BMAD workflow output—not curated product documentation. See [Planning and workflow output vs curated product docs](#planning-and-workflow-output-vs-curated-product-docs) for the distinction.
 
 For default-path versus optional archive material, see **[Default path vs archive](docs/default-vs-archive-split.md)**.
 
@@ -25,7 +24,7 @@ Teachable detail, good vs bad examples, and the **normative** boundary for API r
 
 ## API documentation and OpenAPI boundary
 
-This knowledge base **must not** host a **second authoritative copy** of generated HTTP contracts (FR11, NFR-I2). The hub’s **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** is the **reader-facing map** for the same conventions (Story 1.3, NFR-I1): use it to point to **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)**—**do not** invent different URLs for those entry points.
+This knowledge base **must not** host a **second authoritative copy** of generated HTTP contracts. The hub’s **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** is the **reader-facing map** for the same conventions: use it to point to **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)**—**do not** invent different URLs for those entry points.
 
 **Forbidden as contract of record in this repo**
 
@@ -63,21 +62,17 @@ FakeItem:
 
 When a PR changes **HTTP/API meaning** or **cross-boundary** API claims, reviewers also apply **[Substantive documentation PRs](#substantive-documentation-prs)** under **[Reviewing new and revised doc pages](#reviewing-new-and-revised-doc-pages)**. This section stays scoped to **where API truth lives** and **what not to paste**; it does not replace that checklist.
 
-## Planning and workflow output vs curated product docs
-
-**`_bmad-output/`** holds **planning artifacts, BMAD workflow output, and sprint or research files**. It is **not** the default-path **curated product narrative** for readers or agents.
+## Curated corpus vs IDE rules
 
 **Curated** rules and topic pages that should ground day-to-day consultation live under **`docs/`** (with **[docs/index.md](docs/index.md)** as the primary entry). **`docs/archive/`** is the **opt-in** location for superseded narratives, deliberation, and deep history—see **[docs/archive/README.md](docs/archive/README.md)** and the **[Archive section](#archive-docsarchive)** in this guide. It is **not** part of the default consultation path; follow the hub and structure contract for what counts as default path versus archive.
 
 **IDE agent guardrails** for this repository live under **`.cursor/rules/`** (Cursor project rules). They **point at** curated docs and this guide; they are **not** a second documentation tree or a substitute for **`docs/`**.
 
-This separation matches the architecture intent documented in [_bmad-output/planning-artifacts/architecture.md](_bmad-output/planning-artifacts/architecture.md) (see **Structure Patterns** and **Project Structure & Boundaries**).
-
 <a id="archive-docsarchive"></a>
 
 ## Archive (`docs/archive/`)
 
-**Normative rules** for classifying and placing **historical or deliberative** material so archive content stays consistent (FR14).
+**Normative rules** for classifying and placing **historical or deliberative** material so archive content stays consistent.
 
 ### Default path versus `docs/archive/`
 
@@ -123,7 +118,7 @@ audience: archive
 
 ## Supersession on the default path
 
-When **default-path** meaning **replaces** bookmarkable guidance, or when a **summary** page **subsumes** longer deliberative docs, use this **standard pattern** so readers do not treat outdated material as current (FR15):
+When **default-path** meaning **replaces** bookmarkable guidance, or when a **summary** page **subsumes** longer deliberative docs, use this **standard pattern** so readers do not treat outdated material as current:
 
 1. Add a **leading blockquote** immediately after the **`#` title** (or the first short intro paragraph). Start the first line with **`> **Note on prior guidance:**`** or **`> **Superseded material:**`** (bold label inside the blockquote).
 2. Keep the blockquote to **one or two sentences**, name what moved or what is now canonical, and link **[docs/archive/README.md](docs/archive/README.md)** or a **specific** path under **`docs/archive/`** when applicable.
@@ -162,7 +157,7 @@ Curated Markdown under **`docs/`** **must** follow **[docs/structure-contract.md
 
 ### Provenance for substantive meaning changes
 
-When you change **substantive** curated meaning (same definition as **[Substantive documentation PRs](#substantive-documentation-prs)**), **at least one** visible audit trail **must** exist so **truth does not change silently** (FR9). **Default-path** curated pages **must not** merge substantive edits that alter **rules**, **scope**, or **cross-boundary claims** **without** a trail reviewers and readers can follow from the **same pull request** or a **linked** artifact.
+When you change **substantive** curated meaning (same definition as **[Substantive documentation PRs](#substantive-documentation-prs)**), **at least one** visible audit trail **must** exist so **truth does not change silently**. **Default-path** curated pages **must not** merge substantive edits that alter **rules**, **scope**, or **cross-boundary claims** **without** a trail reviewers and readers can follow from the **same pull request** or a **linked** artifact.
 
 **`date`** and **`last_updated`** (and **`owner`** where required) are **necessary** but **not sufficient** for **change** provenance: they record **freshness** and **curation contact**, not **why** guidance changed—see **[Provenance and ownership](docs/structure-contract.md#provenance-and-ownership)**.
 
@@ -182,7 +177,7 @@ When you change **substantive** curated meaning (same definition as **[Substanti
 
 ### Front matter and schema drift
 
-The architecture’s **Naming Patterns** state that **front matter keys** are defined in **`docs/structure-contract.md`** and that **synonym keys** for the same concept (for example mixing `owner` and `maintainer`) are **not** allowed without updating the contract. **Enforcement Guidelines** add that **drift** is handled in lockstep: if you **introduce a new key**, **rename** the meaning of an existing key, or **split** one concept across multiple keys, you **must** update **`docs/structure-contract.md`** in the **same pull request** (or the same merged change set). Do not land new normative conventions in prose or YAML alone while the contract still describes an older schema.
+**Front matter keys** are defined in **`docs/structure-contract.md`**. **Synonym keys** for the same concept (for example mixing `owner` and `maintainer`) are **not** allowed without updating the contract. If you **introduce a new key**, **rename** the meaning of an existing key, or **split** one concept across multiple keys, you **must** update **`docs/structure-contract.md`** in the **same pull request** (or the same merged change set). Do not land new normative conventions in prose or YAML alone while the contract still describes an older schema.
 
 ## Starting from a template
 
@@ -212,7 +207,7 @@ When you add a **new topical page** under `docs/` that should be part of the dis
 
 ## CI and local documentation checks
 
-**Circle CI** runs the **`docs-quality`** workflow (see **`.circleci/config.yml`**) using **Node 22** (Active LTS line). **Duration budget (NFR-P2):** aim for **under about three minutes** for these documentation jobs on typical PRs; raise the limit only if the corpus grows enough to justify it.
+**Circle CI** runs the **`docs-quality`** workflow (see **`.circleci/config.yml`**) using **Node 22** (Active LTS line). Aim for **under about three minutes** for these documentation jobs on typical PRs; raise the limit only if the corpus grows enough to justify it.
 
 From the repository root, after **`npm ci`**:
 
@@ -220,7 +215,7 @@ From the repository root, after **`npm ci`**:
 |--------|----------------|
 | **`npm run docs:linkcheck`** | **Repo-relative** links in **`docs/**/*.md`**, **`README.md`**, and **`CONTRIBUTING.md`** (`markdown-link-check`). **External** `http(s)://` URLs are **skipped** in CI via **`.markdown-link-check.json`** (`ignorePatterns`) so jobs stay stable—**do not** use that file to mask **broken internal** links. **`.markdown-link-check.json`** cannot contain comments; document any **narrow** `ignorePatterns` change with **reviewer-approved** rationale **here** or in **`scripts/README.md`**. |
 | **`npm run docs:lint`** | **`markdownlint-cli2`** with **`.markdownlint-cli2.jsonc`** on the **same paths** as link check. **Waivers:** prefer fixing markdown over exceptions; **no** silent disables. **Per-file** or **inline** overrides need **PR justification** (and config comments with **owner approval** or **ticket** when the waiver lives in repo config). |
-| **`npm run docs:rules`** | **Structure** of **`.cursor/rules/*.mdc`** (front matter, non-empty body, `description`, `alwaysApply` / `globs`)—FR22. This is **separate** from link check; **`.mdc`** files are **not** in link-check scope unless you expand it deliberately. |
+| **`npm run docs:rules`** | **Structure** of **`.cursor/rules/*.mdc`** (front matter, non-empty body, `description`, `alwaysApply` / `globs`). This is **separate** from link check; **`.mdc`** files are **not** in link-check scope unless you expand it deliberately. |
 | **`npm run docs:check`** | Runs **link check**, **lint**, and **rules** in one go (same sequence as CI). |
 
 Script overview: **[scripts/README.md](scripts/README.md)**.
@@ -288,14 +283,14 @@ If you are unsure, treat the PR as **substantive** and apply this checklist.
 - **Placement (default vs archive)** — Path, **`status`**, and **`audience`** align with **[Default vs archive](docs/structure-contract.md#default-vs-archive)** and the narrative in **[Default path vs archive](docs/default-vs-archive-split.md)**. No **default-path** page presents **`draft`** (or otherwise non-canonical) material as **current truth** without clear rationale in the PR. **New `docs/archive/`** pages are **not** presented as default-path truth and meet **naming** and **YAML** rules in the **[Archive section](#archive-docsarchive)**.
 - **Supersession (when replacing guidance)** — If the PR **replaces** prior default-path guidance, the **living** page (and/or PR trail) follows **[Supersession on the default path](#supersession-on-the-default-path)** so stale bookmarks are not silently wrong.
 - **Index / hub** — New or **promoted** default-path topical pages update **[docs/index.md](docs/index.md)** in the **same PR**—**[Keeping the hub complete](#keeping-the-hub-complete)** and **[Keeping this index current](docs/index.md#keeping-this-index-current)**.
-- **Outbound link hygiene** — **[Descriptive link text](docs/structure-contract.md#descriptive-link-text)** for intra-repo and external links (NFR-A1). Stable DevDoc / OpenAPI entry points match **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** and **[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)**—no ad-hoc substitutes for those hubs.
+- **Outbound link hygiene** — **[Descriptive link text](docs/structure-contract.md#descriptive-link-text)** for intra-repo and external links. Stable DevDoc / OpenAPI entry points match **[Where API and backend depth live](docs/index.md#where-api-and-backend-depth-live)** and **[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)**—no ad-hoc substitutes for those hubs.
 - **OpenAPI boundary** — No new **authoritative** spec dumps, path/method catalogs, or schema-as-truth blocks in this repo; **link-out** only—**[API documentation and OpenAPI boundary](#api-documentation-and-openapi-boundary)** and **[What belongs in this corpus](docs/structure-contract.md#what-belongs-in-this-corpus)**.
 - **Provenance**
   - **Front matter** — **`date`** reflects the **last substantive** update; **`owner`** and **`last_updated`** are **required** on pages that fall under **[Applicable curated pages](docs/structure-contract.md#applicable-curated-pages)**—see **[Provenance and ownership](docs/structure-contract.md#provenance-and-ownership)** for semantics, examples, and exemptions. **`date`** / **`last_updated`** are **not** a substitute for a **change narrative**—see **[Provenance for substantive meaning changes](#provenance-for-substantive-meaning-changes)**.
   - **Change trail (substantive meaning)** — Work **yes / no / n/a** against **[Provenance for substantive meaning changes](#provenance-for-substantive-meaning-changes)** (**n/a** only when the PR is **not** substantive per **[What counts as substantive](#substantive-documentation-prs)**).
     - **Pointer (substantive PRs → yes)** — Does the **PR description** or a **linked issue/PR** state **what** meaning changed (and point to an ADR/issue when that is where the decision lives)?
     - **Stronger trail (when applicable → yes / n/a)** — If the edit **replaces** or **contradicts** prior default-path guidance, **demotes** or **moves** material toward archive, or otherwise risks **stale bookmarks**: is there a **supersession note**, **archive note**, **changelog entry** (when the repo has one), or **ADR / issue** pointer that makes **old vs new** discoverable?
-- **Privacy / sensitivity** (when examples or narratives touch people-like data) — Use **synthetic** or clearly **non-production** examples—**no** casual real names, learner identifiers, or PII-adjacent payloads (NFR-A2). Escalate if content could identify individuals or sensitive deployments without an approved pattern.
+- **Privacy / sensitivity** (when examples or narratives touch people-like data) — Use **synthetic** or clearly **non-production** examples—**no** casual real names, learner identifiers, or PII-adjacent payloads. Escalate if content could identify individuals or sensitive deployments without an approved pattern.
 
 ---
 

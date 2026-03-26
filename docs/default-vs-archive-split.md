@@ -1,6 +1,6 @@
 ---
 title: "Default path vs archive"
-description: "Summary of default curated path versus opt-in archive for this knowledge base; links to full research."
+description: "Summary of default curated path versus opt-in archive for this knowledge base."
 date: 2026-03-23
 last_reviewed: 2026-03-23
 doc_type: explanation
@@ -18,9 +18,9 @@ audience: agent-default
 
 > **Note on prior guidance:** This page is the **default-path policy summary**. Deliberative and superseded write-ups belong under **[docs/archive/](archive/README.md)** (placement rules in **[CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**).
 
-This page summarizes **technical research** on splitting **curated “current truth”** (default consultation) from **historical deliberation** (archive, opt-in). It applies to this repository as an **agent-first** knowledge base: routine answers and agent context should lean on the **default** layer; the **archive** holds the full story when someone explicitly needs it.
+This page summarizes how we split **curated “current truth”** (default consultation) from **historical deliberation** (archive, opt-in). It applies to this repository as an **agent-first** knowledge base: routine answers and agent context should lean on the **default** layer; the **archive** holds the full story when someone explicitly needs it.
 
-**Full research** (methodology, citations, implementation detail): [`../_bmad-output/planning-artifacts/research/technical-default-vs-archive-split-research-2026-03-22.md`](../_bmad-output/planning-artifacts/research/technical-default-vs-archive-split-research-2026-03-22.md)
+**Background:** The split is grounded in the same ideas cited under [Patterns from outside this repo](#patterns-from-outside-this-repo) below—**context budgets** (agents and humans do better with a small default set), **trust** (the default layer should read consistent for a given moment), and **traceability** (supersession and archive instead of silent deletion). Optional **MCP**-style retrieval, if added later, should treat default vs archive as an explicit **policy** for what enters routine context.
 
 ## Definitions
 
@@ -54,5 +54,4 @@ These are **reference patterns**, not mandatory tooling:
 
 ## Related
 
-- Product vision (default vs archive in scope): `_bmad-output/planning-artifacts/product-brief-knowledge-base-2026-03-22.md`
 - Doc structure rules: [structure-contract.md](./structure-contract.md)

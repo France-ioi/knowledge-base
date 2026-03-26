@@ -1,6 +1,6 @@
 # Maintenance scripts
 
-## Documentation quality (Epic 7)
+## Documentation quality
 
 From the repository root, after `npm ci`:
 
@@ -11,8 +11,8 @@ From the repository root, after `npm ci`:
 | `npm run docs:rules` | Structural checks on **`.cursor/rules/*.mdc`** (YAML front matter + non-empty body + `description` + `alwaysApply` / `globs`). **Requires** **`.cursor/rules/`** with at least one **`.mdc`** in the tree—**commit** those files so **Circle CI** sees them after checkout. |
 | `npm run docs:check` | Runs all three in sequence (matches the Circle CI job intent). |
 
-### Cursor rule files (FR22)
+### Cursor rule files (`.mdc`)
 
 Link checking does **not** include `.mdc` unless you extend scope. Rule **structure** is covered by `npm run docs:rules` and the **`docs:rules`** step in Circle CI.
 
-Further background: [_bmad-output/planning-artifacts/research/ai-knowledge-base-and-agent-rules-ci-2026-03-22.md](../_bmad-output/planning-artifacts/research/ai-knowledge-base-and-agent-rules-ci-2026-03-22.md).
+**Why validate rules:** Project rules should stay **short** and **point** to curated docs (`docs/`, `CONTRIBUTING.md`) instead of duplicating the full corpus. CI checks that each **`.cursor/rules/*.mdc`** file has parseable YAML front matter (`description`, and `alwaysApply` or `globs`), plus a non-empty body—so broken or empty rule files do not ship unnoticed.

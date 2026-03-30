@@ -25,7 +25,7 @@ The documentation site is built with [Jekyll](https://jekyllrb.com/) and the [Ju
 1. Install Ruby
 2. Install bundler if needed: `gem install bundler`
 3. Install dependencies: `bundle install`
-4. Serve the site: `bundle exec jekyll serve`
+4. Serve the site: `bundle exec jekyll serve --config docs/_config.yml --source docs`
 5. Open `http://localhost:4000/knowledge-base/` in your browser.
 
 On WSL you may need `bundle exec jekyll serve --force_polling` for live-reload on file changes.

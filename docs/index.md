@@ -5,6 +5,8 @@ date: 2026-03-25
 doc_type: reference
 status: current
 audience: agent-default
+permalink: /
+nav_order: 1
 ---
 
 # France-IOI knowledge base — documentation hub

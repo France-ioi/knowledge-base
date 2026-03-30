@@ -6,6 +6,8 @@ last_reviewed: 2026-03-23
 doc_type: explanation
 status: current
 audience: agent-default
+parent: "Meta"
+nav_order: 1
 ---
 
 # Default path vs archive

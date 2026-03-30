@@ -1,5 +1,5 @@
 ---
-title: "Legacy migration playbook"
+title: "Migration playbook"
 description: "Step-by-step workflow for moving Algorea-relevant material from legacy sources into docs/ with governed IA, working links, and hub updates."
 date: 2026-03-23
 last_updated: 2026-03-23
@@ -8,9 +8,11 @@ owner: "#algorea-platform-docs"
 doc_type: reference
 status: current
 audience: agent-default
+parent: "Meta"
+nav_order: 3
 ---
 
-# Legacy migration playbook
+# Migration playbook
 
 **Who this is for:** **Maintainers** bringing **in-scope** material from **legacy** homes (wikis, other repositories, chat or meeting exports, ad-hoc docs) into this knowledge base under **`docs/`**.
 

@@ -6,6 +6,8 @@ last_reviewed: 2026-03-23
 doc_type: reference
 status: current
 audience: agent-default
+parent: "Meta"
+nav_order: 2
 ---
 
 # Structure contract
@@ -64,7 +66,7 @@ These keys are **never required** unless governance explicitly adopts them. **Om
 
 | Key | Type | Allowed values | Purpose |
 |-----|------|----------------|---------|
-| `origin` | string | `migrated`, `net-new` | Optional **corpus-entry** signal: **`migrated`** = first publication in this repo traced to a **legacy** source per the [Legacy migration playbook](./migration.md); **`net-new`** = authored for this corpus without that lineage. Full semantics and team opt-in: **[Corpus provenance (optional)](../CONTRIBUTING.md#corpus-provenance-optional)** in the contribution guide. |
+| `origin` | string | `migrated`, `net-new` | Optional **corpus-entry** signal: **`migrated`** = first publication in this repo traced to a **legacy** source per the [Migration playbook](./migration.md); **`net-new`** = authored for this corpus without that lineage. Full semantics and team opt-in: **[Corpus provenance (optional)](../CONTRIBUTING.md#corpus-provenance-optional)** in the contribution guide. |
 
 **`origin` is additive only:** it does **not** replace or redefine **`date`**, **`owner`**, **`last_updated`**, **`last_reviewed`**, or any other key in this contract. It does **not** change **[Applicable curated pages](#applicable-curated-pages)**—pages that must carry **`owner`** / **`last_updated`** still do when they fall under that section.
 

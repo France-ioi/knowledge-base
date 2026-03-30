@@ -60,10 +60,11 @@ Every **default-path** topical page under `docs/` (outside **`docs/archive/`**) 
 
 | Page | What it covers |
 |------|----------------|
+| **[Meta](./meta.md)** (section) | |
 | [Default path vs archive — how curated pages relate to optional archive material](./default-vs-archive-split.md) | Default consultation path versus opt-in archive; short policy summary |
 | [Structure contract — Markdown and front matter rules for `docs/`](./structure-contract.md) | YAML front matter, heading ladder, and conventions so tools and agents parse pages consistently |
 | [Page templates — scaffolds for new curated `docs/` pages](./templates/README.md) | Copy-paste `topic-page.md` starter aligned with the structure contract; see contributing guide for required use |
-| [Legacy migration playbook — moving legacy material into `docs/`](./migration.md) | Maintainer-oriented steps: choose slice, map paths, rewrite for the contract, fix links, update this hub in the same PR |
+| [Migration playbook — moving legacy material into `docs/`](./migration.md) | Maintainer-oriented steps: choose slice, map paths, rewrite for the contract, fix links, update this hub in the same PR |
 | **[Algorea](./algorea.md)** (section) | |
 | [Linked repositories — map of related repositories](./algorea-linked-repositories.md) | How this knowledge base sits next to Algorea application and documentation repositories |
 | [Frontend — canonical repo link and UI↔API expectations](./algorea-frontend.md) | GitHub as source of truth for app code; cross-boundary intent between the SPA and HTTP APIs; pointers to DevDoc |

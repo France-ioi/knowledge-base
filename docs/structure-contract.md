@@ -118,7 +118,7 @@ Archive-path pages (`audience: archive`, typically under `docs/archive/`) follow
 
 ```yaml
 ---
-title: "Algorea frontend — routing overview"
+title: "Frontend — routing overview"
 description: "Top-level Angular routes and lazy-loaded areas for AlgoreaFrontend."
 date: 2026-03-22
 last_updated: 2026-03-22

@@ -1,5 +1,5 @@
 ---
-title: "Algorea frontend — AlgoreaFrontend overview"
+title: "Frontend"
 description: "Canonical repo link, UI↔API expectations for implementers, and pointers to DevDoc—not a copy of frontend internals."
 date: 2026-03-23
 last_updated: 2026-03-23
@@ -8,13 +8,15 @@ owner: "#algorea-frontend"
 doc_type: reference
 status: current
 audience: agent-default
+parent: "Algorea"
+nav_order: 2
 ---
 
-# Algorea frontend (`AlgoreaFrontend`)
+# Frontend (`AlgoreaFrontend`)
 
 **Source code:** **[France-ioi/AlgoreaFrontend](https://github.com/France-ioi/AlgoreaFrontend)** on GitHub — that is the canonical place to clone, read the README, and inspect routing, `package.json`, and `src/`.
 
-If you keep several Algorea repos side by side on disk, see [Algorea — linked repositories](./algorea-linked-repositories.md) for how they relate as sibling folders next to `knowledge-base`.
+If you keep several Algorea repos side by side on disk, see [Linked repositories](./algorea-linked-repositories.md) for how they relate as sibling folders next to `knowledge-base`.
 
 **What this knowledge-base page is for:** orientation and **cross-boundary** expectations between the SPA and the HTTP APIs. **Not** a mirror of Angular layout, scripts, or folder-by-folder implementation detail—those belong in the GitHub repo.
 

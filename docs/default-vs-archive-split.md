@@ -14,7 +14,7 @@ audience: agent-default
 
 **What this page answers:** How the **default consultation path** relates to the **archive**, and where **contributor placement rules** live.
 
-**What this page does not cover:** Product support playbooks, **HTTP or OpenAPI contract detail**, or **per-application runbooks**. For those boundaries use the **[documentation hub](./index.md#where-api-and-backend-depth-live)**, **[Algorea linked repositories](./algorea-linked-repositories.md)** for repo maps, and **[CONTRIBUTING.md — API documentation and OpenAPI boundary](../CONTRIBUTING.md#api-documentation-and-openapi-boundary)**.
+**What this page does not cover:** Product support playbooks, **HTTP or OpenAPI contract detail**, or **per-application runbooks**. For those boundaries use the **[documentation hub](./index.md#where-api-and-backend-depth-live)**, **[Linked repositories](./algorea-linked-repositories.md)** for repo maps, and **[CONTRIBUTING.md — API documentation and OpenAPI boundary](../CONTRIBUTING.md#api-documentation-and-openapi-boundary)**.
 
 > **Note on prior guidance:** This page is the **default-path policy summary**. Deliberative and superseded write-ups belong under **[docs/archive/](archive/README.md)** (placement rules in **[CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**).
 

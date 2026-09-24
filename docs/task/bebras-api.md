@@ -6,7 +6,8 @@ has_toc: true
 ---
 
 # Bebras API
-{: .no_toc}
+
+November 2017
 
 1. TOC
 {:toc}
@@ -31,9 +32,9 @@ The api provides a way for a platform to present tasks from various origins to i
 
 The API doesn't specify how the task's main resources are loaded in the browser, but assumes that they, and in particular the "Task" object, are already available in one of the following ways:
 
-* Independently of the platform: the task may have been loaded directly through an url loaded within an iframe, in the same domain or a different domain from the platform.
+- Independently of the platform: the task may have been loaded directly through an url loaded within an iframe, in the same domain or a different domain from the platform.
 
-* Through the platform: the content of the task may have been loaded in the browser, either within the platform’s main page or within an iframe. This is possible in particular for tasks that implement the installation API, an extension to the present API, documented separately.
+- Through the platform: the content of the task may have been loaded in the browser, either within the platform’s main page or within an iframe. This is possible in particular for tasks that implement the installation API, an extension to the present API, documented separately.
 
 Some of the elements of the task, such as the solution, hints or the grader, may not be loaded, in which case the corresponding features are not available.
 
@@ -41,23 +42,23 @@ What the API specifies however, is how the platform and the task exchange inform
 
 The platform may:
 
-* tell the task to initialize itself, given some parameters: task.load(...)  
-* ask the task for the current answer provided by a user: task.getAnswer(...)  
-* reload a previously saved answer: task.reloadAnswer(...)  
-* obtain the height of the task content, so that it can adjust the layout: task.getHeight(...)  
-* obtain the list of views (task, solution, ...) that the task is able to display: task.getViews(...)  
-* provide the task with a signed token that proves that it allows the user to access to some content: task.updateToken(...)
+- tell the task to initialize itself, given some parameters: task.load(...)  
+- ask the task for the current answer provided by a user: task.getAnswer(...)  
+- reload a previously saved answer: task.reloadAnswer(...)  
+- obtain the height of the task content, so that it can adjust the layout: task.getHeight(...)  
+- obtain the list of views (task, solution, ...) that the task is able to display: task.getViews(...)  
+- provide the task with a signed token that proves that it allows the user to access to some content: task.updateToken(...)
 
 If a grader is available with the task, the platform may:
 
-* ask the grader to grade a given answer: grader.gradeTask()
+- ask the grader to grade a given answer: grader.gradeTask()
 
 On the other hand, the task may contact the platform to indicate that the user wants to:
 
-* validate her current answer: platform.validate(...)  
-* obtain a new hint: platform.askHint(...)  
-* access to a different view (statement, solution, ...): platform.showView(...)  
-* open a different page: platform.openUrl(...)
+- validate her current answer: platform.validate(...)  
+- obtain a new hint: platform.askHint(...)  
+- access to a different view (statement, solution, ...): platform.showView(...)  
+- open a different page: platform.openUrl(...)
 
 # Actors
 
@@ -77,13 +78,13 @@ The operation API provides a way for platforms and tasks to interact with each o
 
 A task may provide multiple views. A view can be seen as a container providing one specific information or functionality. Only one view at a time is displayed by the task. There is only one mandatory view, but some have a mandatory name they must follow:
 
-* **task:** the view containing the task wording  
-* **solution:** the view containing the task solution  
-* **hints:** the view containing the task hints  
-* **hint\_n:** the view containing the nth hint  
-* **forum:** the view containing the help forum, when available  
-* **editor:** the view containing the answer editor interface  
-* **answer\_n:** the view containing the nth answer submitted by the user
+- **task:** the view containing the task wording  
+- **solution:** the view containing the task solution  
+- **hints:** the view containing the task hints  
+- **hint\_n:** the view containing the nth hint  
+- **forum:** the view containing the help forum, when available  
+- **editor:** the view containing the answer editor interface  
+- **answer\_n:** the view containing the nth answer submitted by the user
 
 It’s up to the task to provide any name for other views they contains. The only requirement is that it is unique. An example is provided in the Task API section.
 
@@ -99,8 +100,8 @@ The *platform* object will send the call to the platform, in the parent window.
 
 The proxies are implemented by two files:
 
-* task-pr.js has to be loaded by the platform and when needed, creates a proxy so that the platform can access the task and grader objects. In case the task is on another domain, task-xd-pr.js must be used.  
-* platform-pr.js has to be loaded by the task, and when needed, creates a proxy so that the task can access the platform. It adapts automatically cross-domain cases.
+- task-pr.js has to be loaded by the platform and when needed, creates a proxy so that the platform can access the task and grader objects. In case the task is on another domain, task-xd-pr.js must be used.  
+- platform-pr.js has to be loaded by the task, and when needed, creates a proxy so that the task can access the platform. It adapts automatically cross-domain cases.
 
 **Note :** Please note that when two consecutive calls are made to the platform or the task, there is no guarantee that the calls will be received in the same order by the destination actor.
 
@@ -159,7 +160,7 @@ The following functions are provided by the task. Each function has a **callback
 
 **task.getViews(callback, errorCallback)**
 
-This function provides an object containing the task views as root keys. It is used in combination with the task.load’s views parameter. 
+This function provides an object containing the task views as root keys. It is used in combination with the task.load’s views parameter.
 
 All views listed in the “Task Views” sections of this document are mandatory to appear in the root keys. The associated values are empty objects when the view is provided, and objects containing :
 
@@ -169,9 +170,9 @@ All views listed in the “Task Views” sections of this document are mandatory
 For example, a simple task providing views for statement and solution will return :
 
 {  
-	“task”: {},  
-	“solution”: {},  
-	“hint” : {requires: “task”},  
+  “task”: {},  
+  “solution”: {},  
+  “hint” : {requires: “task”},  
 “forum” : {requires: “task”},  
 “editor” : {includes: \[“submission”\]},  
 “submission”: {}  
@@ -181,12 +182,12 @@ callback(views) takes one parameter, the javascript object as described above.
 
 **task.load(views, callback, errorCallback)**
 
-This is called after the task html has been loaded into the DOM, and may perform further initialization steps. 
+This is called after the task html has been loaded into the DOM, and may perform further initialization steps.
 
 The views parameter tells the tasks which views to load. The parameter is an object describing the different parts to load. It describes, among other things, the views that will be loaded (other views may not be available if not asked here). This argument has the same structure as the argument of task.showViews(), but adds other possibilities as if these were views:
 
-* *grader* must be set for task.gradeTask() to work  
-* *metadata* must be set for task.getMetaData() to work
+- *grader* must be set for task.gradeTask() to work  
+- *metadata* must be set for task.getMetaData() to work
 
 You need to call *showViews()* after *load()* in order to display a view.
 
@@ -198,41 +199,41 @@ This function returns (as first argument of the callback) the metadata associate
 
 *callback(metadata) takes one object parameter*, containing the following properties:
 
-* **id (string)**: a unique identifier of the task, in the form of a unique uri, such as “http://castor-informatique.fr/tasks/2012-FR-01-en”  
-* **language (string)**: the language code (ISO 639-1)  
-* **version (number)**: a version number  
-* **title (string, max 25 characters)**: the title of the task, to be displayed on the platform  
-* **authors (array of strings)**: one or more authors  
-* **translators (optional, array of strings)**: one or more translators  
-* **license (string)**: the name of the license  
-* **autoHeight (boolean, optional)**: true if the task can adapt itself to whatever height the platform offers (usually that height will be the height of the window minus the heights of a header and a footer in the platform)  
-* **minWidth (int or string, optional):** minimum width (in px) the task needs to be displayed, default is 800\. The value “auto” should allow the task to take as much room as it can  
-* **usesRandomSeed (boolean, optional)**: true if the task requires to get a randomSeed, default false  
-* **usesTokens (boolean, optional)**: true if the task requires a task token (see below in “Token format”), default false  
-* **browserSupport (optional, array):** list of browsers, and for each, if it’s supported / unsupported / untested. TODO: define format.   
-* **nbHints (int, optional):** the number of hints provided by the task. Default value is 0\.  
-* **fullFeedback (boolean, optional):** a boolean indicating whether the task provides full feedback to the user on the validity of his answer (default is false)  
-* **editorUrl (string, optional):** a direct URL to the editor for this task  
-* **apiVersion (number, optional):** highest Bebras API version supported (default: 1\)  
-* **minApiVersion (number, optional):** lowest Bebras API version supported (default: 1\)  
-* TODO : boolean that says if grading can be validated by a token
+- **id (string)**: a unique identifier of the task, in the form of a unique uri, such as “<http://castor-informatique.fr/tasks/2012-FR-01-en>”  
+- **language (string)**: the language code (ISO 639-1)  
+- **version (number)**: a version number  
+- **title (string, max 25 characters)**: the title of the task, to be displayed on the platform  
+- **authors (array of strings)**: one or more authors  
+- **translators (optional, array of strings)**: one or more translators  
+- **license (string)**: the name of the license  
+- **autoHeight (boolean, optional)**: true if the task can adapt itself to whatever height the platform offers (usually that height will be the height of the window minus the heights of a header and a footer in the platform)  
+- **minWidth (int or string, optional):** minimum width (in px) the task needs to be displayed, default is 800\. The value “auto” should allow the task to take as much room as it can  
+- **usesRandomSeed (boolean, optional)**: true if the task requires to get a randomSeed, default false  
+- **usesTokens (boolean, optional)**: true if the task requires a task token (see below in “Token format”), default false  
+- **browserSupport (optional, array):** list of browsers, and for each, if it’s supported / unsupported / untested. TODO: define format.
+- **nbHints (int, optional):** the number of hints provided by the task. Default value is 0\.  
+- **fullFeedback (boolean, optional):** a boolean indicating whether the task provides full feedback to the user on the validity of his answer (default is false)  
+- **editorUrl (string, optional):** a direct URL to the editor for this task  
+- **apiVersion (number, optional):** highest Bebras API version supported (default: 1\)  
+- **minApiVersion (number, optional):** lowest Bebras API version supported (default: 1\)  
+- TODO : boolean that says if grading can be validated by a token
 
 When a task handles tokens, the fields returned by this function depend on the following fields of the token:
 
-* *nbHints* is returned according to the token field *bHintsAllowed*  
-* *authors* is returned according to *bAuthorsDisplayed*  
-* *fullFeedback* is always returned  
-* others are returned according to *bAllowPrivateMetaData*
+- *nbHints* is returned according to the token field *bHintsAllowed*  
+- *authors* is returned according to *bAuthorsDisplayed*  
+- *fullFeedback* is always returned  
+- others are returned according to *bAllowPrivateMetaData*
 
 **task.showViews(views, callback, errorCallback)**
 
-This function makes the task display the views passed as argument. 
+This function makes the task display the views passed as argument.
 
 The argument is an object containing the asked views as key, and *true* as value. For example, a platform asking the *hint* and *task* views should call *showViews()* with the argument
 
 {  
-	“task”: true,  
-	“hint”: true  
+  “task”: true,  
+  “hint”: true  
 }
 
 In case the asked view is not provided by the task but mapped to another view (see *requires* key of the object returned by *getViews()*), the platform should call the mapped view. But the task should also provide a mapping to show the correct view if it is an unprovided view is asked. In such a case, the task must also raise an error.
@@ -241,7 +242,7 @@ callback() takes no parameter, and should be called when the views are visible
 
 **task.unload(callback, errorCallback)**
 
-This is called before the task html is removed from the DOM. 
+This is called before the task html is removed from the DOM.
 
 This function might be needed for tasks that use timers, which would otherwise execute code after the task’s html has been removed from the DOM. No timers should occur after this function calls the callback.
 
@@ -270,7 +271,7 @@ callback() takes no parameter and should be called when the answer has been load
 *Minimum API version: 2*  
 This functions like reloadAnswer, but allows passing options, an object with the following parameters:
 
-* **idUserAnswer (string, optional):** Specifies the idUserAnswer the answer corresponds to, for the task to possibly reload related submission data
+- **idUserAnswer (string, optional):** Specifies the idUserAnswer the answer corresponds to, for the task to possibly reload related submission data
 
 **task.getHeight(callback, errorCallback)**
 
@@ -284,7 +285,7 @@ Updates the task’s authentication token. callback() takes no parameter.
 
 **task.getState(callback, errorCallback)**
 
-This function returns a string representing the current state of the task as presented by the user. The platform does not have to understand its structure. It is only used for next function. 
+This function returns a string representing the current state of the task as presented by the user. The platform does not have to understand its structure. It is only used for next function.
 
 A state might contain, for example, the way things are currently being displayed to the user, with answers he did not validate yet, etc.
 
@@ -302,9 +303,9 @@ The answer field is a string
 
 callback(score, message, scoreToken) should be called with three arguments:
 
-* the score, a number between minScore and maxScore as returned by platform.getTaskParams()  
-* a short message (preferably \< 50 characters) giving an overview of the evaluation  
-* an optional JWS token signed by the task, containing the fields *score*, *idUser* and *idItem* 
+- the score, a number between minScore and maxScore as returned by platform.getTaskParams()  
+- a short message (preferably \< 50 characters) giving an overview of the evaluation  
+- an optional JWS token signed by the task, containing the fields *score*, *idUser* and *idItem*
 
 The grader is in javascript, but this does not mean that the student has access to it during the contest. For instance, the grading may take place after the contest is over, in the contest organizer’s browser. In this case, the platform can load all the answers in the browser, grade them one by one, and have the browser send the results back to the platform where they are saved.
 
@@ -324,14 +325,14 @@ where *key* and *default* are an optional parameters.
 
 If no parameter is passed, the callback should be called, with one parameter: an object containing the following key-value pairs:
 
-* *minScore*: the score when the answer is false  
-* *maxScore*: the score when the answer is completely right  
-* *noScore*: the score when there is no answer  
-* *randomSeed*: see below  
-* *readOnly*: can be set to true to prevent the task from displaying validation buttons  
-* *fullFeedback*: should the task display full feedback to the user, default true  
-* *options*: an object containing options as defined by the task  
-* *returnUrl* is optional, and its use is optional too. It contains an url that will be called if the evaluation is done in an asynchronous way. The url will be called with the POST variables *score*, *message* and *scoreToken* with the same value as those of the javascript callback, plus an additional ‘action’ variable with value ‘	rReturn’.
+- *minScore*: the score when the answer is false  
+- *maxScore*: the score when the answer is completely right  
+- *noScore*: the score when there is no answer  
+- *randomSeed*: see below  
+- *readOnly*: can be set to true to prevent the task from displaying validation buttons  
+- *fullFeedback*: should the task display full feedback to the user, default true  
+- *options*: an object containing options as defined by the task  
+- *returnUrl* is optional, and its use is optional too. It contains an url that will be called if the evaluation is done in an asynchronous way. The url will be called with the POST variables *score*, *message* and *scoreToken* with the same value as those of the javascript callback, plus an additional ‘action’ variable with value ‘  rReturn’.
 
 *randomSeed* is an integer that can be used to shuffle choices, or add other types of randomness, but should do so in a deterministic manner, such that two uses of the task with the same random seed generate exactly the same question. If the metadata returned by task.getMetaData doesn’t contain usesRandomSeed: true, this value should be 0\.
 
@@ -343,19 +344,19 @@ If *key* parameter is passed, the callback should be called, with one parameter:
 
 This function may be called by the task when the user indicates, through the task, that the current answer should be validated. The parameter mode gives an indication to the platform as to what to do next. It can have the following values:
 
-* “**stay**”: the platform should stay on this question after storing the answer.  
-* “**done**”: the user is probably done with this question. The platform may go to the next question.  
-* “**next**”: the user is definitely done with this question. The platform should go to the next question.  
-* “**cancel**”: the user wants to cancel his submission to the question.
+- “**stay**”: the platform should stay on this question after storing the answer.  
+- “**done**”: the user is probably done with this question. The platform may go to the next question.  
+- “**next**”: the user is definitely done with this question. The platform should go to the next question.  
+- “**cancel**”: the user wants to cancel his submission to the question.
 
 When the result of platform.getTaskParams has *readOnly* set to true (and, for tasks handling tokens, if the token field *bReadOnly* is set to true), this function should not be called by the task. If it is, it should have no effect.
 
 **TODO: change API to simplify grading process :**
 
-* taskPlatform can call task.gradeAnswer for old answers  
-* otherwise, a task calls platform.authorizeGrading(answer) first, then grades the answer by itself  
-* it then calls platform.updateScore({answer: …, score: …, message: …}, signature)  
-* we add a separate function for the current mode parameter in platform.validate : platform.taskDone()
+- taskPlatform can call task.gradeAnswer for old answers  
+- otherwise, a task calls platform.authorizeGrading(answer) first, then grades the answer by itself  
+- it then calls platform.updateScore({answer: …, score: …, message: …}, signature)  
+- we add a separate function for the current mode parameter in platform.validate : platform.taskDone()
 
 **platform.showView(views, callback, errorCallback)**
 
@@ -368,12 +369,12 @@ The parameter is a string corresponding to a single view.
 This function tells the platform that it should open another item or URL.  
 It is called with an argument pathParams which is an object with the parameters :
 
-* one of :  
-  * itemId (string) : numerical ID of the item in the platform  
-  * path (string) : path to the item in the platform, for instance ‘123/456/789’  
-  * url (string) : URL to open, for instance ‘http://google.com’  
-  * textId (string) : text ID of the item to open  
-* newTab (boolean, optional) : open in a new tab/window
+- one of :  
+  - itemId (string) : numerical ID of the item in the platform  
+  - path (string) : path to the item in the platform, for instance ‘123/456/789’  
+  - url (string) : URL to open, for instance ‘<http://google.com>’  
+  - textId (string) : text ID of the item to open  
+- newTab (boolean, optional) : open in a new tab/window
 
 For legacy reasons, pathParams can also be a string ; in that case, that string will be interpreted as the ‘path’ parameter.
 
@@ -402,9 +403,9 @@ TODO: we might rename askHint into authorizeHint
 
 The task can notify the platform when it knows its display changes. The options argument is an object with optional properties :
 
-* height : the new height of the task in px  
-* views : the new list of available views for the task  
-* scrollTop (integer) : request the platform to scroll to this distance in px from the top of the task
+- height : the new height of the task in px  
+- views : the new list of available views for the task  
+- scrollTop (integer) : request the platform to scroll to this distance in px from the top of the task
 
 **platform.log(data, callback, errorCallback)**
 
@@ -412,9 +413,9 @@ Tells the platform to log some data.
 
 Data must be an array, whose first item is a string describing the type of log it is, such as :
 
-* “error”  
-* “activity”  
-* …
+- “error”  
+- “activity”  
+- …
 
 The other items of the array are the data corresponding to the log.
 
@@ -434,10 +435,10 @@ It is necessary for some APIs (such as standard buttons and messages) to be able
 
 The different events that need to be emitted are the following:
 
-* **load:** at *task.load()*  
-* **unload:** at *task.unload()*  
-* **reloadAnswer:** at *task.reloadAnswer()*  
-* **validate:** at *platform.validate()*
+- **load:** at *task.load()*  
+- **unload:** at *task.unload()*  
+- **reloadAnswer:** at *task.reloadAnswer()*  
+- **validate:** at *platform.validate()*
 
 They correspond to events triggered after calls to functions.
 
@@ -461,11 +462,11 @@ See task.gradeAnswer
 
 # Token format
 
-In general, the required values to be put in all jws tokens are: 
+In general, the required values to be put in all jws tokens are:
 
-* date (string, format ‘d-m-Y’): the day the token has been generated (a token is valid until the end of the day after)  
-* itemUrl (string): the url of the task  
-* idUser (number): the user ID according to the platform
+- date (string, format ‘d-m-Y’): the day the token has been generated (a token is valid until the end of the day after)  
+- itemUrl (string): the url of the task  
+- idUser (number): the user ID according to the platform
 
 In most cases, platforms need to differentiate their users, and be sure that a user cannot access other users’s tasks. In these cases, when a token is used it can contain the field ‘idUser’. Tasks recording user informations should take care of conflicts between identical idUser from different platforms.
 
@@ -498,16 +499,15 @@ Here is a list of standard rights which can be encoded in the token sent by the 
 
 The token is signed with the platform’s private key. The task must check the validity of the token before engaging any of the following actions:
 
-* give access to the task  
-* authorize a hint  
-* authorize a submission  
-* give access to the solution
+- give access to the task  
+- authorize a hint  
+- authorize a submission  
+- give access to the solution
 
 The token is passed to the task by the url *sToken* query parameter. For example if a platform loads [http://task.pem.dev/my/task/](http://task.pem.dev/my/task/), it will include an iframe with src [http://task.pem.dev/my/task/](http://task.pem.dev/my/task/)?sToken=...
 
 ## **Answer Token**
 
-   
 Answer tokens are sent when calling task.gradeAnswer, they contain the fields:
 
 | Parameter | Description |
@@ -542,16 +542,16 @@ The token sent by the grader contains the following fields (in addition to the u
 
 # Appendix 1
 
-# Examples of function calls
+## Examples of function calls
 
-### **Task initialization**
+### Task initialization
 
 1. user clicks on the link of a task  
 2. the platform generates a token containing at least:  
-   * the user login  
-   * the date  
-   * the asked task  
-   * the maximum hint number the user is allowed to ask  
+   - the user login  
+   - the date  
+   - the asked task  
+   - the maximum hint number the user is allowed to ask  
 3. the platform calls an iFrame with this token  
 4. when the iFrame is loaded, the platform get the task object from the iFrame through **task \= TaskProxyManager.getTask(idIframe)**  
 5. the platform makes the necessary initialization steps to have a platform object implementing the different functions of the API, and tells the task to communicate with this object, through **TaskProxyManager.setPlatform(task, platform).**  
@@ -559,7 +559,7 @@ The token sent by the grader contains the following fields (in addition to the u
 7. it then calls **task.setViews()** with the view it wants to be displayed  
 8. it can then, if relevant, call **task.reloadAnswer()** with a previously saved answer, or/and **task.reloadState()** with a previously saved state.
 
-### **Hint asking**
+### Hint asking
 
 1. User asks for a hint by pressing a button inside the task  
 2. the task calls **platform.askHint()**  
@@ -569,7 +569,7 @@ The token sent by the grader contains the following fields (in addition to the u
 6. The platform calls the callback sent by the task inthe platform.askHint() call  
 7. The task shows the hint
 
-### **Answer validation**
+### Answer validation
 
 1. User types an answer in the task and validates  
 2. the task calls **platform.validate()**  
@@ -600,4 +600,4 @@ Tokens are basically an encoded object with its signature.
 
 Some tasks support tokens and others don’t, but the API should be similar in both cases.
 
-Idea: for tasks that don’t support tokens, we just provide a non-encoded object, while for tasks that support tokens, we provide the exact same object, but encoded and with a signature.  
+Idea: for tasks that don’t support tokens, we just provide a non-encoded object, while for tasks that support tokens, we provide the exact same object, but encoded and with a signature.

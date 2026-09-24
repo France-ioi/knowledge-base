@@ -1,6 +1,6 @@
 # Contributing to the France-IOI knowledge base
 
-The contribution guide lives under the documentation hub’s **Meta** section:
+The contribution guide lives under the documentation hub’s **Meta (about this doc)** section:
 
 **[Contribution guide](docs/contributing.md)**
 

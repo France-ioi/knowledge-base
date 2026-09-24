@@ -60,7 +60,7 @@ Every **default-path** topical page under `docs/` (outside **`docs/archive/`**) 
 
 | Page | What it covers |
 |------|----------------|
-| **[Meta](./meta.md)** (section) | |
+| **[Meta (about this doc)](./meta.md)** (section) | |
 | [Contribution guide — scope, archive, templates, and documentation PR review](./contributing.md) | Canonical contributor rules for this knowledge base (root `CONTRIBUTING.md` points here) |
 | [Default path vs archive — how curated pages relate to optional archive material](./default-vs-archive-split.md) | Default consultation path versus opt-in archive; short policy summary |
 | [Structure contract — Markdown and front matter rules for `docs/`](./structure-contract.md) | YAML front matter, heading ladder, and conventions so tools and agents parse pages consistently |

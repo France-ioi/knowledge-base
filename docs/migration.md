@@ -8,7 +8,7 @@ owner: "#algorea-platform-docs"
 doc_type: reference
 status: current
 audience: agent-default
-parent: "Meta"
+parent: "Meta (about this doc)"
 nav_order: 3
 ---
 

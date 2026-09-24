@@ -6,7 +6,7 @@ last_reviewed: 2026-03-23
 doc_type: reference
 status: current
 audience: agent-default
-parent: "Meta"
+parent: "Meta (about this doc)"
 nav_order: 2
 ---
 

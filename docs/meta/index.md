@@ -26,6 +26,7 @@ Conventions for pages under **`docs/`**:
 - One `#` title per page (or rely on front-matter `title`).
 - Headings in order: `##` then `###` then `####` (do not skip levels).
 - Prefer CommonMark: lists, **language-tagged** fenced code blocks, **descriptive** link text.
+- For workflows and diagrams, **Mermaid** is enabled (fenced blocks tagged `mermaid`).
 - Keep each heading’s body immediately under it.
 
 ## Front matter

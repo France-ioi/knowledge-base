@@ -66,17 +66,17 @@ These keys are **never required** unless governance explicitly adopts them. **Om
 
 | Key | Type | Allowed values | Purpose |
 |-----|------|----------------|---------|
-| `origin` | string | `migrated`, `net-new` | Optional **corpus-entry** signal: **`migrated`** = first publication in this repo traced to a **legacy** source per the [Migration playbook](./migration.md); **`net-new`** = authored for this corpus without that lineage. Full semantics and team opt-in: **[Corpus provenance (optional)](../CONTRIBUTING.md#corpus-provenance-optional)** in the contribution guide. |
+| `origin` | string | `migrated`, `net-new` | Optional **corpus-entry** signal: **`migrated`** = first publication in this repo traced to a **legacy** source per the [Migration playbook](./migration.md); **`net-new`** = authored for this corpus without that lineage. Full semantics and team opt-in: **[Corpus provenance (optional)](./contributing.md#corpus-provenance-optional)** in the contribution guide. |
 
 **`origin` is additive only:** it does **not** replace or redefine **`date`**, **`owner`**, **`last_updated`**, **`last_reviewed`**, or any other key in this contract. It does **not** change **[Applicable curated pages](#applicable-curated-pages)**—pages that must carry **`owner`** / **`last_updated`** still do when they fall under that section.
 
-When YAML front matter is **unavailable**, the same two values may appear in the **prose-only `Corpus origin:` footer** defined in **[Corpus provenance (optional)](../CONTRIBUTING.md#corpus-provenance-optional)** (use YAML when the page already has front matter).
+When YAML front matter is **unavailable**, the same two values may appear in the **prose-only `Corpus origin:` footer** defined in **[Corpus provenance (optional)](./contributing.md#corpus-provenance-optional)** (use YAML when the page already has front matter).
 
 Use **multi-line YAML lists** for arrays (e.g. `tags:`) and **quote** strings that contain `:` or special characters.
 
 ### Provenance and ownership
 
-These keys make **curation** and **freshness** visible on substantive default-path pages. Do **not** introduce parallel synonyms (for example `maintainer` for `owner`) without updating this contract in the same pull request—see **[CONTRIBUTING.md — Front matter and schema drift](../CONTRIBUTING.md#front-matter-and-schema-drift)**.
+These keys make **curation** and **freshness** visible on substantive default-path pages. Do **not** introduce parallel synonyms (for example `maintainer` for `owner`) without updating this contract in the same pull request—see **[CONTRIBUTING.md — Front matter and schema drift](./contributing.md#front-matter-and-schema-drift)**.
 
 #### `date` (required — unchanged meaning)
 
@@ -111,7 +111,7 @@ Pages that **must** include both `owner` and `last_updated` (in addition to requ
 **Explicitly exempt** (do **not** require `owner` / `last_updated` here):
 
 - **Hub:** [`docs/index.md`](./index.md) — navigation and corpus map, not a single owned topic.
-- **Meta / governance shells:** this file [`docs/structure-contract.md`](./structure-contract.md), [`docs/default-vs-archive-split.md`](./default-vs-archive-split.md) — they define rules for the corpus rather than product cross-boundary claims.
+- **Meta / governance shells:** this file [`docs/structure-contract.md`](./structure-contract.md), [`docs/default-vs-archive-split.md`](./default-vs-archive-split.md), [`docs/contributing.md`](./contributing.md) — they define rules for the corpus rather than product cross-boundary claims.
 - **Templates:** files under `docs/templates/` — scaffolds; **published** pages copied from them **must** satisfy this section when they fall under “must include” above.
 
 Archive-path pages (`audience: archive`, typically under `docs/archive/`) follow the same keys only if governance promotes them to a **curated** surface; default is **no extra requirement** beyond the required keys unless explicitly listed in the hub.
@@ -135,7 +135,7 @@ audience: agent-default
 ## Default vs archive
 
 - **Default consultation path:** pages linked from [index.md](./index.md) and written for ongoing truth (`status: current`, `audience: agent-default`).
-- **Archive / deliberation:** pages under **`docs/archive/`** are marked with `audience: archive` (and often `status: archived`) so agents can exclude them unless explicitly asked — see **[Archive (docs/archive/)](../CONTRIBUTING.md#archive-docsarchive)** in the contribution guide.
+- **Archive / deliberation:** pages under **`docs/archive/`** are marked with `audience: archive` (and often `status: archived`) so agents can exclude them unless explicitly asked — see **[Archive (docs/archive/)](./contributing.md#archive-docsarchive)** in the contribution guide.
 
 ## Optional: `llms.txt`
 
@@ -143,7 +143,7 @@ A root or `docs/` [llms.txt](https://www.llmstxt.org/)-style manifest may list *
 
 ## Linting and CI
 
-Automated checks run in **Circle CI** and locally via **`npm run docs:check`** — see **[CI and local documentation checks](../CONTRIBUTING.md#ci-and-local-documentation-checks)** in **`CONTRIBUTING.md`** (link check on scoped markdown, **markdownlint-cli2**, and optional **`.cursor/rules/*.mdc`** structure). They **do not** replace this contract: reviewers still enforce anything outside tool scope and **substantive** correctness in PRs.
+Automated checks run in **Circle CI** and locally via **`npm run docs:check`** — see **[CI and local documentation checks](./contributing.md#ci-and-local-documentation-checks)** in the **contribution guide** (link check on scoped markdown, **markdownlint-cli2**, and optional **`.cursor/rules/*.mdc`** structure). They **do not** replace this contract: reviewers still enforce anything outside tool scope and **substantive** correctness in PRs.
 
 ---
 

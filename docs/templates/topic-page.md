@@ -11,16 +11,16 @@ date: "YYYY-MM-DD"
 # On default-path curated pages listed in docs/index.md#curated-pages (cross-boundary / governed narrative):
 # owner: "#algorea-platform-docs"   # or #algorea-frontend, etc. — see ../structure-contract.md#provenance-and-ownership
 # last_updated: YYYY-MM-DD          # same as date on substantive edits — ../structure-contract.md#applicable-curated-pages
-# Optional team practice — migrated | net-new; omit by default — ../structure-contract.md#optional-corpus-keys and ../../CONTRIBUTING.md#corpus-provenance-optional
+# Optional team practice — migrated | net-new; omit by default — ../structure-contract.md#optional-corpus-keys and ../contributing.md#corpus-provenance-optional
 # origin: migrated
 ---
 
 <!--
 Before opening a PR: replace every REPLACE/placeholder, remove this block and other HTML comments,
 and align front matter with docs/structure-contract.md (normative).
-Normative API/OpenAPI boundary (no spec dumps as authority): ../../CONTRIBUTING.md#api-documentation-and-openapi-boundary
-Substantive doc PR review checklist (meaning, placement, provenance, etc.): ../../CONTRIBUTING.md#substantive-documentation-prs
-Audit trail when you change substantive meaning (not just freshness keys): ../../CONTRIBUTING.md#provenance-for-substantive-meaning-changes
+Normative API/OpenAPI boundary (no spec dumps as authority): ../contributing.md#api-documentation-and-openapi-boundary
+Substantive doc PR review checklist (meaning, placement, provenance, etc.): ../contributing.md#substantive-documentation-prs
+Audit trail when you change substantive meaning (not just freshness keys): ../contributing.md#provenance-for-substantive-meaning-changes
 Owner / last_updated when your page is an applicable curated page: ../structure-contract.md#applicable-curated-pages
 -->
 

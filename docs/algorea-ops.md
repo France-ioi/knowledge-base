@@ -51,5 +51,5 @@ This knowledge base **does not replace**:
 ## References and outbound links
 
 - **Hub — API and backend depth:** [France-IOI knowledge base — documentation hub](./index.md#where-api-and-backend-depth-live)
-- **Contribution and provenance:** [CONTRIBUTING.md](../CONTRIBUTING.md) — substantive changes need reviewer-visible provenance per **Substantive documentation PRs** and **Provenance for substantive meaning changes**.
-- **OpenAPI / contract boundary:** normative rules in [CONTRIBUTING.md](../CONTRIBUTING.md#api-documentation-and-openapi-boundary); this page **links** to DevDoc for contracts rather than duplicating OpenAPI or path/method catalogs.
+- **Contribution and provenance:** [CONTRIBUTING.md](./contributing.md) — substantive changes need reviewer-visible provenance per **Substantive documentation PRs** and **Provenance for substantive meaning changes**.
+- **OpenAPI / contract boundary:** normative rules in [CONTRIBUTING.md](./contributing.md#api-documentation-and-openapi-boundary); this page **links** to DevDoc for contracts rather than duplicating OpenAPI or path/method catalogs.

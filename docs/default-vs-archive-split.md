@@ -16,9 +16,9 @@ nav_order: 1
 
 **What this page answers:** How the **default consultation path** relates to the **archive**, and where **contributor placement rules** live.
 
-**What this page does not cover:** Product support playbooks, **HTTP or OpenAPI contract detail**, or **per-application runbooks**. For those boundaries use the **[documentation hub](./index.md#where-api-and-backend-depth-live)**, **[Linked repositories](./algorea-linked-repositories.md)** for repo maps, and **[CONTRIBUTING.md — API documentation and OpenAPI boundary](../CONTRIBUTING.md#api-documentation-and-openapi-boundary)**.
+**What this page does not cover:** Product support playbooks, **HTTP or OpenAPI contract detail**, or **per-application runbooks**. For those boundaries use the **[documentation hub](./index.md#where-api-and-backend-depth-live)**, **[Linked repositories](./algorea-linked-repositories.md)** for repo maps, and **[CONTRIBUTING.md — API documentation and OpenAPI boundary](./contributing.md#api-documentation-and-openapi-boundary)**.
 
-> **Note on prior guidance:** This page is the **default-path policy summary**. Deliberative and superseded write-ups belong under **[docs/archive/](archive/README.md)** (placement rules in **[CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**).
+> **Note on prior guidance:** This page is the **default-path policy summary**. Deliberative and superseded write-ups belong under **[docs/archive/](archive/README.md)** (placement rules in **[CONTRIBUTING.md](./contributing.md#archive-docsarchive)**).
 
 This page summarizes how we split **curated “current truth”** (default consultation) from **historical deliberation** (archive, opt-in). It applies to this repository as an **agent-first** knowledge base: routine answers and agent context should lean on the **default** layer; the **archive** holds the full story when someone explicitly needs it.
 
@@ -52,7 +52,7 @@ These are **reference patterns**, not mandatory tooling:
 
 1. **Add or update curated facts** in the normal doc tree and keep **`docs/index.md`** (and any future hub pages) pointing at **default** entry points.
 2. **When meaning changes** (not just typos), avoid silent rewrites: add an **archive note**, **changelog line**, or **supersession** pointer as agreed in contribution rules.
-3. **Put long deliberation** (meeting notes, rejected options, full rationale) under **`docs/archive/`** when it is curated Markdown for readers—see **[docs/archive/README.md](archive/README.md)** and **[Archive rules in CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**—do not rely on chat history as the archive.
+3. **Put long deliberation** (meeting notes, rejected options, full rationale) under **`docs/archive/`** when it is curated Markdown for readers—see **[docs/archive/README.md](archive/README.md)** and **[Archive rules in CONTRIBUTING.md](./contributing.md#archive-docsarchive)**—do not rely on chat history as the archive.
 
 ## Related
 

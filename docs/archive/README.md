@@ -17,7 +17,7 @@ Material under **`docs/archive/`** is **opt-in history**: deliberation, supersed
 - **Hold deliberation** captured as Markdown (long “why” threads, rejected options, meeting summaries) that would add noise on the default path.
 - **Store superseded** policies or narratives for readers who need the historical record.
 
-This tree is **not** a dumping ground for **unvetted** working notes. If you **copy** or **summarize** deliberation into the curated corpus for readers, **place** that Markdown here following [Archive (docs/archive/)](../../CONTRIBUTING.md#archive-docsarchive) in the contribution guide.
+This tree is **not** a dumping ground for **unvetted** working notes. If you **copy** or **summarize** deliberation into the curated corpus for readers, **place** that Markdown here following [Archive (docs/archive/)](../contributing.md#archive-docsarchive) in the contribution guide.
 
 ## Relationship to the default path
 
@@ -29,13 +29,13 @@ This tree is **not** a dumping ground for **unvetted** working notes. If you **c
 
 - Expect **archive-oriented** front matter on files in this directory (**`audience: archive`**, and/or **`status: archived`**) unless a page is explicitly a **meta** explainer like this **`README`**.
 - Prefer **descriptive titles and links**; treat claims in archive files as **historical context** unless a default-path page explicitly reaffirms them.
-- For **classification, naming, and placement** rules when adding files, see **[Archive (docs/archive/)](../../CONTRIBUTING.md#archive-docsarchive)** in **`CONTRIBUTING.md`**.
+- For **classification, naming, and placement** rules when adding files, see **[Archive (docs/archive/)](../contributing.md#archive-docsarchive)** in the **contribution guide**.
 
 ## When content should move here (vs stay on the default path)
 
 **Stay on the default path** (under **`docs/*.md`** outside **`archive/`**, listed from the hub when appropriate) when the page is **current** governed guidance: rules, cross-boundary behavior, and how-to that readers and agents should treat as **truth now**.
 
-**Move or add under `docs/archive/`** when the material is **historical**, **superseded**, or **primarily deliberative**—content you want **discoverable** but **not** mixed into the default bundle. When default-path meaning **replaces** older guidance, the **living** page should carry a **supersession** note per **`CONTRIBUTING.md`** (see **[Supersession on the default path](../../CONTRIBUTING.md#supersession-on-the-default-path)**) and, when useful, point to a **specific** file or folder under **`docs/archive/`**.
+**Move or add under `docs/archive/`** when the material is **historical**, **superseded**, or **primarily deliberative**—content you want **discoverable** but **not** mixed into the default bundle. When default-path meaning **replaces** older guidance, the **living** page should carry a **supersession** note per the **contribution guide** (see **[Supersession on the default path](../contributing.md#supersession-on-the-default-path)**) and, when useful, point to a **specific** file or folder under **`docs/archive/`**.
 
 ## Subfolder conventions
 
@@ -47,6 +47,6 @@ No topic subfolders exist yet. When you introduce one (for example **`docs/archi
 
 ## Related
 
-- [Contribution guide — Archive](../../CONTRIBUTING.md#archive-docsarchive)
+- [Contribution guide — Archive](../contributing.md#archive-docsarchive)
 - [Default path vs archive](../default-vs-archive-split.md)
 - [Structure contract — Default vs archive](../structure-contract.md#default-vs-archive)

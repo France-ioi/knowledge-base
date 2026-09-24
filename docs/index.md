@@ -61,6 +61,7 @@ Every **default-path** topical page under `docs/` (outside **`docs/archive/`**) 
 | Page | What it covers |
 |------|----------------|
 | **[Meta](./meta.md)** (section) | |
+| [Contribution guide — scope, archive, templates, and documentation PR review](./contributing.md) | Canonical contributor rules for this knowledge base (root `CONTRIBUTING.md` points here) |
 | [Default path vs archive — how curated pages relate to optional archive material](./default-vs-archive-split.md) | Default consultation path versus opt-in archive; short policy summary |
 | [Structure contract — Markdown and front matter rules for `docs/`](./structure-contract.md) | YAML front matter, heading ladder, and conventions so tools and agents parse pages consistently |
 | [Page templates — scaffolds for new curated `docs/` pages](./templates/README.md) | Copy-paste `topic-page.md` starter aligned with the structure contract; see contributing guide for required use |
@@ -72,7 +73,7 @@ Every **default-path** topical page under `docs/` (outside **`docs/archive/`**) 
 
 ### Archive (opt-in)
 
-Historical and deliberative Markdown lives under **`docs/archive/`**—separate from the default consultation path. **Purpose, browsing norms, and when to use the archive** are documented in **[Archive (opt-in history)](./archive/README.md)**. Contributors: classification and naming rules are in **[CONTRIBUTING.md](../CONTRIBUTING.md#archive-docsarchive)**.
+Historical and deliberative Markdown lives under **`docs/archive/`**—separate from the default consultation path. **Purpose, browsing norms, and when to use the archive** are documented in **[Archive (opt-in history)](./archive/README.md)**. Contributors: classification and naming rules are in **[CONTRIBUTING.md](./contributing.md#archive-docsarchive)**.
 
 ## Canonical technical documentation
 
@@ -93,4 +94,4 @@ If a page is intentionally **not** listed here (for example **draft** material o
 
 ---
 
-**Contributing:** For how to add or change documentation—scope, inclusion rules, and where curated truth lives—see the **[contribution guide](../CONTRIBUTING.md)**. Technical structure for `docs/` pages (YAML front matter, headings) remains in the [structure contract](./structure-contract.md).
+**Contributing:** For how to add or change documentation—scope, inclusion rules, and where curated truth lives—see the **[contribution guide](./contributing.md)**. Technical structure for `docs/` pages (YAML front matter, headings) remains in the [structure contract](./structure-contract.md).

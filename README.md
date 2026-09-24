@@ -2,7 +2,7 @@
 
 This repository holds curated documentation for **business rules**, **cross-boundary behavior**, and **operations essentials** across France-IOI software.
 
-It is auto-published **[here](https://france-ioi.github.io/knowledge-base/)** after each merge to the `master` branch. You can also run it [locally](#run-locally).
+It is auto-published on <https://france-ioi.github.io/knowledge-base/> after each merge to the `master` branch. You can also run it [locally](#run-locally).
 
 ## Contributing
 

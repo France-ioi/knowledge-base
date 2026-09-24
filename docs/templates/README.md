@@ -15,4 +15,4 @@ Use these files when adding a **new** curated topic page under `docs/` so front 
 |------|-----|
 | [topic-page.md](./topic-page.md) | Default **standard topic** scaffold — copy, rename to a **lowercase-hyphenated** name in `docs/`, then replace placeholders. |
 
-**Contributing workflow** (requirements and exceptions): see **[Starting from a template](../../CONTRIBUTING.md#starting-from-a-template)** in the repository contribution guide.
+**Contributing workflow** (requirements and exceptions): see **[Starting from a template](../contributing.md#starting-from-a-template)** in the repository contribution guide.

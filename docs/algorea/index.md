@@ -1,10 +1,5 @@
 ---
 title: "Algorea"
-description: "Section landing page for Algorea-specific documentation: linked repositories, frontend, and operations."
-date: 2026-03-30
-doc_type: reference
-status: current
-audience: agent-default
 has_children: true
 nav_order: 2
 ---

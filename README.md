@@ -6,7 +6,7 @@ It is auto-published on <https://france-ioi.github.io/knowledge-base/> after eac
 
 ## Contributing
 
-See the **[contributing notes](CONTRIBUTING.md)** (Meta section) for collaboration and public scope. Pages under `docs/` follow shared rules in the **[structure contract](docs/meta/structure-contract.md)** (YAML front matter and heading conventions).
+See the **[contributing notes](CONTRIBUTING.md)** (Meta section) for collaboration, public scope, and page conventions.
 
 ## Run locally
 
@@ -14,7 +14,7 @@ The site uses [Jekyll](https://jekyllrb.com/) with [Just the Docs](https://just-
 
 1. Install Ruby, then Bundler if needed (`gem install bundler`)
 2. `bundle install`
-3. `bundle exec jekyll serve`
+3. `bundle exec jekyll serve --config docs/_config.yml --source docs`
 4. Open `http://localhost:4000/knowledge-base/`
 
-On WSL, use `bundle exec jekyll serve --force_polling` if live-reload misses file changes.
+On WSL, add `--force_polling` to that serve command if live-reload misses file changes.

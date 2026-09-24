@@ -1,13 +1,5 @@
 ---
 title: "Frontend"
-description: "Canonical repo link, UI↔API expectations for implementers, and pointers to DevDoc—not a copy of frontend internals."
-date: 2026-03-23
-last_updated: 2026-03-23
-last_reviewed: 2026-03-23
-owner: "#algorea-frontend"
-doc_type: reference
-status: current
-audience: agent-default
 parent: "Algorea"
 nav_order: 2
 ---
@@ -22,7 +14,7 @@ If you keep several Algorea repos side by side on disk, see [Linked repositories
 
 Official backend documentation remains in **algorea-devdoc**; the app calls HTTP APIs configured per environment in the frontend repository.
 
-**Front matter** uses `audience: agent-default` because this page stays on the default consultation path. **Human** FE/BE implementers: the **UI ↔ API** section below is written for you. **Agents:** use this page for outbound links and boundary rules; Angular layout and scripts are not summarized here—see the GitHub repository.
+**Human** FE/BE implementers: the **UI ↔ API** section below is written for you. **Agents:** use this page for outbound links and boundary rules; Angular layout and scripts are not summarized here—see the GitHub repository.
 
 ## UI ↔ API: who owns what (for implementers)
 

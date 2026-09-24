@@ -1,7 +1,7 @@
 // Baseline for docs/**/*.md, README.md, CONTRIBUTING.md.
-// Aligns with docs/meta/structure-contract.md: heading ladder and link quality matter;
+// Aligns with docs/meta/index.md: heading ladder and link quality matter;
 // line length, pseudo-headings, and intentional HTML anchors stay relaxed for this corpus.
-// MD025 off: structure-contract allows title in YAML plus one in-body # for agent-first pages.
+// MD025 off: Meta allows title in YAML plus one in-body # for agent-first pages.
 {
   "config": {
     "default": true,

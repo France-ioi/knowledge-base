@@ -1,10 +1,5 @@
 ---
 title: "France-IOI Knowledge Base"
-description: "Documentation hub for France-IOI projects: scope of this corpus."
-date: 2026-03-25
-doc_type: reference
-status: current
-audience: agent-default
 permalink: /
 nav_order: 1
 ---
@@ -30,8 +25,8 @@ This website is a **documentation hub** for all projects in the France-IOI spher
 
 ## Archive
 
-Discussions, deliberation, and relevant information for **abandoned projects** live under **`docs/archive/`** — see the **[Archive](./archive/index.md)** section. That material is **not** default-path truth; use it when you need history or context, not day-to-day guidance.
+Discussions, deliberation, and relevant information for **abandoned projects** live under **`docs/archive/`** — see the **[Archive](./archive/index.md)** section. Put archive material on **subpages** of that section. That material is **not** default-path truth; use it when you need history or context, not day-to-day guidance.
 
 ---
 
-**Contributing:** For how to add or change documentation—collaboration and public scope—see **[Meta (about this doc)](./meta/index.md)**. Technical structure for `docs/` pages (YAML front matter, headings) remains in the [structure contract](./meta/structure-contract.md).
+**Contributing:** For how to add or change documentation—collaboration, public scope, and page conventions—see **[Meta (about this doc)](./meta/index.md)**.

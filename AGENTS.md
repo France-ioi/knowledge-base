@@ -5,7 +5,7 @@ When answering from this repository:
 ## Where to start
 
 - Open **`docs/index.md`** first for navigation and scope.
-- For **routine answers**, prefer **default-path** pages under **`docs/`** (outside **`docs/archive/`**; typically `status: current`, `audience: agent-default`). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **Default vs archive** in **`docs/meta/structure-contract.md`** and **`docs/archive/index.md`**.
+- For **routine answers**, prefer pages under **`docs/`** outside **`docs/archive/`**. Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. See **`docs/archive/index.md`**.
 
 ## API and OpenAPI
 
@@ -13,4 +13,4 @@ When answering from this repository:
 
 ## Consistency
 
-- Do **not** contradict **`docs/meta/structure-contract.md`** or **`docs/index.md`** on default vs archive or what belongs elsewhere.
+- Do **not** contradict **`docs/meta/index.md`** or **`docs/index.md`** on default vs archive or what belongs elsewhere.

@@ -1,13 +1,5 @@
 ---
 title: "Linked repositories"
-description: "Map of Algorea-related sibling repositories and pointers to algorea-devdoc; not a second home for API depth."
-date: 2026-03-23
-last_updated: 2026-03-23
-last_reviewed: 2026-03-23
-owner: "#algorea-platform-docs"
-doc_type: reference
-status: current
-audience: agent-default
 parent: "Algorea"
 nav_order: 1
 ---

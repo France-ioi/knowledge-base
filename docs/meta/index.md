@@ -1,18 +1,11 @@
 ---
 title: "Meta (about this doc)"
-description: "How this knowledge base is maintained: collaboration, public scope, and links to the structure contract."
-date: 2026-09-24
-last_reviewed: 2026-09-24
-doc_type: reference
-status: current
-audience: agent-default
-has_children: true
 nav_order: 3
 ---
 
 # Meta (about this doc)
 
-How this knowledge base is **structured and maintained**. Files live under **`docs/meta/`**. Governance scaffolding, not product documentation. Page shape and front matter: **[structure contract](./structure-contract.md)**.
+How this knowledge base is **structured and maintained**. Files live under **`docs/meta/`**. Governance scaffolding, not product documentation.
 
 ## Collaboration workflow
 
@@ -25,3 +18,28 @@ If someone else must review (for example a small documentation update tied to an
 Follow the hub’s **[What belongs here vs elsewhere](../index.md#what-belongs-here-vs-elsewhere)**.
 
 This site is **public**. Do not put credentials, secrets, private keys, access tokens, or other critical/sensitive operational details here.
+
+## Markdown
+
+Conventions for pages under **`docs/`**:
+
+- One `#` title per page (or rely on front-matter `title`).
+- Headings in order: `##` then `###` then `####` (do not skip levels).
+- Prefer CommonMark: lists, **language-tagged** fenced code blocks, **descriptive** link text.
+- Keep each heading’s body immediately under it.
+
+## Front matter
+
+Put YAML between `---` at the top of curated `docs/*.md` pages.
+
+**Required:** `title`.
+
+**Just the Docs (as needed):** `parent`, `nav_order`, `has_children`, `permalink`, and other theme keys the site needs for navigation.
+
+Do not add corpus metadata (`description`, `date`, `status`, `audience`, `doc_type`, `owner`, `last_updated`, `last_reviewed`, …). Freshness and history live in git.
+
+For a new page, copy a similar existing page and adapt.
+
+## Checks
+
+Locally and in Circle CI: **`npm run docs:check`** after `npm ci` — see **[scripts/README.md](../../scripts/README.md)**.

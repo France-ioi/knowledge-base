@@ -1,6 +1,6 @@
 ---
 title: Items & Related Entities
-parent: Algorea
+parent: Algorea Platform
 nav_order: 60
 has_children: true
 permalink: /items/

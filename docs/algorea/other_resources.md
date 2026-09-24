@@ -1,6 +1,6 @@
 ---
 title: Other Resources
-parent: Algorea
+parent: Algorea Platform
 nav_order: 300
 permalink: /other_resources/
 ---

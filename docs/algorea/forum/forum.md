@@ -1,6 +1,6 @@
 ---
 title: Forum
-parent: Algorea
+parent: Algorea Platform
 nav_order: 80
 has_children: true
 permalink: /forum/

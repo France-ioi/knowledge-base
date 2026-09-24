@@ -1,6 +1,6 @@
 ---
 title: Ops (installation, running, ...)
-parent: Algorea
+parent: Algorea Platform
 nav_order: 250
 has_children: true
 permalink: /ops/

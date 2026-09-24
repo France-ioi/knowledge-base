@@ -1,5 +1,5 @@
 ---
-title: "France-IOI Knowledge Base"
+title: Home
 permalink: /
 nav_order: 1
 ---

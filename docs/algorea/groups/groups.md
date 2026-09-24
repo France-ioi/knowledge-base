@@ -1,6 +1,6 @@
 ---
 title: Groups & Related Entities
-parent: Algorea
+parent: Algorea Platform
 nav_order: 70
 has_children: true
 permalink: /groups/

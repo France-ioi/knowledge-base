@@ -1,6 +1,6 @@
 ---
 title: Interactions with Other Platforms
-parent: Algorea
+parent: Algorea Platform
 nav_order: 40
 has_children: true
 permalink: /task_platforms/task_platforms/

@@ -5,6 +5,8 @@ date: "2026-03-23"
 doc_type: reference
 status: current
 audience: agent-default
+parent: "Meta (about this doc)"
+nav_order: 4
 ---
 
 # Page templates
@@ -13,6 +15,6 @@ Use these files when adding a **new** curated topic page under `docs/` so front 
 
 | File | Use |
 |------|-----|
-| [topic-page.md](./topic-page.md) | Default **standard topic** scaffold — copy, rename to a **lowercase-hyphenated** name in `docs/`, then replace placeholders. |
+| [topic-page.md](./topic-page.md) | Default **standard topic** scaffold — copy, rename to a **lowercase-hyphenated** name under the right **section directory** (for example `docs/algorea/`), then replace placeholders. |
 
 **Contributing workflow** (requirements and exceptions): see **[Starting from a template](../contributing.md#starting-from-a-template)** in the repository contribution guide.

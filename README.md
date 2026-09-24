@@ -6,7 +6,7 @@ It is auto-published on <https://france-ioi.github.io/knowledge-base/> after eac
 
 ## Contributing
 
-See the **[contribution guide](CONTRIBUTING.md)** for scope and what belongs in `docs/` versus other repositories. Pages under `docs/` follow shared rules in the **[structure contract](docs/structure-contract.md)** (YAML front matter and heading conventions).
+See the **[contribution guide](CONTRIBUTING.md)** for scope and what belongs in `docs/` versus other repositories. Pages under `docs/` follow shared rules in the **[structure contract](docs/meta/structure-contract.md)** (YAML front matter and heading conventions).
 
 ## Run locally
 

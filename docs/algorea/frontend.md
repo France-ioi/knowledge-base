@@ -16,7 +16,7 @@ nav_order: 2
 
 **Source code:** **[France-ioi/AlgoreaFrontend](https://github.com/France-ioi/AlgoreaFrontend)** on GitHub — that is the canonical place to clone, read the README, and inspect routing, `package.json`, and `src/`.
 
-If you keep several Algorea repos side by side on disk, see [Linked repositories](./algorea-linked-repositories.md) for how they relate as sibling folders next to `knowledge-base`.
+If you keep several Algorea repos side by side on disk, see [Linked repositories](./linked-repositories.md) for how they relate as sibling folders next to `knowledge-base`.
 
 **What this knowledge-base page is for:** orientation and **cross-boundary** expectations between the SPA and the HTTP APIs. **Not** a mirror of Angular layout, scripts, or folder-by-folder implementation detail—those belong in the GitHub repo.
 

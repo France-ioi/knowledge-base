@@ -45,7 +45,7 @@ If unsure, read **[Default path vs archive](./default-vs-archive-split.md)** and
 ### 1. Select the slice
 
 - Define **one** coherent **batch** (one topic, one epic-sized chapter, or one superseded narrative) so the PR stays reviewable.
-- Confirm the content is **in scope** for this corpus per **[What belongs here (in scope)](./contributing.md#what-belongs-here-in-scope)** and **[What belongs here vs elsewhere](./index.md#what-belongs-here-vs-elsewhere)**—defer **per-app implementation detail** and **authoritative API contracts** to the right repos and project docs.
+- Confirm the content is **in scope** for this corpus per **[What belongs here (in scope)](./contributing.md#what-belongs-here-in-scope)** and **[What belongs here vs elsewhere](../index.md#what-belongs-here-vs-elsewhere)**—defer **per-app implementation detail** and **authoritative API contracts** to the right repos and project docs.
 
 ### 2. Map to target paths and titles
 
@@ -72,7 +72,7 @@ If unsure, read **[Default path vs archive](./default-vs-archive-split.md)** and
 ## Verify before merge
 
 - Confirm new pages render and appear where expected in the **site nav** (**manual** pass; automated **`markdown-link-check`** is optional **Epic 7** tooling—do not add a **Node** toolchain here only for this playbook).
-- For **playbook-only** PRs: confirm new links to **`docs/migration.md`** and any **CONTRIBUTING** cross-links resolve.
+- For **playbook-only** PRs: confirm new links to **`docs/meta/migration.md`** and any **CONTRIBUTING** cross-links resolve.
 - For PRs that **move** real content: spot-check **inbound** links from **touched** pages.
 
 ## References
@@ -83,5 +83,5 @@ If unsure, read **[Default path vs archive](./default-vs-archive-split.md)** and
 | Scaffolds | [Page templates](./templates/README.md) |
 | Contribution rules, archive, substantive PRs, API boundary | [CONTRIBUTING.md](./contributing.md) |
 | Default vs archive policy | [Default path vs archive](./default-vs-archive-split.md) |
-| Archive browsing and classification | [Archive README](./archive/README.md) |
-| Hub (scope) | [Documentation hub](./index.md) |
+| Archive browsing and classification | [Archive README](../archive/index.md) |
+| Hub (scope) | [Documentation hub](../index.md) |

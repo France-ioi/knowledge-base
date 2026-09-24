@@ -11,4 +11,4 @@ nav_order: 3
 
 # Meta (about this doc)
 
-Pages in this section define **how this knowledge base is structured and maintained** — contribution rules, front matter conventions, the default-vs-archive split, migration procedures, and page templates. They are governance scaffolding, not product documentation.
+Pages in this section define **how this knowledge base is structured and maintained** — contribution rules, front matter conventions, the default-vs-archive split, migration procedures, and page templates. Files for this section live under **`docs/meta/`**. They are governance scaffolding, not product documentation.

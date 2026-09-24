@@ -2,7 +2,7 @@
 # Required keys — see ../structure-contract.md#yaml-front-matter
 title: "REPLACE: short stable title"
 description: "REPLACE: one line — what this page is for (skimming / retrieval)."
-date: "YYYY-MM-DD"
+date: 2026-03-23
 # Recommended (uncomment and fill when applicable):
 # last_reviewed: YYYY-MM-DD
 # doc_type: reference   # tutorial | how-to | reference | explanation
@@ -17,7 +17,7 @@ date: "YYYY-MM-DD"
 
 <!--
 Before opening a PR: replace every REPLACE/placeholder, remove this block and other HTML comments,
-and align front matter with docs/structure-contract.md (normative).
+and align front matter with docs/meta/structure-contract.md (normative).
 Normative API/OpenAPI boundary (no spec dumps as authority): ../contributing.md#api-documentation-and-openapi-boundary
 Substantive doc PR review checklist (meaning, placement, provenance, etc.): ../contributing.md#substantive-documentation-prs
 Audit trail when you change substantive meaning (not just freshness keys): ../contributing.md#provenance-for-substantive-meaning-changes
@@ -27,7 +27,7 @@ Owner / last_updated when your page is an applicable curated page: ../structure-
 # REPLACE: same as title (or a natural H1 variant)
 
 <!--
-Heading ladder: use ## then ### then #### in order — docs/structure-contract.md#heading-ladder
+Heading ladder: use ## then ### then #### in order — docs/meta/structure-contract.md#heading-ladder
 -->
 
 ## Purpose
@@ -44,7 +44,7 @@ Keep this section short; put cross-boundary rules in Rules and intent.
 <!--
 Business or cross-boundary rules this page **owns** (product assumptions, FE↔BE alignment, invariants).
 Do **not** paste OpenAPI, schemas, or path catalogs — link to DevDoc / published API docs in References only.
-See docs/algorea-frontend.md for an example of intent vs outbound links.
+See docs/algorea/frontend.md for an example of intent vs outbound links.
 -->
 
 - REPLACE: rule or assumption (link out for HTTP contract detail).
@@ -53,7 +53,7 @@ See docs/algorea-frontend.md for an example of intent vs outbound links.
 
 <!--
 Authoritative depth lives elsewhere: algorea-devdoc, generated Backend API, sibling repos, app READMEs.
-This section makes external authority explicit — docs/structure-contract.md#what-belongs-in-this-corpus
+This section makes external authority explicit — docs/meta/structure-contract.md#what-belongs-in-this-corpus
 -->
 
 - REPLACE: [descriptive label](https://example.org/) — why this link matters.

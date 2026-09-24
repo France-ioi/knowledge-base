@@ -110,9 +110,9 @@ Pages that **must** include both `owner` and `last_updated` (in addition to requ
 
 **Explicitly exempt** (do **not** require `owner` / `last_updated` here):
 
-- **Hub:** [`docs/index.md`](./index.md) — corpus scope and entry, not a single owned topic.
-- **Meta / governance shells:** this file [`docs/structure-contract.md`](./structure-contract.md), [`docs/default-vs-archive-split.md`](./default-vs-archive-split.md), [`docs/contributing.md`](./contributing.md) — they define rules for the corpus rather than product cross-boundary claims.
-- **Templates:** files under `docs/templates/` — scaffolds; **published** pages copied from them **must** satisfy this section when they fall under “must include” above.
+- **Hub:** [`docs/index.md`](../index.md) — corpus scope and entry, not a single owned topic.
+- **Meta / governance shells:** this file [`docs/meta/structure-contract.md`](./structure-contract.md), [`docs/meta/default-vs-archive-split.md`](./default-vs-archive-split.md), [`docs/meta/contributing.md`](./contributing.md) — they define rules for the corpus rather than product cross-boundary claims.
+- **Templates:** files under `docs/meta/templates/` — scaffolds; **published** pages copied from them **must** satisfy this section when they fall under “must include” above.
 
 Archive-path pages (`audience: archive`, typically under `docs/archive/`) follow the same keys only if governance promotes them to a **curated** surface; default is **no extra requirement** beyond the required keys.
 

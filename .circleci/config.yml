@@ -1,4 +1,4 @@
-# Documentation quality (Epic 7): link check, markdownlint, Cursor rule structure.
+# Documentation quality (Epic 7): link check, markdownlint, AGENTS.md structure.
 # Budget (NFR-P2): keep this job under ~3 minutes on typical PRs — see docs/meta/contributing.md.
 version: 2.1
 
@@ -29,7 +29,7 @@ jobs:
           command: npm run docs:lint
           no_output_timeout: 3m
       - run:
-          name: Cursor rules structure (.cursor/rules/*.mdc)
+          name: AGENTS.md structure
           command: npm run docs:rules
 
 workflows:

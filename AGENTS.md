@@ -1,8 +1,3 @@
----
-description: "France-IOI knowledge base — curated docs corpus boundaries for agents (default path, archive, OpenAPI)"
-alwaysApply: true
----
-
 # Knowledge base corpus — agent guardrails
 
 When answering from this repository:
@@ -10,7 +5,7 @@ When answering from this repository:
 ## Where to start
 
 - Open **`docs/index.md`** first for navigation and scope.
-- For **routine answers**, prefer **default-path** pages under **`docs/`** (outside **`docs/archive/`**; typically `status: current`, `audience: agent-default`). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **`docs/meta/default-vs-archive-split.md`** and the **Archive (`docs/archive/`)** section in **`docs/meta/contributing.md`**.
+- For **routine answers**, prefer **default-path** pages under **`docs/`** (outside **`docs/archive/`**; typically `status: current`, `audience: agent-default`). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **Default vs archive** in **`docs/meta/structure-contract.md`** and the **Archive (`docs/archive/`)** section in **`docs/meta/contributing.md`**.
 
 ## API and OpenAPI
 

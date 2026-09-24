@@ -36,10 +36,4 @@ Put YAML between `---` at the top of curated `docs/*.md` pages.
 
 **Just the Docs (as needed):** `parent`, `nav_order`, `has_children`, `permalink`, and other theme keys the site needs for navigation.
 
-Do not add corpus metadata (`description`, `date`, `status`, `audience`, `doc_type`, `owner`, `last_updated`, `last_reviewed`, …). Freshness and history live in git.
-
 For a new page, copy a similar existing page and adapt.
-
-## Checks
-
-Locally and in Circle CI: **`npm run docs:check`** after `npm ci` — see **[scripts/README.md](../../scripts/README.md)**.

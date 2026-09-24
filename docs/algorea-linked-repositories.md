@@ -22,7 +22,6 @@ Repositories under the same parent directory as `knowledge-base` that relate to 
 |------------|------|
 | **AlgoreaFrontend** | Main **Angular** SPA for the learning platform (NgRx, i18n, Playwright e2e). **Primary focus of the docs in this folder.** |
 | **AlgoreaPortal** | Separate portal codebase (not documented here). |
-| **AlgoreaFrontend1224wip** | WIP / alternate frontend tree (legacy or experiment; confirm with team before relying on it). |
 
 ## Backend and APIs
 
@@ -30,27 +29,15 @@ Repositories under the same parent directory as `knowledge-base` that relate to 
 |------------|------|
 | **AlgoreaServerless** | **Serverless** / Lambda-oriented backend code and tooling. Detailed behavior and deployment: **algorea-devdoc** (`backend/`, especially `lambda.md`). |
 | **AlgoreaBackend** | Non-serverless backend service (Go). Architecture and decisions: **algorea-devdoc** `backend/`. |
+| **AlgoreaSearch** | Search-related services or indexing. |
 
-## Platform, search, config, ops
+## Ops and docs
 
 | Repository | Role |
 |------------|------|
-| **AlgoreaSearch** | Search-related services or indexing (confirm scope in repo README). |
 | **AlgoreaConfigs** | Configuration artifacts for environments or deployments. |
 | **AlgoreaOps** | Operational configs (e.g. Lambda / static hosting JSON under `environments/configs/`). |
-| **AlgBugsink** | Error tracking / Bugsink integration (supporting). |
-
-## Documentation
-
-| Repository | Role |
-|------------|------|
 | **algorea-devdoc** | **Authoritative technical documentation** for engineers (Jekyll). Covers API surface, auth, DB, backend decisions, **Lambda**, tests, ops links. For **generated HTTP API reference** (OpenAPI-sourced), use the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)** section. **Do not duplicate serverless/backend deep dives or API contracts here**—link to DevDoc. |
-
-## This repo
-
-| Repository | Role |
-|------------|------|
-| **knowledge-base** | Cursor/BMAD skills and **this** Algorea-oriented index for AI-assisted work; not the production app. |
 
 ---
 

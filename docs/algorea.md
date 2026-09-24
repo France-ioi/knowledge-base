@@ -13,4 +13,4 @@ nav_order: 2
 
 **Algorea** is the primary project slice documented in this knowledge base. The pages below cover the platform's **repository landscape**, **frontend expectations**, and **operations essentials**.
 
-For backend depth, HTTP contracts, and API reference, follow the outbound links to **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)**—this corpus does not duplicate that material (see [Where API and backend depth live](./index.md#where-api-and-backend-depth-live)).
+For backend depth, HTTP contracts, and API reference, follow the outbound links to **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)**—this corpus does not duplicate that material (see [What belongs elsewhere](./index.md#what-belongs-elsewhere)).

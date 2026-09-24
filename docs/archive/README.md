@@ -21,7 +21,7 @@ This tree is **not** a dumping ground for **unvetted** working notes. If you **c
 
 ## Relationship to the default path
 
-- **[Curated pages](../index.md#curated-pages)** in **`docs/index.md`** list **default-path** topical pages—ongoing, **`status: current`**, typically **`audience: agent-default`**—that agents and humans use for day-to-day truth.
+- **Default-path** pages under **`docs/`** outside **`docs/archive/`**—ongoing, **`status: current`**, typically **`audience: agent-default`**, discoverable via the site nav—are what agents and humans use for day-to-day truth.
 - **This archive** is **separate**: pages here should use **`audience: archive`** and often **`status: archived`** (per the structure contract) so tooling and readers can treat them as **non-default**.
 - **[Default path vs archive](../default-vs-archive-split.md)** is the **short policy summary** on the default path; it points here when you need the **archive entry** and norms.
 

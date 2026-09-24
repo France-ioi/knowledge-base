@@ -16,7 +16,7 @@ nav_order: 1
 
 **What this page answers:** How the **default consultation path** relates to the **archive**, and where **contributor placement rules** live.
 
-**What this page does not cover:** Product support playbooks, **HTTP or OpenAPI contract detail**, or **per-application runbooks**. For those boundaries use the **[documentation hub](./index.md#where-api-and-backend-depth-live)**, **[Linked repositories](./algorea-linked-repositories.md)** for repo maps, and **[CONTRIBUTING.md — API documentation and OpenAPI boundary](./contributing.md#api-documentation-and-openapi-boundary)**.
+**What this page does not cover:** Product support playbooks, **HTTP or OpenAPI contract detail**, or **per-application runbooks**. For those boundaries use the hub’s **[What belongs elsewhere](./index.md#what-belongs-elsewhere)**, **[Linked repositories](./algorea-linked-repositories.md)** for repo maps, and **[CONTRIBUTING.md — API documentation and OpenAPI boundary](./contributing.md#api-documentation-and-openapi-boundary)**.
 
 > **Note on prior guidance:** This page is the **default-path policy summary**. Deliberative and superseded write-ups belong under **[docs/archive/](archive/README.md)** (placement rules in **[CONTRIBUTING.md](./contributing.md#archive-docsarchive)**).
 
@@ -50,7 +50,7 @@ These are **reference patterns**, not mandatory tooling:
 
 ## Practical guidance for contributors
 
-1. **Add or update curated facts** in the normal doc tree and keep **`docs/index.md`** (and any future hub pages) pointing at **default** entry points.
+1. **Add or update curated facts** in the normal doc tree (`docs/` outside **`docs/archive/`**) and set site-nav front matter so the page is discoverable.
 2. **When meaning changes** (not just typos), avoid silent rewrites: add an **archive note**, **changelog line**, or **supersession** pointer as agreed in contribution rules.
 3. **Put long deliberation** (meeting notes, rejected options, full rationale) under **`docs/archive/`** when it is curated Markdown for readers—see **[docs/archive/README.md](archive/README.md)** and **[Archive rules in CONTRIBUTING.md](./contributing.md#archive-docsarchive)**—do not rely on chat history as the archive.
 

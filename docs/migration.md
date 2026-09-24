@@ -1,6 +1,6 @@
 ---
 title: "Migration playbook"
-description: "Step-by-step workflow for moving Algorea-relevant material from legacy sources into docs/ with governed IA, working links, and hub updates."
+description: "Step-by-step workflow for moving Algorea-relevant material from legacy sources into docs/ with governed IA and working links."
 date: 2026-03-23
 last_updated: 2026-03-23
 last_reviewed: 2026-03-23
@@ -16,7 +16,7 @@ nav_order: 3
 
 **Who this is for:** **Maintainers** bringing **in-scope** material from **legacy** homes (wikis, other repositories, chat or meeting exports, ad-hoc docs) into this knowledge base under **`docs/`**.
 
-**What this page is:** An ordered **procedure** so migrated content lands on the **right path** (default vs archive), matches the **structure contract**, keeps **relative links** valid, and updates **navigation** in the **same change set** as new or promoted default-path pages.
+**What this page is:** An ordered **procedure** so migrated content lands on the **right path** (default vs archive), matches the **structure contract**, keeps **relative links** valid, and appears in the **site nav** in the **same change set** as new or promoted default-path pages.
 
 **What this page is not:** A catalog of legacy URLs, a mandate to migrate everything at once, or the full specification of **optional** “migrated vs net-new” labeling—that normative detail lives in the contribution guide under **[Corpus provenance (optional)](./contributing.md#corpus-provenance-optional)** (with **`origin`** in YAML front matter and the **[structure contract](./structure-contract.md#optional-corpus-keys)** as the shape authority).
 
@@ -40,21 +40,17 @@ Every migration PR should **decide explicitly**:
 
 If unsure, read **[Default path vs archive](./default-vs-archive-split.md)** and the archive table in **[CONTRIBUTING.md](./contributing.md#archive-docsarchive)** before choosing a path.
 
-## NFR-SC1 — index and hub stay in sync
-
-Do **not** add or promote a **discoverable** default-path topical page **without** updating **`docs/index.md`** (usually a new row under **[Curated pages](./index.md#curated-pages)**) and any **hub** section that should list the topic—**in the same pull request** as the new or moved page. Same rule as **[Keeping this index current](./index.md#keeping-this-index-current)** and **[Keeping the hub complete](./contributing.md#keeping-the-hub-complete)**.
-
 ## Migration phases (do in order)
 
 ### 1. Select the slice
 
 - Define **one** coherent **batch** (one topic, one epic-sized chapter, or one superseded narrative) so the PR stays reviewable.
-- Confirm the content is **in scope** for this corpus per **[What belongs here (in scope)](./contributing.md#what-belongs-here-in-scope)** and **[What belongs here vs elsewhere](./index.md#what-belongs-here-vs-elsewhere)**—defer **per-app implementation detail** and **authoritative API contracts** to the right repos and DevDoc.
+- Confirm the content is **in scope** for this corpus per **[What belongs here (in scope)](./contributing.md#what-belongs-here-in-scope)** and **[What belongs here vs elsewhere](./index.md#what-belongs-here-vs-elsewhere)**—defer **per-app implementation detail** and **authoritative API contracts** to the right repos and project docs.
 
-### 2. Map to target paths and hub titles
+### 2. Map to target paths and titles
 
 - Choose **filenames** (`lowercase-hyphenated.md`) and **directory** (default **`docs/`** vs **`docs/archive/...`**).
-- Align the **page title** and **hub listing** text with how **[Curated pages](./index.md#curated-pages)** should describe the destination.
+- Align the **page title** and Just the Docs front matter (`parent`, `nav_order`) with where the page should sit in the **site nav**.
 - If the material **replaces** older default-path guidance, plan **[Supersession on the default path](./contributing.md#supersession-on-the-default-path)** and provenance per **[Provenance for substantive meaning changes](./contributing.md#provenance-for-substantive-meaning-changes)**.
 
 ### 3. Move or rewrite for the structure contract
@@ -68,17 +64,16 @@ Do **not** add or promote a **discoverable** default-path topical page **without
 - After files move, **update every intra-repo relative link** (including links from other **`docs/`** pages that pointed at old paths).
 - Prefer **stable, descriptive** link text—**[Markdown syntax](./structure-contract.md#markdown-syntax)**.
 
-### 5. Same PR — update `docs/index.md` and hubs
+### 5. Same PR — site nav and topic hubs
 
-- Add or adjust **Curated pages** rows for each new **default-path** navigable page.
-- Update any **topic hub** or index section that must mention the new destination.
-- If you **cannot** ship the index update in the same PR, treat that as an exception: follow **[Keeping the hub complete](./contributing.md#keeping-the-hub-complete)** (follow-up issue and no silent orphan pages).
+- Ensure new **default-path** pages appear in the **site nav** via Just the Docs front matter.
+- Update any **topic hub** (for example an ops topic index) that must mention the new destination.
 
 ## Verify before merge
 
-- From **`docs/index.md`**, open each **Curated pages** link (including new rows)—confirm **targets exist** and render as intended (**manual** pass; automated **`markdown-link-check`** is optional **Epic 7** tooling—do not add a **Node** toolchain here only for this playbook).
+- Confirm new pages render and appear where expected in the **site nav** (**manual** pass; automated **`markdown-link-check`** is optional **Epic 7** tooling—do not add a **Node** toolchain here only for this playbook).
 - For **playbook-only** PRs: confirm new links to **`docs/migration.md`** and any **CONTRIBUTING** cross-links resolve.
-- For PRs that **move** real content: repeat the index **smoke check** and spot-check **inbound** links from **touched** pages.
+- For PRs that **move** real content: spot-check **inbound** links from **touched** pages.
 
 ## References
 
@@ -89,4 +84,4 @@ Do **not** add or promote a **discoverable** default-path topical page **without
 | Contribution rules, archive, substantive PRs, API boundary | [CONTRIBUTING.md](./contributing.md) |
 | Default vs archive policy | [Default path vs archive](./default-vs-archive-split.md) |
 | Archive browsing and classification | [Archive README](./archive/README.md) |
-| Hub and curated list | [Documentation hub](./index.md) |
+| Hub (scope) | [Documentation hub](./index.md) |

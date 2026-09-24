@@ -10,11 +10,11 @@ When answering from this repository:
 ## Where to start
 
 - Open **`docs/index.md`** first for navigation and scope.
-- For **routine answers**, prefer **default-path** pages under **`docs/`** (especially those linked from the hub **Curated pages** table). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **`docs/default-vs-archive-split.md`** and the **Archive (`docs/archive/`)** section in **`docs/contributing.md`**.
+- For **routine answers**, prefer **default-path** pages under **`docs/`** (outside **`docs/archive/`**; typically `status: current`, `audience: agent-default`). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **`docs/default-vs-archive-split.md`** and the **Archive (`docs/archive/`)** section in **`docs/contributing.md`**.
 
 ## API and OpenAPI
 
-- **Do not invent** path, method, payload, or schema detail, and **do not duplicate** OpenAPI or generated API catalogs in this repo. Follow **`docs/index.md`** — **Where API and backend depth live** (`#where-api-and-backend-depth-live`) and **`docs/contributing.md`** — **API documentation and OpenAPI boundary**. **Link out** to **algorea-devdoc**, the published **Backend API (generated)** surface, and **application repositories** for authoritative contracts; **open** those sources instead of recreating spec text in answers.
+- **Do not invent** path, method, payload, or schema detail, and **do not duplicate** OpenAPI or generated API catalogs in this repo. Follow **`docs/index.md`** — **What belongs elsewhere** (`#what-belongs-elsewhere`) and **`docs/contributing.md`** — **API documentation and OpenAPI boundary**. **Link out** to project docs (for Algorea: **algorea-devdoc** and the published **Backend API (generated)** surface) and **application repositories** for authoritative contracts; **open** those sources instead of recreating spec text in answers.
 
 ## Consistency
 

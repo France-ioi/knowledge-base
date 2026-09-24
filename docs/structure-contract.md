@@ -106,15 +106,15 @@ These keys make **curation** and **freshness** visible on substantive default-pa
 
 Pages that **must** include both `owner` and `last_updated` (in addition to required keys):
 
-- Default-path **`docs/*.md`** pages **listed** under **[Curated pages](./index.md#curated-pages)** in the hub **when** they carry **cross-boundary**, **governed**, or **business-rule** narrative—typically with `doc_type` one of `reference`, `how-to`, `tutorial`, or `explanation` on the default consultation path (`status: current`, `audience: agent-default`).
+- Default-path **`docs/*.md`** pages **outside** **`docs/archive/`** **when** they carry **cross-boundary**, **governed**, or **business-rule** narrative—typically with `doc_type` one of `reference`, `how-to`, `tutorial`, or `explanation` on the default consultation path (`status: current`, `audience: agent-default`).
 
 **Explicitly exempt** (do **not** require `owner` / `last_updated` here):
 
-- **Hub:** [`docs/index.md`](./index.md) — navigation and corpus map, not a single owned topic.
+- **Hub:** [`docs/index.md`](./index.md) — corpus scope and entry, not a single owned topic.
 - **Meta / governance shells:** this file [`docs/structure-contract.md`](./structure-contract.md), [`docs/default-vs-archive-split.md`](./default-vs-archive-split.md), [`docs/contributing.md`](./contributing.md) — they define rules for the corpus rather than product cross-boundary claims.
 - **Templates:** files under `docs/templates/` — scaffolds; **published** pages copied from them **must** satisfy this section when they fall under “must include” above.
 
-Archive-path pages (`audience: archive`, typically under `docs/archive/`) follow the same keys only if governance promotes them to a **curated** surface; default is **no extra requirement** beyond the required keys unless explicitly listed in the hub.
+Archive-path pages (`audience: archive`, typically under `docs/archive/`) follow the same keys only if governance promotes them to a **curated** surface; default is **no extra requirement** beyond the required keys.
 
 **Example** (substantive reference page)
 
@@ -134,7 +134,7 @@ audience: agent-default
 
 ## Default vs archive
 
-- **Default consultation path:** pages linked from [index.md](./index.md) and written for ongoing truth (`status: current`, `audience: agent-default`).
+- **Default consultation path:** pages under **`docs/`** outside **`docs/archive/`**, written for ongoing truth (`status: current`, `audience: agent-default`), and discoverable via the site nav (Just the Docs front matter such as `parent` / `nav_order`).
 - **Archive / deliberation:** pages under **`docs/archive/`** are marked with `audience: archive` (and often `status: archived`) so agents can exclude them unless explicitly asked — see **[Archive (docs/archive/)](./contributing.md#archive-docsarchive)** in the contribution guide.
 
 ## Optional: `llms.txt`

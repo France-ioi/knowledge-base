@@ -1,0 +1,21 @@
+// Full-width main content: use the viewport beside the fixed sidebar
+// instead of the theme default (~50rem) centered column.
+.side-bar {
+  @include mq(lg) {
+    width: $nav-width;
+    min-width: $nav-width;
+  }
+}
+
+// Match theme specificity (`.side-bar + .main`) so these win over the
+// default centered max-width / margin calc.
+.side-bar + .main {
+  @include mq(md) {
+    max-width: none;
+  }
+
+  @include mq(lg) {
+    max-width: none;
+    margin-left: $nav-width;
+  }
+}

@@ -9,7 +9,7 @@ When answering from this repository:
 
 ## API and OpenAPI
 
-- **Do not invent** path, method, payload, or schema detail, and **do not duplicate** OpenAPI or generated API catalogs in this repo. Follow **`docs/index.md`** — **What belongs elsewhere** (`#what-belongs-elsewhere`). **Link out** to project docs (for Algorea: **algorea-devdoc** and the published **Backend API (generated)** surface) and **application repositories** for authoritative contracts; **open** those sources instead of recreating spec text in answers.
+- **Do not invent** path, method, payload, or schema detail, and **do not duplicate** OpenAPI or generated API catalogs in this repo. Follow **`docs/index.md`** — **What belongs elsewhere** (`#what-belongs-elsewhere`). For Algorea, read the curated pages under **`docs/algorea/`**; for HTTP contracts use the published **Backend API (generated)** page in that section. Link out to **application repositories** for authoritative code and OpenAPI sources; **open** those sources instead of recreating spec text in answers.
 
 ## Consistency
 

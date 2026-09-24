@@ -2,6 +2,7 @@
 // Aligns with docs/meta/index.md: heading ladder and link quality matter;
 // line length, pseudo-headings, and intentional HTML anchors stay relaxed for this corpus.
 // MD025 off: Meta allows title in YAML plus one in-body # for agent-first pages.
+// docs/algorea/** is imported technical content and keeps its original HTML markup.
 {
   "config": {
     "default": true,
@@ -15,5 +16,6 @@
     "MD049": false,
     "MD060": false
   },
-  "globs": ["docs/**/*.md", "README.md", "CONTRIBUTING.md"]
+  "globs": ["docs/**/*.md", "README.md", "CONTRIBUTING.md"],
+  "ignores": ["docs/algorea/**"]
 }

@@ -4,5 +4,8 @@
   "retryCount": 2,
   "fallbackRetryDelay": "2s",
   "aliveStatusCodes": [200, 206, 403, 429],
-  "ignorePatterns": [{ "pattern": "^https?://" }]
+  "ignorePatterns": [
+    { "pattern": "^https?://" },
+    { "pattern": "\\{\\{" }
+  ]
 }

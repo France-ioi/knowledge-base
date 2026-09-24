@@ -7,6 +7,10 @@ remote_theme: just-the-docs/just-the-docs@v0.10.0
 search_enabled: true
 permalink: pretty
 
+# Mermaid diagrams (jsDelivr). Used e.g. by algorea/exports/group-results-export.md
+mermaid:
+  version: "10.9.0"
+
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."
 gh_edit_repository: "https://github.com/France-ioi/knowledge-base"

@@ -6,6 +6,6 @@ nav_order: 2
 
 # Algorea
 
-**Algorea** is the primary project slice documented in this knowledge base. Files for this section live under **`docs/algorea/`**. The pages below cover the platform's **repository landscape**, **frontend expectations**, and **operations essentials**.
+This section is the former **Algorea technical documentation website** ([algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)), moved into this knowledge base. It still needs rework to fit the hub’s structure and conventions.
 
-For backend depth, HTTP contracts, and API reference, follow the outbound links to **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** and the published **[Backend API (generated)](https://france-ioi.github.io/algorea-devdoc/api/)**—this corpus does not duplicate that material (see [What belongs elsewhere](../index.md#what-belongs-elsewhere)).
+It groups **technical documentation** related to the Algorea project. The **target audience** is software engineers, developers and analysts.

@@ -16,8 +16,11 @@ const rootFiles = ["README.md", "CONTRIBUTING.md"].filter((f) => existsSync(join
 function walkMarkdown(dir, acc) {
   for (const name of readdirSync(dir, { withFileTypes: true })) {
     const full = join(dir, name.name);
-    if (name.isDirectory()) walkMarkdown(full, acc);
-    else if (name.isFile() && name.name.endsWith(".md")) acc.push(full);
+    if (name.isDirectory()) {
+      // Imported Algorea corpus uses Jekyll pretty-URL links; skip file-based checks.
+      if (name.name === "algorea" && relative(docsDir, full) === "algorea") continue;
+      walkMarkdown(full, acc);
+    } else if (name.isFile() && name.name.endsWith(".md")) acc.push(full);
   }
 }
 

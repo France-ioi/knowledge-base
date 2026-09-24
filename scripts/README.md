@@ -6,8 +6,8 @@ From the repository root, after `npm ci`:
 
 | Command | Purpose |
 |--------|---------|
-| `npm run docs:linkcheck` | Validates **repo-relative** links in `docs/**/*.md`, `README.md`, and `CONTRIBUTING.md` via `markdown-link-check`. External `http(s)://` URLs are **skipped** in CI by config — see **`.markdown-link-check.json`**. |
-| `npm run docs:lint` | Markdownlint (**`markdownlint-cli2`**) on the same paths; config **`.markdownlint-cli2.jsonc`**. |
+| `npm run docs:linkcheck` | Validates **repo-relative** links in `docs/**/*.md` (except **`docs/algorea/`**), `README.md`, and `CONTRIBUTING.md` via `markdown-link-check`. External `http(s)://` URLs and Liquid `{{ … }}` hrefs are **skipped** — see **`.markdown-link-check.json`**. Imported Algorea pages use Jekyll pretty-URL links; they are excluded from file-based checking. |
+| `npm run docs:lint` | Markdownlint (**`markdownlint-cli2`**) on the same curated paths; config **`.markdownlint-cli2.jsonc`** (ignores **`docs/algorea/**`**). |
 | `npm run docs:rules` | Structural checks on root **`AGENTS.md`** (non-empty body + required section headings). **Commit** **`AGENTS.md`** so **Circle CI** sees it after checkout. |
 | `npm run docs:check` | Runs all three in sequence (matches the Circle CI job intent). |
 

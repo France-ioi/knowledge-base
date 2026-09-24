@@ -32,7 +32,6 @@ Use this table as the **canonical map** for Algorea ops topics in this corpus. W
 | Frontend app source, UI↔API expectations | [Frontend](./frontend.md) | **Deploy pipelines and build scripts** for the SPA live in **[AlgoreaFrontend](https://github.com/France-ioi/AlgoreaFrontend)**—not summarized here. |
 | Backend, Lambda, database, platform depth | **[algorea-devdoc](https://france-ioi.github.io/algorea-devdoc/)** (e.g. [Lambda notes](https://france-ioi.github.io/algorea-devdoc/backend/lambda/)) | **Authoritative** engineer-facing ops/deployment detail for the backend stack. |
 | HTTP API contracts (OpenAPI-sourced) | [What belongs elsewhere](../index.md#what-belongs-elsewhere) on the hub | This KB **links only**—no spec dumps (see **[Structure contract — what belongs in this corpus](../meta/structure-contract.md#what-belongs-in-this-corpus)**). |
-| Moving legacy material into `docs/` | [Migration playbook](../meta/migration.md) | Maintainer steps; same provenance rules as other curated pages. |
 | **Planned:** Algorea MVP deployment checklist (governed) | *Not written yet* | Intended as a short **corpus** checklist when the team defines MVP-wide steps that are **not** owned by a single app repo. |
 | **Planned:** Incident / escalation handoff | *Not written yet* | **Live** paging, on-call rosters, and **customer-facing** comms usually live in **internal** tooling or wikis—see below. |
 
@@ -50,6 +49,5 @@ This knowledge base **does not replace**:
 
 ## References and outbound links
 
-- **Hub — what belongs elsewhere:** [France-IOI Knowledge Base](../index.md#what-belongs-elsewhere)
-- **Contribution and provenance:** [CONTRIBUTING.md](../meta/contributing.md) — substantive changes need reviewer-visible provenance per **Substantive documentation PRs** and **Provenance for substantive meaning changes**.
-- **OpenAPI / contract boundary:** normative rules in [CONTRIBUTING.md](../meta/contributing.md#api-documentation-and-openapi-boundary); this page **links** to DevDoc for contracts rather than duplicating OpenAPI or path/method catalogs.
+- **Hub — what belongs elsewhere:** [France-IOI Knowledge Base](../index.md#what-belongs-elsewhere) — this page **links** to DevDoc for contracts rather than duplicating OpenAPI or path/method catalogs.
+- **Contribution:** [Meta (about this doc)](../meta/index.md) — collaboration and public scope.

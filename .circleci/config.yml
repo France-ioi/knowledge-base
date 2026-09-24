@@ -1,5 +1,5 @@
 # Documentation quality (Epic 7): link check, markdownlint, AGENTS.md structure.
-# Budget (NFR-P2): keep this job under ~3 minutes on typical PRs — see docs/meta/contributing.md.
+# Budget (NFR-P2): keep this job under ~3 minutes on typical PRs — see docs/meta/structure-contract.md.
 version: 2.1
 
 jobs:

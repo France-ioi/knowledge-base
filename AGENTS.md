@@ -5,12 +5,12 @@ When answering from this repository:
 ## Where to start
 
 - Open **`docs/index.md`** first for navigation and scope.
-- For **routine answers**, prefer **default-path** pages under **`docs/`** (outside **`docs/archive/`**; typically `status: current`, `audience: agent-default`). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **Default vs archive** in **`docs/meta/structure-contract.md`** and the **Archive (`docs/archive/`)** section in **`docs/meta/contributing.md`**.
+- For **routine answers**, prefer **default-path** pages under **`docs/`** (outside **`docs/archive/`**; typically `status: current`, `audience: agent-default`). Do **not** treat **`docs/archive/`** as default truth; use it only when the user asks for **history, deliberation, or superseded** material. For nuance see **Default vs archive** in **`docs/meta/structure-contract.md`** and **`docs/archive/index.md`**.
 
 ## API and OpenAPI
 
-- **Do not invent** path, method, payload, or schema detail, and **do not duplicate** OpenAPI or generated API catalogs in this repo. Follow **`docs/index.md`** — **What belongs elsewhere** (`#what-belongs-elsewhere`) and **`docs/meta/contributing.md`** — **API documentation and OpenAPI boundary**. **Link out** to project docs (for Algorea: **algorea-devdoc** and the published **Backend API (generated)** surface) and **application repositories** for authoritative contracts; **open** those sources instead of recreating spec text in answers.
+- **Do not invent** path, method, payload, or schema detail, and **do not duplicate** OpenAPI or generated API catalogs in this repo. Follow **`docs/index.md`** — **What belongs elsewhere** (`#what-belongs-elsewhere`). **Link out** to project docs (for Algorea: **algorea-devdoc** and the published **Backend API (generated)** surface) and **application repositories** for authoritative contracts; **open** those sources instead of recreating spec text in answers.
 
 ## Consistency
 
-- Do **not** contradict **`docs/meta/structure-contract.md`**, **`docs/index.md`**, or **`docs/meta/contributing.md`** on default vs archive or the API boundary.
+- Do **not** contradict **`docs/meta/structure-contract.md`** or **`docs/index.md`** on default vs archive or what belongs elsewhere.

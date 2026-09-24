@@ -34,4 +34,4 @@ Discussions, deliberation, and relevant information for **abandoned projects** l
 
 ---
 
-**Contributing:** For how to add or change documentation—scope, inclusion rules, and where curated truth lives—see the **[contribution guide](./meta/contributing.md)**. Technical structure for `docs/` pages (YAML front matter, headings) remains in the [structure contract](./meta/structure-contract.md).
+**Contributing:** For how to add or change documentation—collaboration and public scope—see **[Meta (about this doc)](./meta/index.md)**. Technical structure for `docs/` pages (YAML front matter, headings) remains in the [structure contract](./meta/structure-contract.md).

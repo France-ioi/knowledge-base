@@ -8,6 +8,8 @@ nav_order: 1
 
 This website is a **documentation hub** for all projects in the France-IOI sphere. It is written for both humans and AI agents to learn about the different projects and how they articulate.
 
+For a catalogue of public repositories and how they relate, see **[Projects overview](./projects-overview.md)** (stale since June 2021; needs update).
+
 ## What belongs here vs elsewhere
 
 ### In this knowledge base

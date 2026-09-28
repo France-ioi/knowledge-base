@@ -14,3 +14,11 @@ When answering from this repository:
 ## Consistency
 
 - Do **not** contradict **`docs/meta/index.md`** or **`docs/index.md`** on default vs archive or what belongs elsewhere.
+
+## Editing documentation
+
+When you create or change Markdown under **`docs/`** (outside **`docs/algorea/`**), **`README.md`**, or **`CONTRIBUTING.md`**:
+
+- Follow **`docs/meta/index.md`** (Markdown and front matter).
+- Before finishing, run **`npm run docs:lint`** and fix any reported issues.
+

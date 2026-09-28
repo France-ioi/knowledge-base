@@ -25,9 +25,11 @@ Conventions for pages under **`docs/`**:
 
 - One `#` title per page (or rely on front-matter `title`).
 - Headings in order: `##` then `###` then `####` (do not skip levels).
-- Prefer CommonMark: lists, **language-tagged** fenced code blocks, **descriptive** link text.
+- Prefer CommonMark: lists, **language-tagged** fenced code blocks, **descriptive** link text (no bare URLs).
 - For workflows and diagrams, **Mermaid** is enabled (fenced blocks tagged `mermaid`).
 - Keep each heading’s body immediately under it.
+
+After editing Markdown (outside **`docs/algorea/`**), run **`npm run docs:lint`** and fix failures before considering the change done.
 
 ## Front matter
 

@@ -13,8 +13,8 @@ All of our tools are under MIT License, even when the License is not specified i
 
 These are just basic presentation websites for contests organized by France-ioi
 
-* [alkindi-site](https://github.com/France-ioi/alkindi-site) corresponds to http://concours-alkindi.fr
-* [Castor-informatique.fr](https://github.com/France-ioi/Castor-informatique.fr) corresponds to http://castor-informatique.fr
+* [alkindi-site](https://github.com/France-ioi/alkindi-site) corresponds to [concours-alkindi.fr](http://concours-alkindi.fr)
+* [Castor-informatique.fr](https://github.com/France-ioi/Castor-informatique.fr) corresponds to [castor-informatique.fr](http://castor-informatique.fr)
 
 ## Login module
 
@@ -26,7 +26,7 @@ These are just basic presentation websites for contests organized by France-ioi
 ## Algorea learning platform
 
 * [AlgoreaPlatform](https://github.com/France-ioi/AlgoreaPlatform)
-  This is the main repository for our new exercise platform. The goal is for this platform to eventually replace our other platforms, once all the required features are in place. A beta version can be tested on http://parcours.algorea.org
+  This is the main repository for our new exercise platform. The goal is for this platform to eventually replace our other platforms, once all the required features are in place. A beta version can be tested on [parcours.algorea.org](http://parcours.algorea.org)
   It uses:
   * [commonFramework](https://github.com/France-ioi/commonFramework) at its heart for client/server synchronization
   * [login-module](https://github.com/France-ioi/login-module) for authentication

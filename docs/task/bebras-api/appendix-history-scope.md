@@ -116,19 +116,21 @@ Before `reloadHistory` restores an element, the task saves the current state if 
 
 `reloadState` takes a full state string produced by the task. `reloadHistory` takes only an element id, and the task fetches the content from its own backend. Since the inputs and the behaviour are different, a separate function is clearer. It takes an `options` object so that parameters can be added later without changing the signature.
 
-## Decision 8: support is advertised with the API version
+## Decision 8: support is advertised with `savesHistory`
 
-A task supports history if it declares `apiVersion >= 3` in `task.getMetaData`. A task that declares version 3 must also support every earlier version feature (for instance `reloadAnswerWithOptions` from v2).
+`task.getHistory` and `task.reloadHistory` are part of API version 3. A task that declares version 3 must also support every earlier version feature (for instance `reloadAnswerWithOptions` from v2).
+
+Declaring version 3 does not by itself mean that this task stores editor history. The task sets `savesHistory: true` in `task.getMetaData` when it does. The field is optional and defaults to false. Only a task with `apiVersion` at least 3 may set it.
 
 **Why**
 
-The API version is already how the platform discovers task capabilities, so no new mechanism is needed.
+Not every task on version 3 stores the work in progress. A separate flag tells the platform which tasks do, so it can keep its own save for the others.
 
 **Consequences**
 
-When the task supports v3, the task saves its own work in progress, so the platform must stop doing it:
+When `savesHistory` is true, the task saves its own work in progress, so the platform must stop doing it:
 
 - it no longer saves the current answer and state when the user leaves the task;
 - it no longer saves a backup of the current answer and state when it reloads another answer.
 
-Otherwise the same work would be saved twice, in two places that the user would see as two unrelated lists.
+Otherwise the same work would be saved twice, in two places that the user would see as two unrelated lists. When the flag is absent or false, the platform keeps that single copy, as it did before version 3.

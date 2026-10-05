@@ -221,6 +221,7 @@ This function returns (as first argument of the callback) the metadata associate
 - **editorUrl (string, optional):** a direct URL to the editor for this task  
 - **apiVersion (number, optional):** highest Bebras API version supported (default: 1\)  
 - **minApiVersion (number, optional):** lowest Bebras API version supported (default: 1\)  
+- **savesHistory (boolean, optional):** true if the task stores the work in progress itself (see `task.getHistory` and `task.reloadHistory`). Only a task with `apiVersion` at least 3 may set it; default false. When it is true, the platform must not save the current answer and state, neither when the user leaves the task nor as a backup when it reloads another answer.  
 - TODO : boolean that says if grading can be validated by a token
 
 When a task handles tokens, the fields returned by this function depend on the following fields of the token:

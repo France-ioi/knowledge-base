@@ -319,12 +319,12 @@ History is always that of the currently loaded task instance, as identified by t
 The history is uniquely identified by:
 
 - **platformName**
-- the task identity (from the token, the local task id)
+- the task identity (from the token, `idItemLocal`)
 - **idAttempt** (opaque string from the token; on Algorea this encodes participant + attempt)
 
 The user identifier is not part of the list key.
 
-More explanation is in **[Appendix: History scope](./bebras-api/appendix-history-scope.md)**.
+More explanation is in **[Appendix: Task editor history](./bebras-api/appendix-history-scope.md)**.
 
 **task.reloadHistory(options, callback, errorCallback)**
 

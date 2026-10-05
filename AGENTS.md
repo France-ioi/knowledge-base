@@ -19,6 +19,7 @@ When answering from this repository:
 
 When you create or change Markdown under **`docs/`** (outside **`docs/algorea/`**), **`README.md`**, or **`CONTRIBUTING.md`**:
 
-- Follow **`docs/meta/index.md`** (Markdown and front matter).
+- Follow **`docs/meta/index.md`** (Markdown, front matter, and file placement).
+- By default, a new page under existing content goes in a **subdirectory of that parent** (see **`docs/meta/index.md`** — File placement). Do not drop child pages as siblings of unrelated pages in the same folder.
 - Before finishing, run **`npm run docs:lint`** and fix any reported issues.
 

@@ -40,3 +40,13 @@ Put YAML between `---` at the top of curated `docs/*.md` pages.
 **Just the Docs (as needed):** `parent`, `nav_order`, `has_children`, `permalink`, and other theme keys the site needs for navigation.
 
 For a new page, copy a similar existing page and adapt.
+
+## File placement
+
+By default, a page that belongs under existing content lives in a **subdirectory of that parent**, not as a sibling of other topics in the same folder.
+
+- Keep the parent page at its current path (for example `docs/task/bebras-api.md`) and set `has_children: true` when it has children.
+- Put child pages under a directory named after the parent file without `.md` (for example `docs/task/bebras-api/appendix.md`).
+- Set front-matter `parent` to the parent’s `title`.
+
+Do not add a child as `docs/task/<child>.md` next to other Task section pages; that mixes Bebras API subpages with future pages under Task.

@@ -3,6 +3,7 @@ title: Bebras API
 parent: Task engines, libs and API
 nav_order: 1
 has_toc: true
+has_children: true
 ---
 
 # Bebras API
@@ -45,6 +46,8 @@ The platform may:
 - tell the task to initialize itself, given some parameters: task.load(...)  
 - ask the task for the current answer provided by a user: task.getAnswer(...)  
 - reload a previously saved answer: task.reloadAnswer(...)  
+- obtain the editor history: task.getHistory(...)  
+- reload a history element into the editor: task.reloadHistory(...)  
 - obtain the height of the task content, so that it can adjust the layout: task.getHeight(...)  
 - obtain the list of views (task, solution, ...) that the task is able to display: task.getViews(...)  
 - provide the task with a signed token that proves that it allows the user to access to some content: task.updateToken(...)
@@ -118,6 +121,8 @@ Tasks and platforms can support different API versions. Through the task.getMeta
 If the task and platform have no supported API version in common, task isn’t loaded and an error is raised.
 
 ## **Version history**
+
+v3: Add task.getHistory and task.reloadHistory
 
 v2: Add task.reloadAnswerWithOptions
 
@@ -216,6 +221,7 @@ This function returns (as first argument of the callback) the metadata associate
 - **editorUrl (string, optional):** a direct URL to the editor for this task  
 - **apiVersion (number, optional):** highest Bebras API version supported (default: 1\)  
 - **minApiVersion (number, optional):** lowest Bebras API version supported (default: 1\)  
+- **savesHistory (boolean, optional):** true if the task stores the work in progress itself (see `task.getHistory` and `task.reloadHistory`). Only a task with `apiVersion` at least 3 may set it; default false. When it is true, the platform must not save the current answer and state, neither when the user leaves the task nor as a backup when it reloads another answer.  
 - TODO : boolean that says if grading can be validated by a token
 
 When a task handles tokens, the fields returned by this function depend on the following fields of the token:
@@ -272,6 +278,68 @@ callback() takes no parameter and should be called when the answer has been load
 This functions like reloadAnswer, but allows passing options, an object with the following parameters:
 
 - **idUserAnswer (string, optional):** Specifies the idUserAnswer the answer corresponds to, for the task to possibly reload related submission data
+
+**task.getHistory(options, callback, errorCallback)**
+
+*Minimum API version: 3*
+
+This function returns an array of history elements, ordered by descending `id`.
+
+`callback(history)` takes one parameter: the array of history elements. Each history element is an object with the following properties:
+
+- **id (int):** a unique ascending identifier for the history element
+- **datetime (string, RFC 3339):** the datetime of the history element (precision: seconds)
+- **tags (array of objects):** the tags associated with this history element (if it is a checkpoint, some of those tags explain why). Each tag has:
+  - **identifier (string):** a constant identifier for the tag
+  - **i18nText (string, optional):** a translated label of this tag in the language in which the task has been loaded
+- **idUser (string):** the id of the user that originated this history element (useful only in case of team solving)
+- **isCheckpoint (boolean):** whether this history element is a checkpoint
+- **sinceEarlier (object):** the delta in number of characters between this history element and the earlier one (or with the empty response if it is the first element):
+  - **charsAdded (int):** number of characters added
+  - **charsRemoved (int):** number of characters removed
+- **sinceEarlierCheckpoint (object, only if this history element is a checkpoint):** the delta in number of characters between this checkpoint and the earlier checkpoint (or with the empty response if it is the first checkpoint):
+  - **charsAdded (int):** number of characters added
+  - **charsRemoved (int):** number of characters removed
+  - **elementsCount (int):** number of individual history elements between this checkpoint and the earlier checkpoint (both excluded from the count)
+- **activeTab (object):** additional information about the active tab:
+  - **name (string or null):** the name of the tab (only if there are tabs in this task; otherwise `null`)
+  - **length (int):** the size of the tab, in number of characters for a document or in number of blocks for a block language
+  - **progLang (string):** the programming language of the tab, for example Python or Java
+
+`options` is an object with the following properties:
+
+- **limit (int, optional, default 100, maximum 1000):** the number of history elements to include
+- **maxId (int, optional):** the maximum history element ID, included
+- **minId (int, optional):** the minimum history element ID, excluded
+- **onlyCheckpoints (boolean, optional, default false):** return only history elements that are checkpoints
+
+**Scope**
+
+History is always that of the currently loaded task instance, as identified by the task token used for this iframe.
+
+The history is uniquely identified by:
+
+- **platformName**
+- the task identity (from the token, `idItemLocal`)
+- **idAttempt** (opaque string from the token; on Algorea this encodes participant + attempt)
+
+The user identifier is not part of the list key.
+
+More explanation is in **[Appendix: Task editor history](./bebras-api/appendix-history-scope.md)**.
+
+**task.reloadHistory(options, callback, errorCallback)**
+
+*Minimum API version: 3*
+
+This function reloads the editor state corresponding to the provided history element id.
+
+`options` is an object with the following property:
+
+- **elementId (int):** the identifier of the history element to reload
+
+A save of the editor is done before reloading the specified editor state, if there is anything new to save and the task is not read-only. After reloading the editor, a save is not done until the user makes a change on the reloaded state.
+
+callback() takes no parameter and should be called when the history element has been reloaded.
 
 **task.getHeight(callback, errorCallback)**
 

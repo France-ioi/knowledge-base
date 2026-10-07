@@ -27,7 +27,7 @@ API v3 adds that history. Terms used below:
 
 ## Decision 1: the task owns the history, the platform only sees metadata
 
-The task (and its backend) stores the history. The platform never receives the code or the diffs. `getHistory` returns only what is needed to display a list (id, datetime, author, tags, sizes, character counts), and `reloadHistory` asks the task to restore an element by id.
+The task (and its backend) stores the history. The platform never receives the code or the diffs. `getHistory` returns only what is needed to display a list (id, datetime, author, tags, sizes, change counts), and `reloadHistory` asks the task to restore an element by id.
 
 **Why**
 
@@ -89,7 +89,7 @@ Submissions of teammates remain a platform feature (the platform reloads them wi
 
 An element can be marked as a **checkpoint** (`isCheckpoint`), with tags explaining why. The platform first lists checkpoints only (`onlyCheckpoints: true`), and lets the user expand a checkpoint to see the elements saved since the previous one.
 
-Each element also carries: the author, the active tab (name, size, language), and character counts. These counts are taken over the whole state (all tabs), compared with the immediately older element (`sinceEarlier`) and, for checkpoints, with the previous checkpoint (`sinceEarlierCheckpoint`, with the number of elements in between).
+Each element also carries: the author, the active tab (name, size, language), and change counts. These counts are characters for a text document, and blocks for Blockly and other block documents. They are taken over the whole state (all tabs). `sinceEarlier` is the local delta, compared with the immediately older element. On a checkpoint, `sinceEarlierCheckpoint` is the global delta, compared with the previous checkpoint (with the number of elements in between). Both deltas are returned on every checkpoint, whether the call uses `onlyCheckpoints` or not.
 
 **Why**
 
@@ -98,7 +98,7 @@ A plain list of autosaves ("10:22, 10:23, 10:24…") is unusable: the user canno
 **Consequences on the options**
 
 - Results are ordered from newest to oldest.
-- `maxId` is **included** and `minId` is **excluded**. To expand checkpoint `C` whose previous checkpoint is `P`, the platform requests `minId = P.id, maxId = C.id`. It gets `C` again, this time with its delta to the element just before it, plus everything in between.
+- `maxId` is **included** and `minId` is **excluded**. To expand checkpoint `C` whose previous checkpoint is `P`, the platform requests `minId = P.id, maxId = C.id`. It gets `C` and the elements between `P` and `C`. The local and global deltas of `C` are already present on the checkpoint listing, so this request is only to load the elements in between.
 - To get the next page of results, the platform requests `maxId = lastReceivedId - 1`.
 
 ## Decision 6: saves around a reload
